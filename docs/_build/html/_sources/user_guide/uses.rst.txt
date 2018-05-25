@@ -35,8 +35,11 @@ which version you want to look for modules. This field has a default value selec
 to a different selection, but it cannot be unselected. Another option is how you want to filter on
 modules' installable-property. It's possible to choose from True, False or both (All results).
 And lastly there's a checkbox "Search in README". If this is checked, the search will also look
-readme files of modules for the entered text in "Module". It is possible to look up multiple
-words at once, if "Search in Readme" is checked.
+readme files of modules for the entered text in "Module".
+
+It is possible to look up multiple words at once, if "Search in Readme" is checked. The words will be searched for in
+the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
+an exact match.
 
 Another way to look up a module is via any table that also shows repositories. When you are looking
 at such a table, simply click on a repository's name. This will take you to one of two tables.
@@ -111,7 +114,7 @@ When you have a version specific module table (so not from Full Table) on your s
 "Write review". This clickable link is in the last column of a module record. Clicking on
 it will take you to a form, here you can assign a number and write a review. Optionally, you can
 check a checkbox to delete previous reviews. If this is left unchecked, new reviews will be pasted
-behind existing ones, seperated by '||'. When de module is graded and a review is written, click on
+behind existing ones, separated by '||'. When de module is graded and a review is written, click on
 'Place review'. This will save the review. New scores are not added to old scores,
 and only the last score will be shown.
 
