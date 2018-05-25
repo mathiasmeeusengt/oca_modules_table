@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+Select version:
+<form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.select_version }}
+    {{ form.submit() }}
+</form>
+
+{% endblock %}

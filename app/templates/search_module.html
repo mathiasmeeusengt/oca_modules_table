@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        <b>{{ form.module.label }}</b>
+        {{ form.module(size=45) }}
+    </div>
+
+    <br/>
+
+    <div>
+        {{ form.select_version.label }}
+        {{ form.select_version }}
+    </div>
+
+    <div>
+        {{ form.installable_bool.label }}
+        {{ form.installable_bool }}
+    </div>
+
+    <div>
+        {{ form.search_readme }}
+        {{ form.search_readme.label }}
+    </div>
+
+    <br/>
+    "*" fields are required.
+    <div>{{ form.submit() }}</div>
+
+</form>
+{% endblock %}

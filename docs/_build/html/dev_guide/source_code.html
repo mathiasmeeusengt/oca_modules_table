@@ -1,0 +1,301 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Source Code &#8212; stageopdracht  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="CLI" href="CLI.html" />
+    <link rel="prev" title="How-to" href="../user_guide/uses.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="source-code">
+<h1>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h1>
+<p>This page is intended for developers. Here is explained what all the functions are and where code needs to be changed
+in certain events (eg.: adding a new odoo version).</p>
+<div class="section" id="database-model">
+<h2>Database model<a class="headerlink" href="#database-model" title="Permalink to this headline">¶</a></h2>
+<p>The image below shows how the database looks like, it has two objects, Repository and Module.
+One repository can have multiple modules, but one module cannot have multi repositories</p>
+<img alt="../_images/diagram.png" src="../_images/diagram.png" />
+</div>
+<div class="section" id="python-files">
+<h2>Python files<a class="headerlink" href="#python-files" title="Permalink to this headline">¶</a></h2>
+<p>This section explains what each function in each .py file does. The names of the titles are not identical to the files,
+but strongly resemble them.</p>
+<div class="section" id="routes">
+<h3>Routes<a class="headerlink" href="#routes" title="Permalink to this headline">¶</a></h3>
+<p>This file contains all the “routes” of the application. Routes are functions that specify what logic must be executed
+when the client requests a URL. The routes in this application are usually built in the same way:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">&#64;app.route('/name_page/&lt;variable&gt;,</span> <span class="pre">methods=['GET',</span> <span class="pre">'POST'])</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">name_page(variable):</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">body</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">render_template('name_page.html',</span> <span class="pre">'title',</span> <span class="pre">var1=var1,</span> <span class="pre">var2=var2,</span> <span class="pre">...)</span></code></li>
+</ol>
+<ol class="arabic simple">
+<li>Specify the URL of the page along with optional variables and which methods this page is allowed to use</li>
+<li>Actual definition of the function, with or without variable(s)</li>
+<li>The code that runs when this page is accessed</li>
+<li>A return statement that either returns a template or redirects to another route</li>
+</ol>
+<p>First is a URL that will also be shown in the url-bar of your browser. If a variable needs to be passed along to this
+page, it’s possible to add this to the URL <code class="docutils literal notranslate"><span class="pre">/name_page_to_visit/&lt;variable&gt;</span></code>. The greater than and lesser than
+need to stay, this way the program knows it’s a variable and not a solid part of the url.
+If there is no variable in the URL, the actual function is created with empty parentheses. When one or more variables
+are placed in the URL, they need to be placed in the parentheses. These variables can then be used in the body.
+At the end of the body is a return statement with
+a <code class="docutils literal notranslate"><span class="pre">render_template('name_page.html',</span> <span class="pre">'title',</span> <span class="pre">var1=var1,</span> <span class="pre">var2=var,...)</span></code>. This renders a html page with jinja2.
+The variables passed along after the title can be used in the template.</p>
+<p>The body can also contain an if-statement with a <code class="docutils literal notranslate"><span class="pre">validate_on_submit()</span></code>. This is a function from flask-wtforms.
+This if-statement is true when a button from a form on the page is pressed and no errors are raised.
+There’s either some code to be run or a function call behind this if-statement. If the program has run through the
+entire body, it comes upon a separate return-statement on the same level as the if-statement. This return either has a
+return_template or a <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">redirect(url_for('name_page',</span> <span class="pre">var1=var1,...))</span></code>. This redirects the browser to the page
+that matches the name inside the parentheses.</p>
+</div>
+<div class="section" id="regular-functions">
+<h3>Regular Functions<a class="headerlink" href="#regular-functions" title="Permalink to this headline">¶</a></h3>
+<p>This section will give a bit of explanation for the functions in “functions.py”.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Repository object from the local database has it’s name under “.repository”, so Repository.repository will get
+the name. The Repository object obtained from the GitHub API has it’s name under “.name”, making it Repository.name
+to get the name.</p>
+</div>
+<div class="section" id="update-repositories">
+<h4>update_repositories()<a class="headerlink" href="#update-repositories" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameters: None</em></p>
+<p>This function updates the entire database. It uses PyGitHub, a python library used to access the GitHub API v3.
+First it gets all the repositories from the user OCA, then it loops for every repository that is returned. It starts
+by checking if the Repository exists, if it does, it will update the description and move on. If the repository does
+not exist in the database, a new record will be made. The name (repository) and description will be saved and
+in_scope will be set to ‘False’.
+Now that the repository is updated/created, the function moves on to other functions that will update the repositories’
+modules, and nearly every field of each module.
+The functions are:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">update_modules(repository)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">count_modules(repository)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">get_installable_and_get_readme(repository)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">get_readme_repository(repository)</span></code></li>
+</ul>
+<p>Every 5 repositories, a counter will print the number of repositories already updated. Just to have a little feedback.</p>
+</div>
+<div class="section" id="update-single-repository-repository">
+<h4>update_single_repository(repository)<a class="headerlink" href="#update-single-repository-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: string(repository name)</em></p>
+<p>This function works exactly the same as <code class="docutils literal notranslate"><span class="pre">update_repositories()</span></code>, with one difference. It only updates one repository,
+instead of all of them. This can be useful when a user wants to be sure that the latest version is present on the
+database. Naturally, the counter is left out.</p>
+</div>
+<div class="section" id="update-modules-repository">
+<h4>update_modules(repository)<a class="headerlink" href="#update-modules-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: github.Repository.Repository(repository)</em></p>
+<p>This function is used to get the modules of a repository.  First it calls on another function,
+<code class="docutils literal notranslate"><span class="pre">get_tree_hashes_per_repo(repo)</span></code> to get the hashes from the trees (= Github branches). Then, every item in the
+returned list is sent as a parameter for another PyGitHub function, <code class="docutils literal notranslate"><span class="pre">get_git_tree(repository_hash)</span></code>. This returns
+a lot of items from the API, not all of which are needed. Every item is filtered on the type of tree,
+<code class="docutils literal notranslate"><span class="pre">list_item.type</span> <span class="pre">==</span> <span class="pre">'tree'</span></code> means it is a subdirectory and most likely a module that we want to get. Then it is checked
+if the module is already in the database. If this is not the case, a new record is make and it’s name and the repository
+it is part of are saved in the database.</p>
+<p>Before exiting this function, one last other function is called,
+<code class="docutils literal notranslate"><span class="pre">url_test_module(list_item.path)</span></code>. The <code class="docutils literal notranslate"><span class="pre">.path</span></code> value is the name of the module.</p>
+</div>
+<div class="section" id="get-tree-hashes-per-repo-repository">
+<h4>get_tree_hashes_per_repo(repository)<a class="headerlink" href="#get-tree-hashes-per-repo-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: github.Repository.Repository(repository)</em></p>
+<p>This function pulls the Tree (=branch) hashes from a repository using the Git references. This is done with a function,
+<code class="docutils literal notranslate"><span class="pre">get_git_refs()</span></code>, from the PyGitHub library. The returned PaginatedList is then filtered based on the Odoo versions,
+<em>refs/heads/x.0</em>, where x is the version. The hashes of the filtered list items are saved in a list which is then
+returned for use in another function.</p>
+</div>
+<div class="section" id="url-test-module-module">
+<h4>url_test_module(module)<a class="headerlink" href="#url-test-module-module" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: string(module name)</em></p>
+<p>For every (relevant(= 8, 9, 10 ,11))Odoo version, a URL is prepared and filled in by the module name and linked
+repository. This URL should lead to the GitHub page of the module, if it exists. To check this, a function is called,
+<code class="docutils literal notranslate"><span class="pre">check_if_url_valid(url)</span></code>.</p>
+</div>
+<div class="section" id="check-if-url-valid-url">
+<h4>check_if_url_valid(url)<a class="headerlink" href="#check-if-url-valid-url" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: string(url)</em></p>
+<p>The url is checked on what statuscode is returned when accessed. If this code is lower than 400, it means the page,
+and thus the module, exist. For each version where the page exists, an ‘X’ is saved to the database. If the module
+does not exist, it is saved as ‘-‘.</p>
+</div>
+<div class="section" id="check-if-readme-exists-url">
+<h4>check_if_readme_exists(url)<a class="headerlink" href="#check-if-readme-exists-url" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: string(url)</em></p>
+<p>The url is checked on what statuscode is returned when accessed. If this code is lower than 400, it means the
+readme-file of this particular module exists. For each version where the readme exists, ‘readme’ is saved to the
+database. If the readme does not exist, a ‘-‘ will be saved.</p>
+</div>
+<div class="section" id="count-modules-repository">
+<h4>count_modules(repository)<a class="headerlink" href="#count-modules-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: github.Repository.Repository(repository)</em></p>
+<p>This function counts how many modules there are in a repository, per version. This is done by a join-query between
+between all modules with the same Repository FK <code class="docutils literal notranslate"><span class="pre">Module.repo_name</span></code> and every module that exists (= has a ‘X’ in the
+database).</p>
+</div>
+<div class="section" id="get-installable-and-get-readme-repository">
+<h4>get_installable_and_get_readme(repository)<a class="headerlink" href="#get-installable-and-get-readme-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: github.Repository.Repository(repository)</em></p>
+<p>This function checks if the module is installable and in the same breath gets the text of the readme.
+This is done by using two other functions: <code class="docutils literal notranslate"><span class="pre">get_installable(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">get_readme_module(...)</span></code>.</p>
+</div>
+<div class="section" id="get-installable-repository-module-version">
+<h4>get_installable(repository, module, version)<a class="headerlink" href="#get-installable-repository-module-version" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameters: github.Repository.Repository(repository), app.Models.Module(module), string(‘x.0’)</em></p>
+<p>This function checks if the module is installable. This is done by getting the files of a module from GitHub. When the
+files are returned by the API, the function checks if either ‘openerp’ or ‘manifest’ exist and gets the content from
+that file. Then it searches for the words “installable: True”. Because the text is converted from .rst to .txt, some
+bits of the syntax cause for some weird conversions. This is the reason that there’s some space between the expected
+place of “installable:” and “True”. The function returns a string ‘True’ or ‘False’ depending on if it finds
+‘Installable: True’, even with some weird characters in between.</p>
+</div>
+<div class="section" id="get-readme-module-module-version-x">
+<h4>get_readme_module(module, version_x)<a class="headerlink" href="#get-readme-module-module-version-x" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameters: app.Models.Module(module), string(‘x.0’)</em></p>
+<p>This function</p>
+</div>
+<div class="section" id="get-readme-repository-repository">
+<h4>get_readme_repository(repository)<a class="headerlink" href="#get-readme-repository-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: github.Repository.Repository</em></p>
+</div>
+<div class="section" id="search-module-f">
+<h4>search_module_f(…)<a class="headerlink" href="#search-module-f" title="Permalink to this headline">¶</a></h4>
+<p><em>Variables between parentheses: form_module_data, form_select_version_data, form_search_readme_data,
+form_installable_bool_data.</em></p>
+<p><em>Parameters: string(search keyword), string(selected version), bool(search_readme), string(selected option)</em></p>
+</div>
+<div class="section" id="search-repository-f">
+<h4>search_repository_f(…)<a class="headerlink" href="#search-repository-f" title="Permalink to this headline">¶</a></h4>
+<p><em>Variables between parentheses: form_repository_data, form_bp_data, form_in_scope_data</em></p>
+<p><em>Parameters: string(search keyword), string(selected option), string(selected option)</em></p>
+</div>
+</div>
+<div class="section" id="pygithub-api">
+<h3>PyGitHub API<a class="headerlink" href="#pygithub-api" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="version-specific-functions">
+<h3>Version (specific) functions<a class="headerlink" href="#version-specific-functions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="forms">
+<h3>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="maintenance">
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Source Code</a><ul>
+<li><a class="reference internal" href="#database-model">Database model</a></li>
+<li><a class="reference internal" href="#python-files">Python files</a><ul>
+<li><a class="reference internal" href="#routes">Routes</a></li>
+<li><a class="reference internal" href="#regular-functions">Regular Functions</a><ul>
+<li><a class="reference internal" href="#update-repositories">update_repositories()</a></li>
+<li><a class="reference internal" href="#update-single-repository-repository">update_single_repository(repository)</a></li>
+<li><a class="reference internal" href="#update-modules-repository">update_modules(repository)</a></li>
+<li><a class="reference internal" href="#get-tree-hashes-per-repo-repository">get_tree_hashes_per_repo(repository)</a></li>
+<li><a class="reference internal" href="#url-test-module-module">url_test_module(module)</a></li>
+<li><a class="reference internal" href="#check-if-url-valid-url">check_if_url_valid(url)</a></li>
+<li><a class="reference internal" href="#check-if-readme-exists-url">check_if_readme_exists(url)</a></li>
+<li><a class="reference internal" href="#count-modules-repository">count_modules(repository)</a></li>
+<li><a class="reference internal" href="#get-installable-and-get-readme-repository">get_installable_and_get_readme(repository)</a></li>
+<li><a class="reference internal" href="#get-installable-repository-module-version">get_installable(repository, module, version)</a></li>
+<li><a class="reference internal" href="#get-readme-module-module-version-x">get_readme_module(module, version_x)</a></li>
+<li><a class="reference internal" href="#get-readme-repository-repository">get_readme_repository(repository)</a></li>
+<li><a class="reference internal" href="#search-module-f">search_module_f(…)</a></li>
+<li><a class="reference internal" href="#search-repository-f">search_repository_f(…)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pygithub-api">PyGitHub API</a></li>
+<li><a class="reference internal" href="#version-specific-functions">Version (specific) functions</a></li>
+<li><a class="reference internal" href="#forms">Forms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#maintenance">Maintenance</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../main.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../user_guide/uses.html" title="previous chapter">How-to</a></li>
+      <li>Next: <a href="CLI.html" title="next chapter">CLI</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dev_guide/source_code.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Mathias Meeusen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/dev_guide/source_code.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% content block %}
+
+<table border="1px">
+    <tr>
+        <th>Repository</th>
+        <th>Description</th>
+        <th>In Scope</th>
+        <th>BP</th>
+        <th>Verantw.</th>
+        <th>Edit Repository</th>
+    </tr>
+    {% for repo in repos %}
+    <tr>
+        <td><a href="/version_details/{{ repo.repository }}/{{ version_x }}">{{ repo.repository }}</a></td>
+        <td>{{ repo.description }}</td>
+        <td>{{ repo.in_scope }}</td>
+        {% if repo.bp == None %}
+        <td>-</td>
+        {% else %}
+        <td>{{ repo.bp }}</td>
+        {% endif %}
+        {% if repo.employee == None %}
+        <td>-</td>
+        {% else %}
+        <td>{{ repo.employee }}</td>
+        {% endif %}
+        <td><a href="/edit_repository/{{ repo.repository }}">Edit Repository</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>{{ form.rating.label }}</div>
+    <div>{{ form.rating }}</div>
+    <div>{{ form.review.label }}</div>
+    <div>{{ form.review(size=50) }}</div>
+    <br/>
+    <div>This cannot be undone!</div>
+    <div>{{ form.delete_reviews }} {{ form.delete_reviews.label }}</div>
+    <br/>
+    <div>{{ form.submit() }}</div>
+</form>
+
+
+{% endblock %}

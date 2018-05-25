@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<table border="1px">
+    <tr>
+        <th>Repository</th>
+        <th>Description</th>
+        <th>In scope</th>
+        <th>BP</th>
+        <th>Employee</th>
+        <th>Edit Repository</th>
+        <th>Update Repository</th>
+    </tr>
+    {% for repo in repository %}
+    <tr>
+        <td><a href="/detail/{{ repo.repository }}">{{ repo.repository }}</a></td>
+        <td>{{ repo.description }}</td>
+        <td>{{ repo.in_scope }}</td>
+        {% if repo.bp == None %}
+        <td>-</td>
+        {% else %}
+        <td>{{ repo.bp }}</td>
+        {% endif %}
+        {% if repo.employee == None %}
+        <td>-</td>
+        {% else %}
+        <td>{{ repo.employee }}</td>
+        {% endif %}
+        <td><a href="/edit_repository/{{ repo.repository }}">Edit Repository</a></td>
+        <td><a href="/update_repository/{{ repo.repository }}">Update</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br/>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.submit(value='Update Database') }}
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../microblog/.idea/microblog.iml" filepath="$PROJECT_DIR$/../microblog/.idea/microblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../microblog van tutorial chapter15/.idea/microblog van tutorial chapter15.iml" filepath="$PROJECT_DIR$/../microblog van tutorial chapter15/.idea/microblog van tutorial chapter15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/stageopdracht.iml" filepath="$PROJECT_DIR$/.idea/stageopdracht.iml" />
+    </modules>
+  </component>
+</project>

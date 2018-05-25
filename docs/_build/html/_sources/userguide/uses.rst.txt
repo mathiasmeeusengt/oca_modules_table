@@ -1,0 +1,117 @@
+Operations
+##########
+
+This page will explain how to perform certain actions, eg.: update a repository, in the
+application.
+
+
+Look up a repository
+====================
+You can look up a repository on a couple of pages: ``Full table``, ``Search repository`` and
+``Table per version``.
+
+In ``Full table``, you get an overview of every repository in the database. You can use the
+search-function of your browser to look for a repository, or use the application's search-page to
+filter based on some properties.
+
+On the page ``Search repository``, you can enter a keyword to look in a more specific way. There's
+also the option to set a few properties, in scope and BP.  Along with the keyword, this will affect
+which repositories you will see in the search results. Every field/option is optional to fill in,
+and leaving everything at the default value will result in a table that is the same as ``Full table``.
+
+And lastly you can use the page ``Table per version``. After you've selected a version, the table will
+only show repositories that have modules in that specific version. So if the repository has modules,
+but none exist in the selected version, it is not shown.
+
+
+Look up a module
+================
+A module can be looked up in two ways: via the ``Search Module`` page or from any repository page.
+
+The ``Search Module`` page works mostly the same as the repository one. Visually there will be a
+few differences. The options will be different and there's a checkbox too. In contrast to the
+repository search-function, the "Module"-field is required. The "Select Version" field selects in
+which version you want to look for modules. This field has a default value selected and can be changed
+to a different selection, but it cannot be unselected. Another option is how you want to filter on
+modules' installable-property. It's possible to choose from True, False or both (All results).
+And lastly there's a checkbox "Search in README". If this is checked, the search will also look
+readme files of modules for the entered text in "Module". It is possible to look up multiple
+words at once, if "Seach in Readme" is checked.
+
+Another way to look up a module is via any table that also shows repositories. When you are looking
+at such a table, simply click on a repository's name. This will take you to one of two tables.
+Either the ``Full table`` variant, or the ``Table per version`` one. The difference is that the
+Full table shows an overview for all versions. Whereas the Table per version only shows modules
+for a preselected version.
+
+
+
+Go back to the previous screen
+==============================
+In order to go back to the previous screen, simply press the "Back" button of your browser. This
+should take you out of your current page, back to the previous one. (This is not the case
+with search-forms)
+
+.. warning::
+
+    It is possible that by pressing Back after filling in and submitting a form ,
+    the submitted data will not be written to the database.
+
+Try to avoid using the "Back" button when you've written a review or edited a repository.
+
+
+Update
+======
+
+This section explains how to update either the whole database or just a single repository.
+As you shouldn't need these buttons/links very often, all the update actions are confined
+to **Full table** to keep clutter in other tables to a minimum.
+
+
+Update everything
+-----------------
+
+To update the whole database, visit the **Full table** page. Scroll all the way to the bottom and
+click the button ``Update Database``. The application will now run through every record and update
+it if necessary. If new repositories are found, they will be added to the database.
+
+..  note::
+
+    This will take a very long time.
+
+You can interrupt it, but it cannot continue from
+where it left off. If you want to update again, you'll have to start over.
+
+Update one repository
+---------------------
+
+If you do not wish to update the entire table, or you're pressed for time for a couple of
+repositories: You can update a single repository. To do this, you need to go to **Full table**.
+In the last column of any repository, there's a link ``Update``. When clicked,
+the application will run a mini-version of the ``Update Database``-button.
+
+.. note::
+
+    Depending on the numbers of modules in the repository, the time this takes can vary.
+
+Edit repository
+===============
+
+If you edit a repository, you can specify if it's ``in scope`` of the company, which ``BP`` it's
+linked to, and an ``employee`` who has experience with this repository. To do this, you can go
+to any repository table: **Full Table**, **Search Repository**'s search results
+or **Table per version**. Usually in the last column, there's clickable
+text ``Edit Repository``. Clicking on this will take you to a form. Here you can input or
+select the above mentioned items.
+
+
+Edit rating and review
+======================
+When you have a version specific module table (so not from Full Table) on your screen, you can click
+"Write review". This clickable link is in the last column of a module record. Clicking on
+it will take you to a form, here you can assign a number and write a review. Optionally, you can
+check a checkbox to delete previous reviews. If this is left unchecked, new reviews will be pasted
+behind existing ones, seperated by '||'. When de module is graded and a review is written, click on
+'Place review'. This will save the review. New scores are not added to old scores,
+and only the last score will be shown.
+

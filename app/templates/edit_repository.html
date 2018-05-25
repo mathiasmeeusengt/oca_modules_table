@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>{{ form.bp.label }}</div>
+    <div>{{ form.bp }}</div>
+    <div>{{ form.in_scope.label }}</div>
+    <div>{{ form.in_scope }}</div>
+    <div>{{ form.employee.label }}</div>
+    <div>{{ form.employee(size=30) }}</div>
+
+    <div>{{ form.submit() }}</div>
+</form>
+
+{% endblock %}

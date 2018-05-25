@@ -1,0 +1,202 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>How-to &#8212; stageopdracht  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Source Code" href="../dev_guide/source_code.html" />
+    <link rel="prev" title="Pages" href="pages.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to">
+<h1>How-to<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h1>
+<p>This page will explain how to perform certain actions, eg.: update a repository, in the
+application.</p>
+<div class="section" id="look-up-a-repository">
+<h2>Look up a repository<a class="headerlink" href="#look-up-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>You can look up a repository on a couple of pages: <strong>Full table</strong>, <strong>Search repository</strong> and
+<strong>Table per version</strong>.</p>
+<p>In <strong>Full table</strong>, you get an overview of every repository in the database. You can use the
+search-function of your browser to look for a repository, or use the application’s search-page to
+filter based on some properties.</p>
+<p>On the page <strong>Search repository</strong>, you can enter a keyword to look in a more specific way. There’s
+also the option to set a few properties, in scope and BP.  Along with the keyword, this will affect
+which repositories you will see in the search results. Every field/option is optional to fill in,
+and leaving everything at the default value will result in a table that is the same as <strong>Full table</strong>.</p>
+<p>And lastly you can use the page <strong>Table per version</strong>. After you’ve selected a version, the table will
+only show repositories that have modules in that specific version. So if the repository has modules,
+but none exist in the selected version, it is not shown.</p>
+</div>
+<div class="section" id="look-up-a-module">
+<h2>Look up a module<a class="headerlink" href="#look-up-a-module" title="Permalink to this headline">¶</a></h2>
+<p>A module can be looked up in two ways: via the <strong>Search Module</strong> page or from any repository page.</p>
+<p>The <strong>Search Module</strong> page works mostly the same as the repository one. Visually there will be a
+few differences. The options will be different and there’s a checkbox too. In contrast to the
+repository search-function, the “Module”-field is required. The “Select Version” field selects in
+which version you want to look for modules. This field has a default value selected and can be changed
+to a different selection, but it cannot be unselected. Another option is how you want to filter on
+modules’ installable-property. It’s possible to choose from True, False or both (All results).
+And lastly there’s a checkbox “Search in README”. If this is checked, the search will also look
+readme files of modules for the entered text in “Module”. It is possible to look up multiple
+words at once, if “Search in Readme” is checked.</p>
+<p>Another way to look up a module is via any table that also shows repositories. When you are looking
+at such a table, simply click on a repository’s name. This will take you to one of two tables.
+Either the <strong>Full table</strong> variant, or the <strong>Table per version</strong> one. The difference is that the
+Full table shows an overview for all versions. Whereas the Table per version only shows modules
+for a preselected version.</p>
+</div>
+<div class="section" id="go-back-to-the-previous-screen">
+<h2>Go back to the previous screen<a class="headerlink" href="#go-back-to-the-previous-screen" title="Permalink to this headline">¶</a></h2>
+<p>In order to go back to the previous screen, simply press the “Back” button of your browser. This
+should take you out of your current page, back to the previous one.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is possible that by pressing Back after filling in and submitting a form ,
+the submitted data will not be written to the database. (Except with search-forms)</p>
+</div>
+<p>Try to avoid using the “Back” button when you’ve written a review or edited a repository.</p>
+</div>
+<div class="section" id="update">
+<h2>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<p>This section explains how to update either the whole database or just a single repository.
+As you shouldn’t need these buttons/links very often, all the update actions are confined
+to <strong>Full table</strong> to keep clutter in other tables to a minimum.</p>
+<div class="section" id="update-everything">
+<h3>Update everything<a class="headerlink" href="#update-everything" title="Permalink to this headline">¶</a></h3>
+<p>To update the whole database, visit the <strong>Full table</strong> page. Scroll all the way to the bottom and
+click the button <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Database</span></code>. The application will now run through every record and update
+it if necessary. If new repositories are found, they will be added to the database.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This will take a very long time.</p>
+</div>
+<p>You can interrupt it, but it cannot continue from
+where it left off. If you want to update again, you’ll have to start over.</p>
+</div>
+<div class="section" id="update-one-repository">
+<h3>Update one repository<a class="headerlink" href="#update-one-repository" title="Permalink to this headline">¶</a></h3>
+<p>If you do not wish to update the entire table, or you’re pressed for time for a couple of
+repositories: You can update a single repository. To do this, you need to go to <strong>Full table</strong>.
+In the last column of any repository, there’s a link <code class="docutils literal notranslate"><span class="pre">Update</span></code>. When clicked,
+the application will run a mini-version of the <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Database</span></code>-button.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depending on the numbers of modules in the repository, the time this takes can vary.</p>
+</div>
+</div>
+</div>
+<div class="section" id="edit-repository">
+<h2>Edit repository<a class="headerlink" href="#edit-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you edit a repository, you can specify if it’s <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">scope</span></code> of the company, which <code class="docutils literal notranslate"><span class="pre">BP</span></code> it’s
+linked to, and an <code class="docutils literal notranslate"><span class="pre">employee</span></code> who has experience with this repository. To do this, you can go
+to any repository table: <strong>Full Table</strong>, <strong>Search Repository</strong>’s search results
+or <strong>Table per version</strong>. Usually in the last column, there’s clickable
+text <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Repository</span></code>. Clicking on this will take you to a form. Here you can input or
+select the above mentioned items.</p>
+</div>
+<div class="section" id="edit-rating-and-review">
+<h2>Edit rating and review<a class="headerlink" href="#edit-rating-and-review" title="Permalink to this headline">¶</a></h2>
+<p>When you have a version specific module table (so not from Full Table) on your screen, you can click
+“Write review”. This clickable link is in the last column of a module record. Clicking on
+it will take you to a form, here you can assign a number and write a review. Optionally, you can
+check a checkbox to delete previous reviews. If this is left unchecked, new reviews will be pasted
+behind existing ones, seperated by ‘||’. When de module is graded and a review is written, click on
+‘Place review’. This will save the review. New scores are not added to old scores,
+and only the last score will be shown.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How-to</a><ul>
+<li><a class="reference internal" href="#look-up-a-repository">Look up a repository</a></li>
+<li><a class="reference internal" href="#look-up-a-module">Look up a module</a></li>
+<li><a class="reference internal" href="#go-back-to-the-previous-screen">Go back to the previous screen</a></li>
+<li><a class="reference internal" href="#update">Update</a><ul>
+<li><a class="reference internal" href="#update-everything">Update everything</a></li>
+<li><a class="reference internal" href="#update-one-repository">Update one repository</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#edit-repository">Edit repository</a></li>
+<li><a class="reference internal" href="#edit-rating-and-review">Edit rating and review</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../main.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pages.html" title="previous chapter">Pages</a></li>
+      <li>Next: <a href="../dev_guide/source_code.html" title="next chapter">Source Code</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/user_guide/uses.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Mathias Meeusen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/user_guide/uses.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,48 @@
+
+
+
+## Flask extensions ##
+
+pip install:    # Example in cli:  (venv) $ pip install flask
+- flask
+- flask-wtf
+- flask-sqlalchemy
+- flask-migrate
+- flask-login
+- flask-dance        (requests)
+
+
+
+
+## Flask-sqlalchemy & Flask-migrate ##
+
+-flask db init                     # create migration repository
+-flask db migrate -m "<message>"   # create migration script
+-flask db upgrade                  # apply changes to db
+-(flask db downgrade)              # (undo last "flask db migration")
+
+
+
+
+## Get Modules from OCA ##
+
+api.github.com/repos/OCA/:repo/git/refs
+ => "ref": "refs/heads/<version>"
+
+api.github.com/repos/OCA/manufacture/git/trees/:sha
+ =>filter : type=tree
+
+
+
+
+## Elasticsearch ##
+
+First start elasticsearch with "elasticsearch.bat" in /<path>/bin/elasticsearch.bat
+
+
+
+
+## Very useful tutorial ##
+
+Released during spring 2018
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world

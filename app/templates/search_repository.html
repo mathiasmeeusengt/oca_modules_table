@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <div>
+        <b>{{ form.repository.label }}</b>
+        {{ form.repository(size=42) }}
+    </div>
+
+    <br/>
+
+    <div>
+        {{ form.in_scope.label}}
+        {{ form.in_scope }}
+    </div>
+
+    <br/>
+
+    <div>
+        {{ form.bp.label }}
+        {{ form.bp }}
+    </div>
+    <div>
+
+        {{ form.select_version.label }}
+        {{ form.select_version }}
+    </div>
+
+    <div>{{ form.submit() }}</div>
+
+
+</form>
+{% endblock %}

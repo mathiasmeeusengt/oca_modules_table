@@ -1,0 +1,112 @@
+2018-05-17 09:34:02,462 ERROR: Exception on /version_details/account-analytic/8.0 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 57, in version_details
+    form=form)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
+    {% block content %} {% endblock %}
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 3, in block "content"
+    <div><p>Selected version: {{ version_x }} <br> Current Repository: {{ modules[0].repo_name }}</p></div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: None has no element 0
+2018-05-17 09:34:06,022 ERROR: Exception on /version_details/account-analytic/8.0 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 57, in version_details
+    form=form)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
+    {% block content %} {% endblock %}
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 3, in block "content"
+    <div><p>Selected version: {{ version_x }} <br> Current Repository: {{ modules[0].repo_name }}</p></div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: None has no element 0
+2018-05-17 09:34:39,671 ERROR: Exception on /version_details/partner-contact/9 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 57, in version_details
+    form=form)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
+    {% block content %} {% endblock %}
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 3, in block "content"
+    <div><p>Selected version: {{ version_x }} <br> Current Repository: {{ modules[0].repo_name }}</p></div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: None has no element 0
+2018-05-17 09:34:54,986 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

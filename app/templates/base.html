@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>soApp</title> <!-- = Stage Opdracht Applicatie -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+</head>
+<body>
+<table>
+    <tr>
+        <td><a href="{{ url_for('index') }}">Home</a>&nbsp;-&nbsp;</td>
+        <td><a href="{{ url_for('search_repository') }}">Search Repository</a>&nbsp;-&nbsp;</td>
+        <td><a href="{{ url_for('search_module') }}">Search Module</a>&nbsp;-&nbsp;</td>
+        <td><a href="{{ url_for('table') }}">Full Table</a>&nbsp;-&nbsp;</td>
+        <td><a href="{{ url_for('version_repositories') }}">Table per Version</a>&nbsp;-&nbsp;</td>
+        <td><a href="https://github.com/OCA" target="_blank">OCA</a></td>
+        <td><a href="" target="_blank">Docs</a>&nbsp;-&nbsp;</td>
+    </tr>
+</table>
+<hr>
+{% block content %} {% endblock %}
+<br/><br/>
+<hr>
+<hr>
+Placeholder footer text.
+</body>
+</html>
