@@ -47,7 +47,7 @@ One repository can have multiple modules, but one module cannot have multi repos
 but strongly resemble them.</p>
 <div class="section" id="routes">
 <h3>Routes<a class="headerlink" href="#routes" title="Permalink to this headline">¶</a></h3>
-<p>This file contains all the “routes” of the application. Routes are functions that specify what logic must be executed
+<p>This file contains all the ‘routes’ of the application. Routes are functions that specify what logic must be executed
 when the client requests a URL. The routes in this application are usually built in the same way:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">&#64;app.route('/name_page/&lt;variable&gt;,</span> <span class="pre">methods=['GET',</span> <span class="pre">'POST'])</span></code></li>
@@ -78,10 +78,10 @@ that matches the name inside the parentheses.</p>
 </div>
 <div class="section" id="regular-functions">
 <h3>Regular Functions<a class="headerlink" href="#regular-functions" title="Permalink to this headline">¶</a></h3>
-<p>This section will give a bit of explanation for the functions in “functions.py”.</p>
+<p>This section will give a bit of explanation for the functions in ‘functions.py’.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The Repository object from the local database has it’s name under “.repository”, so Repository.repository will get
+<p class="last">The Repository object from the local database has it’s name under ‘.repository’, so Repository.repository will get
 the name. The Repository object obtained from the GitHub API has it’s name under “.name”, making it Repository.name
 to get the name.</p>
 </div>
@@ -164,7 +164,8 @@ database).</p>
 <h4>get_installable_and_get_readme(repository)<a class="headerlink" href="#get-installable-and-get-readme-repository" title="Permalink to this headline">¶</a></h4>
 <p><em>Parameter: github.Repository.Repository(repository)</em></p>
 <p>This function checks if the module is installable and in the same breath gets the text of the readme.
-This is done by using two other functions: <code class="docutils literal notranslate"><span class="pre">get_installable(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">get_readme_module(...)</span></code>.</p>
+This is done by using two other functions: <code class="docutils literal notranslate"><span class="pre">get_installable(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">get_readme_module(...)</span></code>. The reason these
+functions aren’t used separately is because now the database needs to be queried only once.</p>
 </div>
 <div class="section" id="get-installable-repository-module-version">
 <h4>get_installable(repository, module, version)<a class="headerlink" href="#get-installable-repository-module-version" title="Permalink to this headline">¶</a></h4>
@@ -173,13 +174,15 @@ This is done by using two other functions: <code class="docutils literal notrans
 files are returned by the API, the function checks if either ‘openerp’ or ‘manifest’ exist and gets the content from
 that file. Then it searches for the words “installable: True”. Because the text is converted from .rst to .txt, some
 bits of the syntax cause for some weird conversions. This is the reason that there’s some space between the expected
-place of “installable:” and “True”. The function returns a string ‘True’ or ‘False’ depending on if it finds
+place of ‘installable:’ and ‘True’. The function returns a string ‘True’ or ‘False’ depending on if it finds
 ‘Installable: True’, even with some weird characters in between.</p>
 </div>
 <div class="section" id="get-readme-module-module-version-x">
 <h4>get_readme_module(module, version_x)<a class="headerlink" href="#get-readme-module-module-version-x" title="Permalink to this headline">¶</a></h4>
 <p><em>Parameters: app.Models.Module(module), string(‘x.0’)</em></p>
-<p>This function</p>
+<p>This function uses a URL to get the raw content of the readme file, which is saved for the correct version of the
+module.</p>
+<p>uses <code class="docutils literal notranslate"><span class="pre">check_if_readme_exists(url)</span></code></p>
 </div>
 <div class="section" id="get-readme-repository-repository">
 <h4>get_readme_repository(repository)<a class="headerlink" href="#get-readme-repository-repository" title="Permalink to this headline">¶</a></h4>
@@ -218,7 +221,7 @@ form_installable_bool_data.</em></p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../main.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Source Code</a><ul>
 <li><a class="reference internal" href="#database-model">Database model</a></li>
@@ -253,7 +256,7 @@ form_installable_bool_data.</em></p>
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../main.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../user_guide/uses.html" title="previous chapter">How-to</a></li>
       <li>Next: <a href="CLI.html" title="next chapter">CLI</a></li>
   </ul></li>

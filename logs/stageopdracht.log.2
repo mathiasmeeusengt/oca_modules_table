@@ -1,4 +1,6 @@
-2018-05-17 09:55:08,526 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-17 10:17:45,640 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:32:20,745 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:32:53,543 ERROR: Exception on /rating_review/account_analytic_required/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,21 +14,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details'),module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 09:57:11,530 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 09:57:49,717 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 63, in rating_review
+    rating_review_f(version, module, rating, review, form.delete.data)
+AttributeError: 'RatingReviewForm' object has no attribute 'delete'
+2018-05-17 10:33:12,786 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:33:16,176 ERROR: Exception on /rating_review/account_analytic_required/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -40,21 +32,59 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details/{}/{}'.format(module.repo_name, version_x)))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details/account-analytic/version_8'. Did you mean 'version_details' instead?
-2018-05-17 09:59:08,567 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 09:59:21,239 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 63, in rating_review
+    rating_review_f(version, module, rating, review, form.delete_reviews.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 515, in rating_review_f
+    if form.delete_reviews.data is True:
+NameError: name 'form' is not defined
+2018-05-17 10:35:30,152 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:42:46,105 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 11:11:52,157 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 15:42:11,424 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 15:48:05,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:29:47,589 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:30:17,354 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:30:41,741 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:31:09,812 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:31:32,464 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:47:10,198 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:47:23,772 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:01,533 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:06,468 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:21,315 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:34,489 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:28:58,303 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:31:03,474 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:40:07,169 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:15:59,643 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:16:22,696 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:18:43,086 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:18:56,521 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:19:09,570 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:19:47,558 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:20:30,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:20:52,772 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:22,135 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:29,822 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:48,179 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:52,434 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:56,909 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:26:09,379 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 14:03:41,040 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 14:55:59,755 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:34:25,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:34:47,374 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:36:53,669 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 09:57:34,662 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:36:25,560 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:38:51,571 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:39:10,220 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:39:38,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 13:09:38,211 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 14:26:41,667 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:00:34,997 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:27:10,672 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:29:29,466 ERROR: Exception on /version_details/account-analytic/8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,66 +98,31 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details'), module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+  File "D:\flask\stageopdracht\app\routes.py", line 54, in version_details
+    review=review)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 10:01:32,950 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:04:12,329 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:04:19,974 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 97, in rating_review
-    return redirect(url_for('version_details'), module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 10:06:22,423 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:13:39,237 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:13:59,320 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 60, in rating_review
-    form.rating.data = getattr(module, rating_v)
-AttributeError: 'Module' object has no attribute 'module8'
-2018-05-17 10:14:13,617 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:15:26,817 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
+    {% block content %} {% endblock %}
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 3, in block "content"
+    <div><p>Selected version: {{ version_x }} <br> Current Repository: {{ modules[0].repo_name }}</p></div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: None has no element 0
+2018-05-22 15:29:53,119 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:31:32,603 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:31:57,361 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:50:02,143 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-23 12:57:36,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

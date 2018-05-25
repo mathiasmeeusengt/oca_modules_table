@@ -1,5 +1,5 @@
 # File with functions that work with PyGitHub to use the GitHub API
-from github import Github
+from github import Github, GithubException, BadCredentialsException
 
 
 # Change default github.MainClass.Github parameter from 30 to max 200
@@ -9,9 +9,18 @@ Github.per_page = 50
 
 # Log in with user MathiasMeeusengt using personal access token to get OCA user details
 def get_oca_user():
-    g = Github("4c0ec0d70636055953a0a1cce75c2b5173b71135")
-    user_oca = g.get_user('OCA')
-    return user_oca
+    try:
+        g = Github('b5935d3156a0ec6ef53125952c7721ae3f31fa32')
+        user_oca = g.get_user('OCA')
+        return user_oca
+    except BadCredentialsException:
+        try:
+            g = Github('4c0ec0d70636055953a0a1cce75c2b5173b71135')
+            user_oca = g.get_user('OCA')
+            return user_oca
+        except BadCredentialsException:
+            print('BadCredentialsException, 401, personal access token stopped working.'
+                  'pygithub_api.py line 10-23')
 
 
 # Get all repositories from OCA

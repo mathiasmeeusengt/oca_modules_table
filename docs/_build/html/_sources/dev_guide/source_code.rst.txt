@@ -22,7 +22,7 @@ but strongly resemble them.
 Routes
 ------
 
-This file contains all the "routes" of the application. Routes are functions that specify what logic must be executed
+This file contains all the 'routes' of the application. Routes are functions that specify what logic must be executed
 when the client requests a URL. The routes in this application are usually built in the same way:
 
 
@@ -55,11 +55,11 @@ that matches the name inside the parentheses.
 
 Regular Functions
 -----------------
-This section will give a bit of explanation for the functions in "functions.py".
+This section will give a bit of explanation for the functions in 'functions.py'.
 
 .. note::
 
-    The Repository object from the local database has it's name under ".repository", so Repository.repository will get
+    The Repository object from the local database has it's name under '.repository', so Repository.repository will get
     the name. The Repository object obtained from the GitHub API has it's name under ".name", making it Repository.name
     to get the name.
 
@@ -170,7 +170,8 @@ get_installable_and_get_readme(repository)
 *Parameter: github.Repository.Repository(repository)*
 
 This function checks if the module is installable and in the same breath gets the text of the readme.
-This is done by using two other functions: ``get_installable(...)`` and ``get_readme_module(...)``.
+This is done by using two other functions: ``get_installable(...)`` and ``get_readme_module(...)``. The reason these
+functions aren't used separately is because now the database needs to be queried only once.
 
 get_installable(repository, module, version)
 ********************************************
@@ -181,7 +182,7 @@ This function checks if the module is installable. This is done by getting the f
 files are returned by the API, the function checks if either 'openerp' or 'manifest' exist and gets the content from
 that file. Then it searches for the words "installable: True". Because the text is converted from .rst to .txt, some
 bits of the syntax cause for some weird conversions. This is the reason that there's some space between the expected
-place of "installable:" and "True". The function returns a string 'True' or 'False' depending on if it finds
+place of 'installable:' and 'True'. The function returns a string 'True' or 'False' depending on if it finds
 'Installable: True', even with some weird characters in between.
 
 
@@ -190,7 +191,10 @@ get_readme_module(module, version_x)
 
 *Parameters: app.Models.Module(module), string('x.0')*
 
-This function
+This function uses a URL to get the raw content of the readme file, which is saved for the correct version of the
+module.
+
+uses ``check_if_readme_exists(url)``
 
 
 get_readme_repository(repository)

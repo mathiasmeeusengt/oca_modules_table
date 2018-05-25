@@ -1,4 +1,4 @@
-2018-05-15 11:17:04,582 ERROR: Exception on /detail/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-15 13:23:53,604 ERROR: Exception on /rating_review/account_analytic_project/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,8 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 214, in detail
-    return render_template('detail.html', title="detail", module=module)
+  File "D:\flask\stageopdracht\app\routes.py", line 160, in rating_review
+    return render_template('rating_review.html', title='Rating_Review', form=form)
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 133, in render_template
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
@@ -30,46 +30,30 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "D:\flask\stageopdracht\app\templates\detail.html", line 14, in template
-    {% if mod.addon is not None %}
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 82, in generate
-    generator.visit(node)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 799, in visit_Template
-    self.blockvisit(block.body, block_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 378, in blockvisit
-    self.visit(node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1122, in visit_For
-    self.blockvisit(node.body, loop_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 378, in blockvisit
-    self.visit(node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1157, in visit_If
-    self.visit(node.test, if_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
-    return f(self, node, frame, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1497, in visitor
-    self.visit(node.node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
-    return f(self, node, frame, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1607, in visit_Test
-    self.fail('no test named %r' % node.name, node.lineno)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: no test named 'None'
-2018-05-15 11:21:34,694 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 11:53:03,510 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 11:53:43,140 ERROR: Exception on /rating_review/account_analytic_project/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\templates\rating_review.html", line 10, in template
+    <div>{{ form.delete_reviews form.delete_reviews.label }}</div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'form'
+2018-05-15 13:24:50,835 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 13:25:58,742 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 13:47:09,267 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 14:13:40,670 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 14:14:25,593 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -83,10 +67,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 128, in rating_review
-    module.review_8 += str(review)
-TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
-2018-05-15 11:54:03,755 ERROR: Exception on /rating_review/account_analytic_project/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+    form.bp.data, form.in_scope.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
+    Repository.query.like('%' + form_repository_data + '%'))).all()
+AttributeError: 'BaseQuery' object has no attribute 'like'
+2018-05-15 14:15:01,261 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 14:15:16,783 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -100,16 +87,51 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 128, in rating_review
-    module.review_8 += str(review)
-TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
-2018-05-15 11:54:43,784 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:09:22,809 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:10:30,210 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:57:06,371 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:06:38,279 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:10:01,557 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:12:26,700 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:14:21,419 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:22:25,303 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:23:43,838 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+    form.bp.data, form.in_scope.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
+    Repository.query.like('%' + form_repository_data + '%'))).all()
+AttributeError: 'BaseQuery' object has no attribute 'like'
+2018-05-15 14:19:08,231 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+    form.bp.data, form.in_scope.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
+    Repository.repository.like('%' + form_repository_data + '%'))).all()
+AttributeError: 'BaseQuery' object has no attribute 'like'
+2018-05-15 14:19:17,488 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 14:38:27,609 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 14:59:33,459 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 15:00:29,409 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 223, in update_repository
+    update_single_repository(repository)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 52, in update_single_repository
+    repo = Repository.query.fitler(Repository.repository == repository.name)
+AttributeError: 'BaseQuery' object has no attribute 'fitler'
+2018-05-15 15:00:50,898 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 15:01:16,038 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]

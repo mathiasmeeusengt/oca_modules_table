@@ -95,4 +95,4 @@ part of the repository. Again, you are greeted by a number of rows and columns.
 OCA
 ===
 
-This is just a link to the Odoo Community Association on GitHub.
+This is a link to the Odoo Community Association on GitHub.

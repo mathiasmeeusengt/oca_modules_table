@@ -1,4 +1,21 @@
-2018-05-15 13:23:53,604 ERROR: Exception on /rating_review/account_analytic_project/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-15 15:09:03,187 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+2018-05-15 16:00:46,374 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-15 16:17:52,483 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:18:10,011 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:24:52,274 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:24:56,976 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:25:23,980 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:25:29,113 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:25:32,902 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:25:57,468 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:26:05,056 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:26:49,175 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:29:23,939 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:30:49,051 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:31:17,822 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 09:45:13,234 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 14:45:17,534 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 14:55:41,586 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,68 +29,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 160, in rating_review
-    return render_template('rating_review.html', title='Rating_Review', form=form)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "D:\flask\stageopdracht\app\templates\rating_review.html", line 10, in template
-    <div>{{ form.delete_reviews form.delete_reviews.label }}</div>
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\parser.py", line 876, in subparse
-    self.stream.expect('variable_end')
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'form'
-2018-05-15 13:24:50,835 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:25:58,742 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:47:09,267 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 14:13:40,670 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 14:14:25,593 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
     form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
-    Repository.query.like('%' + form_repository_data + '%'))).all()
-AttributeError: 'BaseQuery' object has no attribute 'like'
-2018-05-15 14:15:01,261 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 14:15:16,783 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
+    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
+TypeError: must be str, not list
+2018-05-16 15:17:37,833 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -87,12 +48,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
     form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
-    Repository.query.like('%' + form_repository_data + '%'))).all()
-AttributeError: 'BaseQuery' object has no attribute 'like'
-2018-05-15 14:19:08,231 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
+    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
+TypeError: must be str, not list
+2018-05-16 15:20:03,940 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -106,15 +67,14 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 96, in search
+  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
     form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 309, in search_db
-    Repository.repository.like('%' + form_repository_data + '%'))).all()
-AttributeError: 'BaseQuery' object has no attribute 'like'
-2018-05-15 14:19:17,488 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 14:38:27,609 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 14:59:33,459 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 15:00:29,409 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
+    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
+TypeError: must be str, not list
+2018-05-16 15:21:01,595 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:16:39,040 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:16:58,587 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -128,10 +88,52 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 223, in update_repository
-    update_single_repository(repository)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 52, in update_single_repository
-    repo = Repository.query.fitler(Repository.repository == repository.name)
-AttributeError: 'BaseQuery' object has no attribute 'fitler'
-2018-05-15 15:00:50,898 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 15:01:16,038 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
+    form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2018-05-16 16:18:49,787 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:18:51,569 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
+    form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2018-05-16 16:19:20,302 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:19:20,540 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
+    form = SearchForm()
+NameError: name 'SearchForm' is not defined
+2018-05-16 16:21:04,213 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:22:23,621 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:22:51,596 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:23:17,488 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:23:53,804 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:28:08,854 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:28:47,103 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:29:18,354 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:30:04,676 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-16 16:30:24,213 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
