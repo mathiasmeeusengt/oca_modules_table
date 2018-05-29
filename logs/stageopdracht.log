@@ -1,4 +1,4 @@
-2018-05-25 13:18:56,130 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-29 14:46:57,519 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,19 +12,18 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
-    update_single_repository(repository)
-  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
-    repository = get_one_repository(repository1)
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
-    user = get_oca_user()
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
-    user_oca = g.get_user('OCA')
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
-    "/users/" + login
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
-    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
-    raise self.__createException(status, responseHeaders, output)
-github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
-2018-05-25 13:22:14,297 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "D:\flask\stageopdracht\app\routes.py", line 149, in edit_module
+    form.customer_delete.data,
+AttributeError: 'EditModuleForm' object has no attribute 'customer_delete'
+2018-05-29 14:47:15,259 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:54:45,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:02,511 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:25,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:47,455 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:00:54,790 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:05:37,532 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:06:02,327 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:06:22,421 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:11:25,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:11:46,050 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:40:09,136 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

@@ -431,6 +431,37 @@ def rating_review_f(version, module, rating, review, form_delete_reviews_data):
     db.session.commit()
     return
 
+
+def edit_module_f(version, module, customer_str, vertical_str, customer_delete, vertical_delete):
+    customer_version = 'customer_' + version
+    vertical_version = 'vertical_' + version
+
+    # clear fields if delete is checked
+    if customer_delete is True:
+        setattr(module, customer_version, None)
+    if vertical_delete is True:
+        setattr(module, vertical_version, None)
+
+    # set values if no values are set, or append new values to old ones and set those
+    if getattr(module, customer_version) is None:
+        setattr(module, customer_version, customer_str)
+    else:
+        customers = getattr(module, customer_version)
+        customers += ' ' + customer_str
+        setattr(module, customer_version, customers)
+
+    # set values if no values are set, or append new values to old ones and set those
+    if getattr(module, vertical_version) is None:
+        setattr(module, vertical_version, vertical_str)
+    else:
+        verticals = getattr(module, vertical_version)
+        verticals += ' ' + vertical_str
+        setattr(module, vertical_version, verticals)
+
+    db.session.commit()
+    pass
+
+
 # ==============================================================================================================
 # All functions below are currently not used, but still kept just in case.
 # "converted" means the function was taken to the new update_repositories() and edited/merged for better performance

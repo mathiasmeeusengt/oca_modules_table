@@ -1,4 +1,4 @@
-2018-05-17 09:55:08,526 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-29 13:22:16,972 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,21 +12,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details'),module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 09:57:11,530 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 09:57:49,717 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 154, in edit_module
+    for customer in customers:
+TypeError: 'NoneType' object is not iterable
+2018-05-29 13:26:14,068 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 13:26:19,676 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -40,21 +30,11 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details/{}/{}'.format(module.repo_name, version_x)))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details/account-analytic/version_8'. Did you mean 'version_details' instead?
-2018-05-17 09:59:08,567 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 09:59:21,239 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 187, in edit_module
+    customers += name + ' '
+TypeError: can only concatenate list (not "str") to list
+2018-05-29 13:27:09,044 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 13:27:11,547 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,22 +48,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 103, in rating_review
-    return redirect(url_for('version_details'), module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 10:01:32,950 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:04:12,329 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:04:19,974 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 187, in edit_module
+    customers += (name + ' ')
+TypeError: can only concatenate list (not "str") to list
+2018-05-29 13:27:55,372 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 13:27:55,914 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -97,37 +75,51 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 97, in rating_review
-    return redirect(url_for('version_details'), module.repo_name, version_x)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+  File "D:\flask\stageopdracht\app\routes.py", line 193, in edit_module
+    db.session.commit()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 943, in commit
+    self.transaction.commit()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 467, in commit
+    self._prepare_impl()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 447, in _prepare_impl
+    self.session.flush()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2254, in flush
+    self._flush(objects)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2380, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
     raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'version_details'. Did you forget to specify values ['repository', 'version_x']?
-2018-05-17 10:06:22,423 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:13:39,237 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:13:59,320 ERROR: Exception on /rating_review/account_analytic_line_list/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 60, in rating_review
-    form.rating.data = getattr(module, rating_v)
-AttributeError: 'Module' object has no attribute 'module8'
-2018-05-17 10:14:13,617 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-17 10:15:26,817 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2344, in _flush
+    flush_context.execute()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 391, in execute
+    rec.execute(self)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 556, in execute
+    uow
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 768, in _emit_update_statements
+    execute(statement, multiparams)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: <unprintable InterfaceError object>
+2018-05-29 13:30:07,431 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

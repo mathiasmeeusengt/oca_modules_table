@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div>Selected repository: <b>{{ repository }}</b></div><br/>
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <div>{{ form.bp.label }}</div>

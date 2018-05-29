@@ -1,12 +1,12 @@
-# File that creates pages behind links
+# File that creates pages behind URLs
 from app import app, db
 from flask import render_template, redirect, url_for
 from app.forms import SearchModuleForm, SearchRepositoryForm, VersionSelectionForm, RatingReviewForm, \
-    EditRepositoryForm, SubmitForm
+    EditRepositoryForm, SubmitForm, EditModuleForm
 from sqlalchemy import and_
 from app.models import Repository, Module
 from app.functions import update_repositories, update_single_repository, search_repository_f, \
-    search_module_f, rating_review_f
+    search_module_f, rating_review_f, edit_module_f
 
 from app.version_functions import get_version_repositories, search_version_modules
 
@@ -44,6 +44,8 @@ def version_details(version_x, repository):
     readme = "readme_" + version_x[8:]
     rating = "rating_" + version_x[8:]
     review = 'review_' + version_x[8:]
+    customer = 'customer_' + version_x[8:]
+    vertical = 'vertical_' + version_x[8:]
     return render_template('version_details.html',
                            title="details",
                            version_x=version_x,
@@ -51,7 +53,9 @@ def version_details(version_x, repository):
                            installable=installable,
                            readme=readme,
                            rating=rating,
-                           review=review)
+                           review=review,
+                           vertical=vertical,
+                           customer=customer)
 
 
 @app.route('/rating_review/<module>/<version_x>', methods=['GET', 'POST'])
@@ -71,7 +75,7 @@ def rating_review(module, version_x):
 @app.route('/search_module', methods=['GET', 'POST'])
 def search_module():
     form = SearchModuleForm()
-    if form.validate_on_submit():
+    if form.is_submitted():
         modules = search_module_f(form.module.data, form.select_version.data,
                                   form.search_readme.data, form.installable_bool.data)
         version_x = 'version_' + form.select_version.data
@@ -80,12 +84,14 @@ def search_module():
         rating = "rating_" + version_x[8:]
         review = 'review_' + version_x[8:]
         readme = 'readme_' + version_x[8:]
+        customer = 'customer_' + version_x[8:]
+        vertical = 'vertical_' + version_x[8:]
         search_readme = False
-        print("test1")
         return render_template('search_results_module.html', title='Module Search Results',
                                modules=modules, version_x=version_x,
                                installable=installable, search_readme=search_readme,
-                               rating=rating, review=review, readme=readme)
+                               rating=rating, review=review, readme=readme, vertical=vertical,
+                               customer=customer)
     return render_template('search_module.html', title='Search Module', form=form)
 
 
@@ -125,7 +131,28 @@ def edit_repository(repository):
 
         db.session.commit()
         return redirect(url_for('table'))
-    return render_template('edit_repository.html', title='Edit Repository', form=form)
+    return render_template('edit_repository.html', title='Edit Repository', form=form, repository=repository.repository)
+
+
+@app.route('/edit_module/<module>/<version_x>', methods=['GET', 'POST'])
+def edit_module(module, version_x):
+    module = Module.query.filter(Module.addon == module).first()
+    version = version_x[8:]
+
+    form = EditModuleForm()
+    if form.validate_on_submit():
+
+        edit_module_f(version,
+                      module,
+                      form.customer_str.data,
+                      form.vertical_str.data,
+                      form.delete_customers.data,
+                      form.delete_verticals.data)
+
+
+        return redirect(url_for('version_details', repository=module.repo_name, version_x=version_x))
+    return render_template('edit_module.html', title='Edit Module',
+                           form=form, module=module.addon, version=version)
 
 
 # Routes for all repositories

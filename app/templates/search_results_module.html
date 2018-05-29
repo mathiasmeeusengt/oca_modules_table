@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div>Version Selected: <b>{{ version_x[8:] }}.0</b></div>
+<div>Selected version: <b>{{ version_x[8:] }}.0</b></div>
 <div>Found Modules:</div>
 <table border="1px">
     <tr>
@@ -8,6 +8,9 @@
         <th>Readme</th>
         <th>Instal.</th>
         <th>OCA</th>
+        <th>Customer</th>
+        <th>Vertical</th>
+        <th>Edit Module</th>
         <th>Rating</th>
         <th>Review</th>
         <th>Write Review</th>
@@ -16,39 +19,50 @@
     {% for module in modules %}
     <tr>
         <td>{{ module.addon }}</td>
+
         {% if module[readme] == None %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td><a target="_blank"
                href="https://github.com/OCA/{{ module.repo_name }}/blob/{{ version_x[8:] }}.0/{{ module.addon }}/README.rst">{{
             module[readme] }}</a></td>
         {% endif %}
+
         {% if module[installable] == "False" %}
-        <td>
-            <div class="redFont">{{ module[installable] }}</div>
-        </td>
+        <td><div class="redFont">{{ module[installable] }}</div></td>
         {% elif module[installable] == "True" %}
-        <td>
-            <div class="greenFont">{{ module[installable] }}</div>
-        </td>
+        <td><div class="greenFont">{{ module[installable] }}</div></td>
         {% else %}
         <td>Err</td>
         {% endif %}
-        <td>
-            <a target="_blank"
-               href="https://github.com/OCA/{{ module.repo_name }}/tree/{{ version_x[8:] }}.0/{{ module.addon }}">Link</a>
-        </td>
+
+        <td><a target="_blank"
+               href="https://github.com/OCA/{{ module.repo_name }}/tree/{{ version_x[8:] }}.0/{{ module.addon }}">Link</a></td>
+
+        {% if module[customer] == None %}
+        <td></td>
+        {% else %}
+        <td>{{ module[customer] }}</td>
+        {% endif %}
+        {% if module[vertical] == None %}
+        <td></td>
+        {% else %}
+        <td>{{ module[vertical] }}</td>
+        {% endif %}
+        <td><a href="/edit_module/{{ module.addon }}/{{ version_x }}">Edit Module</a></td>
+
         {% if module[rating] == None %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td>{{ module[rating] }}</td>
         {% endif %}
         {% if module[rating] == None %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td>{{ module[review] }}</td>
         {% endif %}
         <td><a href="/rating_review/{{ module.addon }}/{{ version_x }}">Write Review</a></td>
+
         <td><a href="/version_details/{{ module.repo_name }}/{{ version_x }}">{{ module.repo_name }}</a></td>
     </tr>
     {% endfor %}

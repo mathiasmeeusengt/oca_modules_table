@@ -1,4 +1,6 @@
-2018-05-15 11:17:04,582 ERROR: Exception on /detail/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-17 10:17:45,640 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:32:20,745 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:32:53,543 ERROR: Exception on /rating_review/account_analytic_required/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,104 +14,115 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 214, in detail
-    return render_template('detail.html', title="detail", module=module)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
+  File "D:\flask\stageopdracht\app\routes.py", line 63, in rating_review
+    rating_review_f(version, module, rating, review, form.delete.data)
+AttributeError: 'RatingReviewForm' object has no attribute 'delete'
+2018-05-17 10:33:12,786 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:33:16,176 ERROR: Exception on /rating_review/account_analytic_required/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 63, in rating_review
+    rating_review_f(version, module, rating, review, form.delete_reviews.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 515, in rating_review_f
+    if form.delete_reviews.data is True:
+NameError: name 'form' is not defined
+2018-05-17 10:35:30,152 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 10:42:46,105 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 11:11:52,157 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 15:42:11,424 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-17 15:48:05,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:29:47,589 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:30:17,354 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:30:41,741 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:31:09,812 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:31:32,464 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:47:10,198 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:47:23,772 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:01,533 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:06,468 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:21,315 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 10:48:34,489 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:28:58,303 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:31:03,474 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 11:40:07,169 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:15:59,643 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:16:22,696 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:18:43,086 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:18:56,521 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:19:09,570 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:19:47,558 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:20:30,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:20:52,772 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:22,135 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:29,822 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:48,179 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:52,434 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:25:56,909 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 12:26:09,379 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 14:03:41,040 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 14:55:59,755 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:34:25,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:34:47,374 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-18 15:36:53,669 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 09:57:34,662 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:36:25,560 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:38:51,571 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:39:10,220 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 11:39:38,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 13:09:38,211 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 14:26:41,667 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:00:34,997 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:27:10,672 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:29:29,466 ERROR: Exception on /version_details/account-analytic/8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 54, in version_details
+    review=review)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
   File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
   File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "D:\flask\stageopdracht\app\templates\detail.html", line 14, in template
-    {% if mod.addon is not None %}
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 543, in _generate
-    optimized=self.optimized)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 82, in generate
-    generator.visit(node)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 799, in visit_Template
-    self.blockvisit(block.body, block_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 378, in blockvisit
-    self.visit(node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1122, in visit_For
-    self.blockvisit(node.body, loop_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 378, in blockvisit
-    self.visit(node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1157, in visit_If
-    self.visit(node.test, if_frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
-    return f(self, node, frame, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1497, in visitor
-    self.visit(node.node, frame)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\visitor.py", line 38, in visit
-    return f(node, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 70, in new_func
-    return f(self, node, frame, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 1607, in visit_Test
-    self.fail('no test named %r' % node.name, node.lineno)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\compiler.py", line 315, in fail
-    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateAssertionError: no test named 'None'
-2018-05-15 11:21:34,694 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 11:53:03,510 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 11:53:43,140 ERROR: Exception on /rating_review/account_analytic_project/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 128, in rating_review
-    module.review_8 += str(review)
-TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
-2018-05-15 11:54:03,755 ERROR: Exception on /rating_review/account_analytic_project/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 128, in rating_review
-    module.review_8 += str(review)
-TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
-2018-05-15 11:54:43,784 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:09:22,809 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:10:30,210 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 12:57:06,371 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:06:38,279 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:10:01,557 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:12:26,700 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:14:21,419 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:22:25,303 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 13:23:43,838 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
+    {% block content %} {% endblock %}
+  File "D:\flask\stageopdracht\app\templates\version_details.html", line 3, in block "content"
+    <div><p>Selected version: {{ version_x }} <br> Current Repository: {{ modules[0].repo_name }}</p></div>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: None has no element 0
+2018-05-22 15:29:53,119 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:31:32,603 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:31:57,361 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-22 15:50:02,143 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-23 12:57:36,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

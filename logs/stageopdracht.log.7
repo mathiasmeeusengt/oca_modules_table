@@ -1,21 +1,4 @@
-2018-05-15 15:09:03,187 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:39]
-2018-05-15 16:00:46,374 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-15 16:17:52,483 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:18:10,011 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:24:52,274 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:24:56,976 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:25:23,980 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:25:29,113 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:25:32,902 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:25:57,468 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:26:05,056 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:26:49,175 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:29:23,939 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:30:49,051 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:31:17,822 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 09:45:13,234 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 14:45:17,534 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 14:55:41,586 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-25 13:18:56,130 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,12 +12,34 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
-    form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
-    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
-TypeError: must be str, not list
-2018-05-16 15:17:37,833 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
+    update_single_repository(repository)
+  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
+    repository = get_one_repository(repository1)
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
+    user = get_oca_user()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
+    user_oca = g.get_user('OCA')
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
+    "/users/" + login
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
+    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
+2018-05-25 13:22:14,297 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 09:27:44,489 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:03:52,911 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:03:57,350 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: module.customer_8
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -48,92 +53,32 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
-    form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
-    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
-TypeError: must be str, not list
-2018-05-16 15:20:03,940 ERROR: Exception on /search [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 67, in search
-    form.bp.data, form.in_scope.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 337, in search_db
-    modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data.split(' ') + '%'),
-TypeError: must be str, not list
-2018-05-16 15:21:01,595 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:16:39,040 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:16:58,587 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
-    form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2018-05-16 16:18:49,787 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:18:51,569 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
-    form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2018-05-16 16:19:20,302 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:19:20,540 ERROR: Exception on /search [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 62, in search
-    form = SearchForm()
-NameError: name 'SearchForm' is not defined
-2018-05-16 16:21:04,213 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:22:23,621 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:22:51,596 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:23:17,488 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:23:53,804 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:28:08,854 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:28:47,103 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:29:18,354 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:30:04,676 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-16 16:30:24,213 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "D:\flask\stageopdracht\app\routes.py", line 76, in search_module
+    form.search_readme.data, form.installable_bool.data)
+  File "D:\flask\stageopdracht\app\functions.py", line 337, in search_module_f
+    (getattr(Module, version_x) == 'X')).all()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2737, in all
+    return list(self)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: module.customer_8 [SQL: 'SELECT module.id AS module_id, module.addon AS module_addon, module.version AS module_version, module.summary AS module_summary, module.customer_8 AS module_customer_8, module.customer_9 AS module_customer_9, module.customer_10 AS module_customer_10, module.customer_11 AS module_customer_11, module.vertical_8 AS module_vertical_8, module.vertical_9 AS module_vertical_9, module.vertical_10 AS module_vertical_10, module.vertical_11 AS module_vertical_11, module.version_8 AS module_version_8, module.version_9 AS module_version_9, module.version_10 AS module_version_10, module.version_11 AS module_version_11, module.installable_8 AS module_installable_8, module.installable_9 AS module_installable_9, module.installable_10 AS module_installable_10, module.installable_11 AS module_installable_11, module.readme_8 AS module_readme_8, module.readme_9 AS module_readme_9, module.readme_10 AS module_readme_10, module.readme_11 AS module_readme_11, module.readme_text_8 AS module_readme_text_8, module.readme_text_9 AS module_readme_text_9, module.readme_text_10 AS module_readme_text_10, module.readme_text_11 AS module_readme_text_11, module.rating_8 AS module_rating_8, module.rating_9 AS module_rating_9, module.rating_10 AS module_rating_10, module.rating_11 AS module_rating_11, module.review_8 AS module_review_8, module.review_9 AS module_review_9, module.review_10 AS module_review_10, module.review_11 AS module_review_11, module.repo_name AS module_repo_name \nFROM module \nWHERE module.addon LIKE ? AND module.version_8 = ?'] [parameters: ('%account%', 'X')] (Background on this error at: http://sqlalche.me/e/e3q8)

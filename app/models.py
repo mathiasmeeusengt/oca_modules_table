@@ -39,8 +39,19 @@ class Module(db.Model):
     version = db.Column(db.String(20))
     # not used
     summary = db.Column(db.String(240), index=True)
-
     # m_url_tested = db.Column(db.String(240), index=True)
+
+    # customer
+    customer_8 = db.Column(db.String(50), index=True)
+    customer_9 = db.Column(db.String(50), index=True)
+    customer_10 = db.Column(db.String(50), index=True)
+    customer_11 = db.Column(db.String(50), index=True)
+
+    # verticals
+    vertical_8 = db.Column(db.String(50), index=True)
+    vertical_9 = db.Column(db.String(50), index=True)
+    vertical_10 = db.Column(db.String(50), index=True)
+    vertical_11 = db.Column(db.String(50), index=True)
 
     # module exists in version:  True='X' / False='-'
     version_8 = db.Column(db.String(10), index=True)

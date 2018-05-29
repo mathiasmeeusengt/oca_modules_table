@@ -100,6 +100,8 @@ the application will run a mini-version of the ``Update Database``-button.
 Edit repository
 ===============
 
+*Changes: In scope, BP, employee*
+
 If you edit a repository, you can specify if it's ``in scope`` of the company, which ``BP`` it's
 linked to, and an ``employee`` who has experience with this repository. To do this, you can go
 to any repository table: **Full Table**, **Search Repository**'s search results
@@ -108,8 +110,21 @@ text ``Edit Repository``. Clicking on this will take you to a form. Here you can
 select the above mentioned items.
 
 
+Edit module
+===========
+
+*Changes: customer, vertical*
+
+To edit a module you can click on ``Edit Repository`` in **Search Module**'s results table or from
+the module table in **Table per Version**.
+
+
+
 Edit rating and review
 ======================
+
+*Changes: rating, review*
+
 When you have a version specific module table (so not from Full Table) on your screen, you can click
 "Write review". This clickable link is in the last column of a module record. Clicking on
 it will take you to a form, here you can assign a number and write a review. Optionally, you can
@@ -117,4 +132,6 @@ check a checkbox to delete previous reviews. If this is left unchecked, new revi
 behind existing ones, separated by '||'. When de module is graded and a review is written, click on
 'Place review'. This will save the review. New scores are not added to old scores,
 and only the last score will be shown.
+
+
 

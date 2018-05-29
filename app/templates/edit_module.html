@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>Selected module: <b>{{ module }}</b></div>
+<div>Selected version: <b>{{ version }}</b></div>
+<br/>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>Add names of customers and verticals to assign them to this module.</div>
+    <div>When filling in multiple names: separate by a <b>space</b>: "name1 name2 name3 ...'</div>
+    <div>If the name contains a space, use an <b>underscore '_'</b> instead.</div>
+
+    <br/>
+    <div>{{ form.customer_str.label }}</div>
+    <div>{{ form.customer_str }}</div>
+    <br/>
+    <div>{{ form.vertical_str.label }}</div>
+    <div>{{ form.vertical_str }}</div>
+    <br/><br/>
+    <div>{{ form.delete_customers }} {{ form.delete_customers.label }}</div>
+    <br/>
+    <div>{{ form.delete_verticals }} {{ form.delete_verticals.label }}</div>
+    <br/>
+    <div>{{ form.submit() }}</div>
+</form>
+
+{% endblock %}

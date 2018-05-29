@@ -1,5 +1,5 @@
 # Forms that are generated as html by jinja2
-from wtforms import StringField, BooleanField, SubmitField, RadioField
+from wtforms import StringField, BooleanField, SubmitField, RadioField, widgets, Form, SelectMultipleField
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired
 
@@ -24,8 +24,8 @@ class VersionSelectionForm(FlaskForm):
 
 # search repository form,
 class SearchRepositoryForm(FlaskForm):
-    repository = StringField('Repository: ', default='')
-    in_scope = RadioField('Filter repositories in scope: ',
+    repository = StringField('Repository:', default='')
+    in_scope = RadioField('Filter repositories in scope:',
                           choices=[('True', 'True'),
                                    ('False', 'False'),
                                    ('both', 'both')],
@@ -35,7 +35,7 @@ class SearchRepositoryForm(FlaskForm):
                              ('BP01', 'BP01'),
                              ('unspecified', 'unspecified')],
                     default='unspecified')
-    select_version = RadioField('Select version, does not affect search results. '
+    select_version = RadioField('Select version, does not affect search results.'
                                 'Enables clicking on the repository name to see its modules.',
                                 choices=[('8', 'Version:  8'),
                                          ('9', 'Version:  9'),
@@ -54,9 +54,9 @@ class SearchModuleForm(FlaskForm):
                                          ('11', 'Version: 11')],
                                 validators=[DataRequired()],
                                 default='8')
-    module = StringField('Module*: ', default='')
+    module = StringField('Module*:', default='')
     search_readme = BooleanField('Search in README', default=False)
-    installable_bool = RadioField('Filter Installable Modules: ',
+    installable_bool = RadioField('Filter Installable Modules:',
                                   choices=[('True', 'Installable: True'),
                                            ('False', 'Installable: False'),
                                            ('both', 'All results')],
@@ -86,10 +86,24 @@ class EditRepositoryForm(FlaskForm):
                              ('BP01', 'BP01'),
                              ('unchanged','unchanged')],
                     default='unchanged')
-    in_scope = RadioField('In Scope: ',
+    in_scope = RadioField('In Scope:',
                           choices=[('True', 'Yes'),
                                    ('False', 'No'),
                                    ('unchanged', 'unchanged')],
                           default='unchanged')
-    employee = StringField('Employee: ', default='')
+    employee = StringField('Employee:', default='')
+    submit = SubmitField('Save changes')
+
+
+# edit module form
+class EditModuleForm(FlaskForm):
+    # customer_delete = StringField('Customer(s) to be deleted:', default='')
+    # vertical_delete = StringField('Customer(s) to be deleted:', default='')
+
+    customer_str = StringField('Customer(s):', default='')
+    vertical_str = StringField('Vertical(s):', default='')
+
+    delete_customers = BooleanField('Delete customers for this module', default=False)
+    delete_verticals = BooleanField('Delete verticals for this module', default=False)
+
     submit = SubmitField('Save changes')
