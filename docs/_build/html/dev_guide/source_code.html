@@ -323,6 +323,20 @@ one(s) is/are added.</p>
 </div>
 <div class="section" id="maintenance">
 <h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="managing-the-sqlite-database">
+<h3>Managing the SQLite database<a class="headerlink" href="#managing-the-sqlite-database" title="Permalink to this headline">¶</a></h3>
+<p>To view the contents of the database outside of the application, a third party tool is required. During development
+I used Db browser for SQlite.</p>
+<p>Adding things to the database is not an issue. Renaming or deleting columns is a bigger hassle. SQlite does not support
+drop-statements, and thus can not change columns after creation. The solution to this is deleting the database and
+re-initialising it. To this, delete the “migrations” folder and “app.db”. To get a database up and running again, view
+<a class="reference external" href="https://oca-modules-table.readthedocs.io/en/latest/dev_guide/CLI.html#create-or-update-database-schema">https://oca-modules-table.readthedocs.io/en/latest/dev_guide/CLI.html#create-or-update-database-schema</a></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Deleting app.db will also remove user submitted data like Customers, Verticals, reviews, and so on.</p>
+</div>
+<p>A copy can be made and viewed locally with the tool mentioned above.</p>
+</div>
 </div>
 </div>
 
@@ -379,7 +393,10 @@ one(s) is/are added.</p>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#maintenance">Maintenance</a></li>
+<li><a class="reference internal" href="#maintenance">Maintenance</a><ul>
+<li><a class="reference internal" href="#managing-the-sqlite-database">Managing the SQLite database</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
