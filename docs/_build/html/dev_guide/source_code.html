@@ -282,11 +282,42 @@ repositories of which the bp property matches the selected one.</p>
 <p><strong>select_version</strong>: the same RadioField as in <code class="docutils literal notranslate"><span class="pre">VersionSelectionForm</span></code>, selects which version should be used.</p>
 <p><strong>module</strong>: a textfield to fill in a keyword that will be compared to the names of repositories.
 With the “Search readme” checkbox checked: also searches in the readme text with the filled in keyword.</p>
-<p><strong>Customers</strong>, <strong>Verticals</strong>: different fields, work when one or both is filled in. A textfield to fill in a keyword
-that will be compared to the values of the corresponding properties of modules.</p>
-<p><strong>search_readme</strong>: a booleanfield, returns true or false. If checked, the text in <strong>module</strong> will also be searched for
+<p><strong>Customers</strong>, <strong>Verticals</strong>: different fields, same functionality, work when one or both is filled in.
+A textfield to fill in a keyword that will be compared to the values of the corresponding properties of modules.</p>
+<p><strong>search_readme</strong>: a checkbox, returns true or false. If checked, the text in <strong>module</strong> will also be searched for
 in the readme text of modules.</p>
-<p><strong>installable_bool</strong>: a RadioField,</p>
+<p><strong>installable_bool</strong>: a RadioField with 3 options, True, False, Both. Filters modules based on the value of their
+installable_x property</p>
+<p><strong>submit</strong>: submit button to submit the form and call the search function.</p>
+</div>
+<div class="section" id="ratingreviewform">
+<h4>RatingReviewForm<a class="headerlink" href="#ratingreviewform" title="Permalink to this headline">¶</a></h4>
+<p><strong>rating</strong>: a radio field with 6 options: ‘No Score’ and ‘1’ to ‘5’. This field is used to assign a rating to a module.</p>
+<p><strong>review</strong>: a textfield where a review can be submitted.</p>
+<p><strong>delete_reviews</strong>: a checkbox. If True is returned, all previous reviews will be deleted and then
+the new review will be placed. Useful if a module has gotten a major update in its functionality.</p>
+<p><strong>submit</strong>: submit button to submit the form and place the review for the module.</p>
+</div>
+<div class="section" id="editrepositoryform">
+<h4>EditRepositoryForm<a class="headerlink" href="#editrepositoryform" title="Permalink to this headline">¶</a></h4>
+<p><strong>bp</strong>: a RadioField filled with all BPs of the company. The selected choice will be saved to the corresponding
+property, unless “unchanged” is selected.</p>
+<p><strong>in_scope</strong>: a RadioField with 3 buttons: True, False, unchanged. The selected option will be set as the module’s
+property, except with unchanged. This will not modify the property.</p>
+<p><strong>employee</strong>: a text field to fill in an employee’s name who has experience with this module.</p>
+<p><strong>submit</strong>: submit button to submit the form and save the edits.</p>
+</div>
+<div class="section" id="editmoduleform">
+<h4>EditModuleForm<a class="headerlink" href="#editmoduleform" title="Permalink to this headline">¶</a></h4>
+<p><strong>customer_str</strong>: a text field, fill in a name of a customer. Once submitted it is added to the list of customers of
+this module.</p>
+<p><strong>vertical_str</strong>: a text field, fill in a name of a vertical. Once submitted it is added to the list of verticals of
+this module.</p>
+<p><strong>delete_customers</strong>: a checkbox. If True is returned, all previous customers are deleted, before the newly submitted
+one(s) is/are added.</p>
+<p><strong>delete_verticals</strong>: a checkbox If True is returned, all previous customers are deleted, before the newly submitted
+one(s) is/are added.</p>
+<p><strong>submit</strong>: submit button to submit the form and save the edits.</p>
 </div>
 </div>
 </div>
@@ -341,6 +372,9 @@ in the readme text of modules.</p>
 <li><a class="reference internal" href="#versionselectionform">VersionSelectionForm</a></li>
 <li><a class="reference internal" href="#searchrepositoryform">SearchRepositoryForm</a></li>
 <li><a class="reference internal" href="#searchmoduleform">SearchModuleForm</a></li>
+<li><a class="reference internal" href="#ratingreviewform">RatingReviewForm</a></li>
+<li><a class="reference internal" href="#editrepositoryform">EditRepositoryForm</a></li>
+<li><a class="reference internal" href="#editmoduleform">EditModuleForm</a></li>
 </ul>
 </li>
 </ul>

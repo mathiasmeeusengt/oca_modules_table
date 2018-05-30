@@ -321,19 +321,56 @@ SearchModuleForm
 **module**: a textfield to fill in a keyword that will be compared to the names of repositories.
 With the "Search readme" checkbox checked: also searches in the readme text with the filled in keyword.
 
-**Customers**, **Verticals**: different fields, work when one or both is filled in. A textfield to fill in a keyword
-that will be compared to the values of the corresponding properties of modules.
+**Customers**, **Verticals**: different fields, same functionality, work when one or both is filled in.
+A textfield to fill in a keyword that will be compared to the values of the corresponding properties of modules.
 
-**search_readme**: a booleanfield, returns true or false. If checked, the text in **module** will also be searched for
+**search_readme**: a checkbox, returns true or false. If checked, the text in **module** will also be searched for
 in the readme text of modules.
 
-**installable_bool**: a RadioField,
+**installable_bool**: a RadioField with 3 options, True, False, Both. Filters modules based on the value of their
+installable_x property
+
+**submit**: submit button to submit the form and call the search function.
 
 
+RatingReviewForm
+****************
+**rating**: a radio field with 6 options: 'No Score' and '1' to '5'. This field is used to assign a rating to a module.
+
+**review**: a textfield where a review can be submitted.
+
+**delete_reviews**: a checkbox. If True is returned, all previous reviews will be deleted and then
+the new review will be placed. Useful if a module has gotten a major update in its functionality.
+
+**submit**: submit button to submit the form and place the review for the module.
+
+EditRepositoryForm
+******************
+**bp**: a RadioField filled with all BPs of the company. The selected choice will be saved to the corresponding
+property, unless "unchanged" is selected.
+
+**in_scope**: a RadioField with 3 buttons: True, False, unchanged. The selected option will be set as the module's
+property, except with unchanged. This will not modify the property.
+
+**employee**: a text field to fill in an employee's name who has experience with this module.
+
+**submit**: submit button to submit the form and save the edits.
+
+EditModuleForm
+**************
+**customer_str**: a text field, fill in a name of a customer. Once submitted it is added to the list of customers of
+this module.
+
+**vertical_str**: a text field, fill in a name of a vertical. Once submitted it is added to the list of verticals of
+this module.
+
+**delete_customers**: a checkbox. If True is returned, all previous customers are deleted, before the newly submitted
+one(s) is/are added.
+
+**delete_verticals**: a checkbox If True is returned, all previous customers are deleted, before the newly submitted
+one(s) is/are added.
+
+**submit**: submit button to submit the form and save the edits.
 
 Maintenance
 ===========
-
-
-
-
