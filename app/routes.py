@@ -6,9 +6,9 @@ from app.forms import SearchModuleForm, SearchRepositoryForm, VersionSelectionFo
 from sqlalchemy import and_
 from app.models import Repository, Module
 from app.functions import update_repositories, update_single_repository, search_repository_f, \
-    search_module_f, rating_review_f, edit_module_f
-
+    rating_review_f, edit_module_f
 from app.version_functions import get_version_repositories, search_version_modules
+from app.my_scribbles import search_module_f
 
 
 # Routes for single version pages
@@ -77,7 +77,8 @@ def search_module():
     form = SearchModuleForm()
     if form.is_submitted():
         modules = search_module_f(form.module.data, form.select_version.data,
-                                  form.search_readme.data, form.installable_bool.data)
+                                  form.search_readme.data, form.installable_bool.data,
+                                  form.customers.data, form.verticals.data)
         version_x = 'version_' + form.select_version.data
         installable = 'installable_' + form.select_version.data
         # readme_text = 'readme_text_' + version_x[8:]

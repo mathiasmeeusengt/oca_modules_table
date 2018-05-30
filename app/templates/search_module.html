@@ -2,32 +2,32 @@
 {% block content %}
 
 <form action="" method="post">
-{{ form.hidden_tag() }}
-    <div>
-        <b>{{ form.module.label }}</b>
-        {{ form.module(size=45) }}
-    </div>
+    {{ form.hidden_tag() }}
+
+    <div><b>{{ form.module.label }}</b>
+        {{ form.module(size=25) }}</div>
 
     <br/>
 
-    <div>
-        {{ form.select_version.label }}
-        {{ form.select_version }}
-    </div>
-
-    <div>
-        {{ form.installable_bool.label }}
-        {{ form.installable_bool }}
-    </div>
-
-    <div>
-        {{ form.search_readme }}
-        {{ form.search_readme.label }}
-    </div>
+    <div>{{ form.select_version.label }}
+        {{ form.select_version }}</div>
+<br/>
+    <div>{{ form.installable_bool.label }}
+        {{ form.installable_bool }}</div>
+<br/>
+    <div>{{ form.customers.label }}
+        {{ form.customers }}</div>
+<br/>
+    <div>{{ form.verticals.label }}
+        {{ form.verticals }}</div>
+<br/>
+    <div>{{ form.search_readme }}
+        {{ form.search_readme.label }}</div>
 
     <br/>
-    "*" fields are required.
+    <div>"*" fields are required.</div>
     <div>{{ form.submit() }}</div>
+
 
 </form>
 {% endblock %}

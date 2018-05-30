@@ -112,7 +112,7 @@ the application will run a mini-version of the <code class="docutils literal not
 </div>
 <div class="section" id="edit-repository">
 <h2>Edit repository<a class="headerlink" href="#edit-repository" title="Permalink to this headline">¶</a></h2>
-<p><em>Changes: In scope, BP, employee</em></p>
+<p><em>Affects: In scope, BP, employee</em></p>
 <p>If you edit a repository, you can specify if it’s <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">scope</span></code> of the company, which <code class="docutils literal notranslate"><span class="pre">BP</span></code> it’s
 linked to, and an <code class="docutils literal notranslate"><span class="pre">employee</span></code> who has experience with this repository. To do this, you can go
 to any repository table: <strong>Full Table</strong>, <strong>Search Repository</strong>’s search results
@@ -122,13 +122,19 @@ select the above mentioned items.</p>
 </div>
 <div class="section" id="edit-module">
 <h2>Edit module<a class="headerlink" href="#edit-module" title="Permalink to this headline">¶</a></h2>
-<p><em>Changes: customer, vertical</em></p>
+<p><em>Affects: customer, vertical</em></p>
 <p>To edit a module you can click on <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Repository</span></code> in <strong>Search Module</strong>’s results table or from
-the module table in <strong>Table per Version</strong>.</p>
+the module table in <strong>Table per Version</strong>. On this page you can fill in the <strong>Customers</strong> and <strong>Verticals</strong>
+this module is used in. You can enter multiple names at once, given that they are separated by a space.
+If the name contains a space, replace the space in the name by an underscore ‘_’.  There’s also the option
+of deleting previously added customers and/or verticals. Simply check the desired checkboxes. If you’ve
+filled in the textfields and checked the checkboxes, it will first clear out the old customers and
+verticals, then add the new ones. Once you filled in what you wanted to fill in, press the Save Changes
+button to write the changes to the database.</p>
 </div>
 <div class="section" id="edit-rating-and-review">
 <h2>Edit rating and review<a class="headerlink" href="#edit-rating-and-review" title="Permalink to this headline">¶</a></h2>
-<p><em>Changes: rating, review</em></p>
+<p><em>Affects: rating, review</em></p>
 <p>When you have a version specific module table (so not from Full Table) on your screen, you can click
 “Write review”. This clickable link is in the last column of a module record. Clicking on
 it will take you to a form, here you can assign a number and write a review. Optionally, you can

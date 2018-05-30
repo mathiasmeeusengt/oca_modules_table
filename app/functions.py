@@ -265,10 +265,23 @@ def get_readme_repository(repository):
 def search_module_f(form_module_data,
                     form_select_version_data,
                     form_search_readme_data,
-                    form_installable_bool_data):
+                    form_installable_bool_data, customer_data, vertical_data):
     version_x = 'version_' + form_select_version_data
     installable = 'installable_' + form_select_version_data
     readme_text = 'readme_text_' + version_x[8:]
+    customer = 'customer_' + version_x[8:]
+    vertical = 'vertical_' + version_x[8:]
+
+    # search on installable=True or False
+    install_true = getattr(Module, installable) == 'True'
+    install_false = getattr(Module, installable) == 'False'
+    # search modules existing version_x
+    exists = getattr(Module, version_x) == 'X'
+    # use a LIKE-statement to search based on words
+    like_module = Module.addon.like('%' + form_module_data + '%')
+    like_readme = getattr(Module, readme_text).like('%' + form_module_data + '%')
+    like_customer = getattr(Module, customer).like('%' + customer_data + '%')
+    like_vertical = getattr(Module, vertical).like('%' + vertical_data + '%')
     '''
     === Overview for searching Modules ===
     ======================================
@@ -287,54 +300,148 @@ def search_module_f(form_module_data,
     ======================================
     '''
     # Module search parameters
-    if form_module_data == '':
-        modules = []
-    else:
+    if form_module_data != '':
+        query = exists, like_module
         if form_search_readme_data is True:
-            if form_installable_bool_data == 'True':
-                modules1 = Module.query.filter(and_(Module.addon.like('%' + form_module_data + '%'),
-                                                    getattr(Module, installable) == 'True',
-                                                    getattr(Module, version_x) == 'X')).all()
-                modules2 = Module.query.filter(
-                    and_(Module.__getattribute__(Module, readme_text).like('%' + form_module_data + '%'),
-                         getattr(Module, installable) == 'True', getattr(Module, version_x) == 'X')).all()
-                modules = modules1
-                for m in modules2:
-                    modules.append(m)
-            elif form_installable_bool_data == 'False':
-                modules1 = Module.query.filter(
-                    and_(Module.addon.like('%' + form_module_data + '%'), getattr(Module, installable) == 'False',
-                         getattr(Module, version_x) == 'X')).all()
-                modules2 = Module.query.filter(
-                    and_(Module.__getattribute__(Module, readme_text).like('%' + form_module_data + '%'),
-                         getattr(Module, installable) == 'False', getattr(Module, version_x) == 'X')).all()
-                modules = modules1
-                for m in modules2:
-                    modules.append(m)
+            query = exists, like_module, like_readme
+            if customer_data != '':
+                query = exists, like_module, like_readme, like_customer
+                if vertical_data != '':
+                    query = exists, like_module, like_readme, like_customer, like_vertical
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_module, like_readme, like_customer, like_vertical, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_module, like_readme, like_customer, like_vertical, install_false
+                    else:
+                        query = exists, like_module, like_readme, like_customer, like_vertical  # could be a pass
+                else:
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_module, like_readme, like_customer, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_module, like_readme, like_customer, install_false
+                    else:
+                        query = exists, like_module, like_readme, like_customer  # could be a pass
+            elif vertical_data != '':
+                query = exists, like_module, like_readme, like_vertical
+                if form_installable_bool_data == 'True:':
+                    query = exists, like_module, like_readme, like_vertical, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_module, like_readme, like_vertical, install_false
+                else:
+                    query = exists, like_module, like_readme, like_vertical  # could be a pass
             else:
-                modules1 = Module.query.filter(
-                    and_(Module.addon.like('%' + form_module_data + '%'), getattr(Module, version_x) == 'X')).all()
-                modules2 = Module.query.filter(
-                    and_(Module.__getattribute__(Module, readme_text).like('%' + form_module_data + '%'),
-                         getattr(Module, version_x) == 'X')).all()
-                modules = modules1
-                for m in modules2:
-                    modules.append(m)
+                if form_installable_bool_data == 'True':
+                    query = exists, like_module, like_readme, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_module, like_readme, install_false
+                else:
+                    query = exists, like_module, like_readme
         else:
-            if form_installable_bool_data == 'True':
-                modules = Module.query.filter(and_(
-                    (Module.addon.like('%' + form_module_data + '%')),
-                    (getattr(Module, installable) == 'True'),
-                    (getattr(Module, version_x) == 'X'))).all()
-            elif form_installable_bool_data == 'False':
-                modules = Module.query.filter(and_(
-                    (Module.addon.like('%' + form_module_data + '%')),
-                    (getattr(Module, installable) == 'False'),
-                    (getattr(Module, version_x) == 'X'))).all()
+            query = exists, like_module  # could be a pass
+            if customer_data != '':
+                query = exists, like_module, like_customer
+                if vertical_data != '':
+                    query = exists, like_module, like_customer, like_vertical
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_module, like_customer, like_vertical, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_module, like_customer, like_vertical, install_false
+                    else:
+                        query = exists, like_module, like_customer, like_vertical  # could be a pass
+                else:
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_module, like_customer, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_module, like_customer, install_false
+                    else:
+                        query = exists, like_module, like_customer  # could be a pass
+            elif vertical_data != '':
+                query = exists, like_module, like_vertical
+                if form_installable_bool_data == 'True:':
+                    query = exists, like_module, like_vertical, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_module, like_vertical, install_false
+                else:
+                    query = exists, like_module, like_vertical  # could be a pass
             else:
-                modules = Module.query.filter(and_
-                                              (Module.addon.like('%' + form_module_data + '%')),
-                                              (getattr(Module, version_x) == 'X')).all()
+                if form_installable_bool_data == 'True':
+                    query = exists, like_module, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_module, install_false
+                else:
+                    query = exists, like_module
+    else:
+        query = exists
+        if form_search_readme_data is True:
+            query = exists, like_readme
+            if customer_data != '':
+                query = exists, like_readme, like_customer
+                if vertical_data != '':
+                    query = exists, like_readme, like_customer, like_vertical
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_readme, like_customer, like_vertical, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_readme, like_customer, like_vertical, install_false
+                    else:
+                        query = exists, like_readme, like_customer, like_vertical  # could be a pass
+                else:
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_readme, like_customer, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_readme, like_customer, install_false
+                    else:
+                        query = exists, like_readme, like_customer  # could be a pass
+            elif vertical_data != '':
+                query = exists, like_readme, like_vertical
+                if form_installable_bool_data == 'True:':
+                    query = exists, like_readme, like_vertical, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_readme, like_vertical, install_false
+                else:
+                    query = exists, like_readme, like_vertical  # could be a pass
+            else:
+                if form_installable_bool_data == 'True':
+                    query = exists, like_readme, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_readme, install_false
+                else:
+                    query = exists, like_readme
+        else:
+            query = exists
+            if customer_data != '':
+                query = exists, like_customer
+                if vertical_data != '':
+                    query = exists, like_customer, like_vertical
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_customer, like_vertical, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_customer, like_vertical, install_false
+                    else:
+                        query = exists, like_customer, like_vertical  # could be a pass
+                else:
+                    if form_installable_bool_data == 'True:':
+                        query = exists, like_customer, install_true
+                    elif form_installable_bool_data == 'False':
+                        query = exists, like_customer, install_false
+                    else:
+                        query = exists, like_customer  # could be a pass
+            elif vertical_data != '':
+                query = exists, like_vertical
+                if form_installable_bool_data == 'True:':
+                    query = exists, like_vertical, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, like_vertical, install_false
+                else:
+                    query = exists, like_vertical  # could be a pass
+            else:
+                if form_installable_bool_data == 'True':
+                    query = exists, install_true
+                elif form_installable_bool_data == 'False':
+                    query = exists, install_false
+                else:
+                    query = exists
+
+    modules = Module.query.filter(and_(*query)).all()
     return modules
 
 

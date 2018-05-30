@@ -55,6 +55,8 @@ class SearchModuleForm(FlaskForm):
                                 validators=[DataRequired()],
                                 default='8')
     module = StringField('Module*:', default='')
+    customers = StringField('Customer(s):', default='')
+    verticals = StringField('Vertical(s):', default='')
     search_readme = BooleanField('Search in README', default=False)
     installable_bool = RadioField('Filter Installable Modules:',
                                   choices=[('True', 'Installable: True'),
@@ -100,8 +102,8 @@ class EditModuleForm(FlaskForm):
     # customer_delete = StringField('Customer(s) to be deleted:', default='')
     # vertical_delete = StringField('Customer(s) to be deleted:', default='')
 
-    customer_str = StringField('Customer(s):', default='')
-    vertical_str = StringField('Vertical(s):', default='')
+    customer_str = StringField('Customer(s) to add:', default='')
+    vertical_str = StringField('Vertical(s) to add:', default='')
 
     delete_customers = BooleanField('Delete customers for this module', default=False)
     delete_verticals = BooleanField('Delete verticals for this module', default=False)

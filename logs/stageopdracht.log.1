@@ -1,4 +1,4 @@
-2018-05-29 13:36:52,780 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-29 14:46:57,519 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,33 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 177, in edit_module
-    customer_list = customer_list.remove(name)
-ValueError: list.remove(x): x not in list
-2018-05-29 13:39:53,755 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 149, in edit_module
+    form.customer_delete.data,
+AttributeError: 'EditModuleForm' object has no attribute 'customer_delete'
+2018-05-29 14:47:15,259 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:54:45,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:02,511 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:25,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 14:55:47,455 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:00:54,790 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:05:37,532 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:06:02,327 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:06:22,421 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:11:25,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:11:46,050 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:40:09,136 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 15:58:42,047 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:14:34,235 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:14:49,911 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:15:15,482 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:16:11,862 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:18:55,409 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:19:23,783 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:19:50,286 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:20:11,811 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 16:20:36,046 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:02:24,395 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:02:37,482 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,12 +52,24 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 187, in edit_module
-    customers += name + ' '
-TypeError: can only concatenate list (not "str") to list
-2018-05-29 13:46:51,725 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 13:50:48,553 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 13:51:25,937 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 84, in search_module_f
+    modules = Module.query.filter(and_(query)).all()
+  File "<string>", line 2, in and_
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1959, in and_
+    return cls._construct(operators.and_, True_, False_, *clauses)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1893, in _construct
+    util.coerce_generator_arg(clauses)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1892, in <listcomp>
+    for clause in
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4254, in _expression_literal_as_text
+    return _literal_as_text(element, warn=True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4275, in _literal_as_text
+    "instead" % type(element)
+sqlalchemy.exc.ArgumentError: SQL expression object or string expected, got object of type <class 'tuple'> instead
+2018-05-30 10:04:11,161 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:04:15,299 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -48,11 +83,27 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 186, in edit_module
-    customers = ' '.join(customer_list)
-TypeError: sequence item 0: expected str instance, list found
-2018-05-29 13:52:48,222 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 13:53:00,384 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 84, in search_module_f
+    modules = Module.query.filter(and_(query)).all()
+  File "<string>", line 2, in and_
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1959, in and_
+    return cls._construct(operators.and_, True_, False_, *clauses)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1893, in _construct
+    util.coerce_generator_arg(clauses)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1892, in <listcomp>
+    for clause in
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4254, in _expression_literal_as_text
+    return _literal_as_text(element, warn=True)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4275, in _literal_as_text
+    "instead" % type(element)
+sqlalchemy.exc.ArgumentError: SQL expression object or string expected, got object of type <class 'tuple'> instead
+2018-05-30 10:19:46,138 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:21:20,693 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:24:10,106 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:27:21,687 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 10:27:52,100 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,64 +117,9 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 186, in edit_module
-    customers = ' '.join(customer_list)
-TypeError: sequence item 0: expected str instance, list found
-2018-05-29 13:55:06,658 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 13:55:14,728 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 179, in edit_module
-    customer_list.remove(name)
-ValueError: list.remove(x): x not in list
-2018-05-29 14:33:11,890 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:43:16,185 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:43:22,210 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 154, in edit_module
-    return render_template('edit_module.html', title='Edit Module', form=form)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    context, ctx.app)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
-    rv = template.render(context)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "D:\flask\stageopdracht\app\templates\edit_module.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "D:\flask\stageopdracht\app\templates\base.html", line 21, in top-level template code
-    {% block content %} {% endblock %}
-  File "D:\flask\stageopdracht\app\templates\edit_module.html", line 18, in block "content"
-    <div>{{ form.customer_delete.label }}</div>
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 430, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'app.forms.EditModuleForm object' has no attribute 'customer_delete'
-2018-05-29 14:46:48,982 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 117, in search_module_f
+    modules = Module.query.filter(and_(*query)).all()
+UnboundLocalError: local variable 'query' referenced before assignment
+2018-05-30 10:30:08,083 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

@@ -100,7 +100,7 @@ the application will run a mini-version of the ``Update Database``-button.
 Edit repository
 ===============
 
-*Changes: In scope, BP, employee*
+*Affects: In scope, BP, employee*
 
 If you edit a repository, you can specify if it's ``in scope`` of the company, which ``BP`` it's
 linked to, and an ``employee`` who has experience with this repository. To do this, you can go
@@ -113,17 +113,22 @@ select the above mentioned items.
 Edit module
 ===========
 
-*Changes: customer, vertical*
+*Affects: customer, vertical*
 
 To edit a module you can click on ``Edit Repository`` in **Search Module**'s results table or from
-the module table in **Table per Version**.
-
+the module table in **Table per Version**. On this page you can fill in the **Customers** and **Verticals**
+this module is used in. You can enter multiple names at once, given that they are separated by a space.
+If the name contains a space, replace the space in the name by an underscore '_'.  There's also the option
+of deleting previously added customers and/or verticals. Simply check the desired checkboxes. If you've
+filled in the textfields and checked the checkboxes, it will first clear out the old customers and
+verticals, then add the new ones. Once you filled in what you wanted to fill in, press the Save Changes
+button to write the changes to the database.
 
 
 Edit rating and review
 ======================
 
-*Changes: rating, review*
+*Affects: rating, review*
 
 When you have a version specific module table (so not from Full Table) on your screen, you can click
 "Write review". This clickable link is in the last column of a module record. Clicking on
