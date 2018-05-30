@@ -29,13 +29,29 @@ Look up a module
 A module can be looked up in two ways: via the **Search Module** page or from any repository page.
 
 The **Search Module** page works mostly the same as the repository one. Visually there will be a
-few differences. The options will be different and there's a checkbox too. In contrast to the
-repository search-function, the "Module"-field is required. The "Select Version" field selects in
-which version you want to look for modules. This field has a default value selected and can be changed
-to a different selection, but it cannot be unselected. Another option is how you want to filter on
-modules' installable-property. It's possible to choose from True, False or both (All results).
-And lastly there's a checkbox "Search in README". If this is checked, the search will also look
-readme files of modules for the entered text in "Module".
+few differences. The options are different and there's a checkbox too.
+
+.. note::
+
+    The search function works as long as at least one option or filter is selected/filled in.
+    Except: "Select Version" and "Installable: All Results". Installable: True / False do work on their own.
+
+Now all the different filters and options will be explained.
+
+**Select Version** field selects in which version you want to look for modules. This field has a default value
+selected and can be changed to a different selection, but it cannot be unselected.
+
+**Installable** filter will select what the installable property of the modules is. It's possible to choose from
+True, False or both (All results). Again, if you select True or False, this is enough to perform a search on,
+this is not the case if "All results" is still selected. (If another filter or option is filled in, All results
+will work.)
+
+**Customer** and **Vertical** are two separate fields, but work the same. Here you can fill in the name of a
+Customer and Vertical, in their assigned textboxes. Any modules matching the entered text will show up in the results.
+They always work, either if one field is filled in, or both.
+
+**Search in Readme**, last but not least. If this checkbox is checked, the search will also look in readme files
+of modules for the entered text in "Module".
 
 It is possible to look up multiple words at once, if "Search in Readme" is checked. The words will be searched for in
 the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
@@ -45,7 +61,7 @@ Another way to look up a module is via any table that also shows repositories. W
 at such a table, simply click on a repository's name. This will take you to one of two tables.
 Either the **Full table** variant, or the **Table per version** one. The difference is that the
 Full table shows an overview for all versions. Whereas the Table per version only shows modules
-for a preselected version.
+for a preselected version with additional columns providing more information.
 
 
 Go back to the previous screen

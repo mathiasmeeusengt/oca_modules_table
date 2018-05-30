@@ -282,23 +282,7 @@ def search_module_f(form_module_data,
     like_readme = getattr(Module, readme_text).like('%' + form_module_data + '%')
     like_customer = getattr(Module, customer).like('%' + customer_data + '%')
     like_vertical = getattr(Module, vertical).like('%' + vertical_data + '%')
-    '''
-    === Overview for searching Modules ===
-    ======================================
-    check if module field is empty
-        True: skip
-        False: cont.
-            -check readme?
-                True:
-                    -check filter
-                        -if elif else       check for each option for installable (True/False/both)
-                            -query
-                False:
-                    -check filter
-                        -if elif else       check for each option for installable (True/False/both)
-                            -query
-    ======================================
-    '''
+
     # Module search parameters
     if form_module_data != '':
         query = exists, like_module
@@ -440,7 +424,6 @@ def search_module_f(form_module_data,
                     query = exists, install_false
                 else:
                     query = exists
-
     modules = Module.query.filter(and_(*query)).all()
     return modules
 

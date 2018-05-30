@@ -54,13 +54,24 @@ but none exist in the selected version, it is not shown.</p>
 <h2>Look up a module<a class="headerlink" href="#look-up-a-module" title="Permalink to this headline">¶</a></h2>
 <p>A module can be looked up in two ways: via the <strong>Search Module</strong> page or from any repository page.</p>
 <p>The <strong>Search Module</strong> page works mostly the same as the repository one. Visually there will be a
-few differences. The options will be different and there’s a checkbox too. In contrast to the
-repository search-function, the “Module”-field is required. The “Select Version” field selects in
-which version you want to look for modules. This field has a default value selected and can be changed
-to a different selection, but it cannot be unselected. Another option is how you want to filter on
-modules’ installable-property. It’s possible to choose from True, False or both (All results).
-And lastly there’s a checkbox “Search in README”. If this is checked, the search will also look
-readme files of modules for the entered text in “Module”.</p>
+few differences. The options are different and there’s a checkbox too.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The search function works as long as at least one option or filter is selected/filled in.
+Except: “Select Version” and “Installable: All Results”. Installable: True / False do work on their own.</p>
+</div>
+<p>Now all the different filters and options will be explained.</p>
+<p><strong>Select Version</strong> field selects in which version you want to look for modules. This field has a default value
+selected and can be changed to a different selection, but it cannot be unselected.</p>
+<p><strong>Installable</strong> filter will select what the installable property of the modules is. It’s possible to choose from
+True, False or both (All results). Again, if you select True or False, this is enough to perform a search on,
+this is not the case if “All results” is still selected. (If another filter or option is filled in, All results
+will work.)</p>
+<p><strong>Customer</strong> and <strong>Vertical</strong> are two separate fields, but work the same. Here you can fill in the name of a
+Customer and Vertical, in their assigned textboxes. Any modules matching the entered text will show up in the results.
+They always work, either if one field is filled in, or both.</p>
+<p><strong>Search in Readme</strong>, last but not least. If this checkbox is checked, the search will also look in readme files
+of modules for the entered text in “Module”.</p>
 <p>It is possible to look up multiple words at once, if “Search in Readme” is checked. The words will be searched for in
 the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
 an exact match.</p>
@@ -68,7 +79,7 @@ an exact match.</p>
 at such a table, simply click on a repository’s name. This will take you to one of two tables.
 Either the <strong>Full table</strong> variant, or the <strong>Table per version</strong> one. The difference is that the
 Full table shows an overview for all versions. Whereas the Table per version only shows modules
-for a preselected version.</p>
+for a preselected version with additional columns providing more information.</p>
 </div>
 <div class="section" id="go-back-to-the-previous-screen">
 <h2>Go back to the previous screen<a class="headerlink" href="#go-back-to-the-previous-screen" title="Permalink to this headline">¶</a></h2>

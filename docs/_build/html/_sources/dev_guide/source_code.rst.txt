@@ -192,9 +192,10 @@ get_readme_module(module, version_x)
 *Parameters: app.Models.Module(module), string('x.0')*
 
 This function uses a URL to get the raw content of the readme file, which is saved for the correct version of the
-module.
-
-uses ``check_if_readme_exists(url)``
+module. Before it saves the file, the content first run through a loop to filter out the '*'. These appear in the text
+as syntax for .rst-files. They are filtered out to help the search function. Together with saving the text,
+this function uses uses ``check_if_readme_exists(url)`` to determine if the Readme-file exists. Afther that, both are
+written to the database.
 
 
 get_readme_repository(repository)
@@ -202,17 +203,22 @@ get_readme_repository(repository)
 
 *Parameter: github.Repository.Repository*
 
-
+Works exactly the same as ``get_readme_module(...)``, except for a repository.
 
 
 search_module_f(...)
 ********************
 *Variables between parentheses: form_module_data, form_select_version_data, form_search_readme_data,
-form_installable_bool_data.*
+form_installable_bool_data, customer_data, vertical_data*
 
-*Parameters: string(search keyword), string(selected version), bool(search_readme), string(selected option)*
+*Parameters: string(search keyword(s)), string(selected version), bool(search_readme), string(selected option),
+string(search keyword), string(search keyword)*
 
-
+This function is used when the user presses the search-button on the **Search Module** page. It "falls through" ifs,
+elifs and elses to determine what query to run, based on inputted data in the form.
+The query is built in pieces, and executed at the very end of the function.
+The pieces are then *joined* by sqlalchemy's ``and_`` This removes clutter and enables easy editing of variables
+while also maintaining a good amount of readability.
 
 
 
@@ -222,7 +228,9 @@ search_repository_f(...)
 
 *Parameters: string(search keyword), string(selected option), string(selected option)*
 
-
+This function is used when the user presses the search-button on the **Search Repository** page. It "falls through"
+ifs, elifs and elses to determine what query to run, based on inputted data in the form. It uses sqlalchemy's ``and_``
+to query based on multiple filters.
 
 
 PyGitHub API

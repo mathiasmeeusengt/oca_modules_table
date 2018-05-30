@@ -62,3 +62,68 @@ Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
     "this expression" % op.__name__)
 NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 11:30:24,537 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 11:30:38,749 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 171, in search_module_f
+    modules = Module.query.filter(and_(*query)).all()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 11:30:58,521 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 171, in search_module_f
+    modules = Module.query.filter(and_(*query)).all()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression

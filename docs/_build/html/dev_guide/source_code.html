@@ -181,23 +181,35 @@ place of ‘installable:’ and ‘True’. The function returns a string ‘Tru
 <h4>get_readme_module(module, version_x)<a class="headerlink" href="#get-readme-module-module-version-x" title="Permalink to this headline">¶</a></h4>
 <p><em>Parameters: app.Models.Module(module), string(‘x.0’)</em></p>
 <p>This function uses a URL to get the raw content of the readme file, which is saved for the correct version of the
-module.</p>
-<p>uses <code class="docutils literal notranslate"><span class="pre">check_if_readme_exists(url)</span></code></p>
+module. Before it saves the file, the content first run through a loop to filter out the ‘*’. These appear in the text
+as syntax for .rst-files. They are filtered out to help the search function. Together with saving the text,
+this function uses uses <code class="docutils literal notranslate"><span class="pre">check_if_readme_exists(url)</span></code> to determine if the Readme-file exists. Afther that, both are
+written to the database.</p>
 </div>
 <div class="section" id="get-readme-repository-repository">
 <h4>get_readme_repository(repository)<a class="headerlink" href="#get-readme-repository-repository" title="Permalink to this headline">¶</a></h4>
 <p><em>Parameter: github.Repository.Repository</em></p>
+<p>Works exactly the same as <code class="docutils literal notranslate"><span class="pre">get_readme_module(...)</span></code>, except for a repository.</p>
 </div>
 <div class="section" id="search-module-f">
 <h4>search_module_f(…)<a class="headerlink" href="#search-module-f" title="Permalink to this headline">¶</a></h4>
 <p><em>Variables between parentheses: form_module_data, form_select_version_data, form_search_readme_data,
-form_installable_bool_data.</em></p>
-<p><em>Parameters: string(search keyword), string(selected version), bool(search_readme), string(selected option)</em></p>
+form_installable_bool_data, customer_data, vertical_data</em></p>
+<p><em>Parameters: string(search keyword(s)), string(selected version), bool(search_readme), string(selected option),
+string(search keyword), string(search keyword)</em></p>
+<p>This function is used when the user presses the search-button on the <strong>Search Module</strong> page. It “falls through” ifs,
+elifs and elses to determine what query to run, based on inputted data in the form.
+The query is built in pieces, and executed at the very end of the function.
+The pieces are then <em>joined</em> by sqlalchemy’s <code class="docutils literal notranslate"><span class="pre">and_</span></code> This removes clutter and enables easy editing of variables
+while also maintaining a good amount of readability.</p>
 </div>
 <div class="section" id="search-repository-f">
 <h4>search_repository_f(…)<a class="headerlink" href="#search-repository-f" title="Permalink to this headline">¶</a></h4>
 <p><em>Variables between parentheses: form_repository_data, form_bp_data, form_in_scope_data</em></p>
 <p><em>Parameters: string(search keyword), string(selected option), string(selected option)</em></p>
+<p>This function is used when the user presses the search-button on the <strong>Search Repository</strong> page. It “falls through”
+ifs, elifs and elses to determine what query to run, based on inputted data in the form. It uses sqlalchemy’s <code class="docutils literal notranslate"><span class="pre">and_</span></code>
+to query based on multiple filters.</p>
 </div>
 </div>
 <div class="section" id="pygithub-api">
