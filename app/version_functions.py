@@ -36,11 +36,6 @@ def get_version_repositories_and_modules(version_x):
     return modules
 
 
-# def get_version_repository_and_modules(version_x, repository):
-#     modules = search_version_modules(version_x, repository)
-#     return modules
-
-
 # get repositories that have modules for version_x
 def get_version_repositories(version_x):
     repos = []

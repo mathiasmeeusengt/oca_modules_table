@@ -76,8 +76,8 @@ entire body, it comes upon a separate return-statement on the same level as the 
 return_template or a <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">redirect(url_for('name_page',</span> <span class="pre">var1=var1,...))</span></code>. This redirects the browser to the page
 that matches the name inside the parentheses.</p>
 </div>
-<div class="section" id="regular-functions">
-<h3>Regular Functions<a class="headerlink" href="#regular-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
 <p>This section will give a bit of explanation for the functions in ‘functions.py’.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -223,21 +223,46 @@ because the first one randomly stopped working one day.</p>
 </div>
 <div class="section" id="get-oca-repositories">
 <h4>get_oca_repositories()<a class="headerlink" href="#get-oca-repositories" title="Permalink to this headline">¶</a></h4>
-<p>This functions returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
+<p>This function returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
 at once. Seeing how there are +160 repositoires, not so strange.</p>
 </div>
 <div class="section" id="get-one-repository">
 <h4>get_one_repository()<a class="headerlink" href="#get-one-repository" title="Permalink to this headline">¶</a></h4>
 <p><em>Parameter: string(name of repository)</em></p>
-<p>This functions calls for one repository from the API, using a string to search for the name. This is used in the
+<p>This function calls for one repository from the API, using a string to search for the name. This is used in the
 <code class="docutils literal notranslate"><span class="pre">update_single_repository</span></code> function.</p>
 </div>
 </div>
 <div class="section" id="version-specific-functions">
 <h3>Version (specific) functions<a class="headerlink" href="#version-specific-functions" title="Permalink to this headline">¶</a></h3>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Version_x is the selected version used in the functions: “version_(8-11)”</p>
+<div class="section" id="search-version-modules">
+<h4>search_version_modules<a class="headerlink" href="#search-version-modules" title="Permalink to this headline">¶</a></h4>
+<p>This function returns a list of modules. In this list are modules that exist, meaning their <code class="docutils literal notranslate"><span class="pre">Module.version_x</span> <span class="pre">==</span> <span class="pre">'X'</span></code>
+and the modules’ repo_name must match that of the string passed when the function is called. This function is used
+by <code class="docutils literal notranslate"><span class="pre">get_version_repositories_and_modules(...)</span></code>.</p>
+</div>
+<div class="section" id="get-version-repositories-and-modules">
+<h4>get_version_repositories_and_modules<a class="headerlink" href="#get-version-repositories-and-modules" title="Permalink to this headline">¶</a></h4>
+<p>This function gets all the modules for a specific version. It contains a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop, going through all the
+repositories in the database, to place every module that exists for a specific version in a list. This list is returned
+at the end of the function. This function is used by <code class="docutils literal notranslate"><span class="pre">get_version_repositories</span></code></p>
+</div>
+<div class="section" id="get-version-repositories">
+<h4>get_version_repositories<a class="headerlink" href="#get-version-repositories" title="Permalink to this headline">¶</a></h4>
+<p>This function returns all repositories that have modules in version_x. It uses the returned list from
+<code class="docutils literal notranslate"><span class="pre">get_version_repositories</span></code> in a for loop to know what repositories it needs to return.</p>
+</div>
 </div>
 <div class="section" id="forms">
 <h3>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="submitform">
+<h4>SubmitForm<a class="headerlink" href="#submitform" title="Permalink to this headline">¶</a></h4>
+<p>This is a small, one field form with only a button. It’s used to start the update function.</p>
+</div>
+<div class="section" id="versionselectionform">
+<h4>VersionSelectionForm<a class="headerlink" href="#versionselectionform" title="Permalink to this headline">¶</a></h4>
+</div>
 </div>
 </div>
 <div class="section" id="maintenance">
@@ -257,7 +282,7 @@ at once. Seeing how there are +160 repositoires, not so strange.</p>
 <li><a class="reference internal" href="#database-model">Database model</a></li>
 <li><a class="reference internal" href="#python-files">Python files</a><ul>
 <li><a class="reference internal" href="#routes">Routes</a></li>
-<li><a class="reference internal" href="#regular-functions">Regular Functions</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a><ul>
 <li><a class="reference internal" href="#update-repositories">update_repositories()</a></li>
 <li><a class="reference internal" href="#update-single-repository-repository">update_single_repository(repository)</a></li>
 <li><a class="reference internal" href="#update-modules-repository">update_modules(repository)</a></li>
@@ -280,8 +305,17 @@ at once. Seeing how there are +160 repositoires, not so strange.</p>
 <li><a class="reference internal" href="#get-one-repository">get_one_repository()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#version-specific-functions">Version (specific) functions</a></li>
-<li><a class="reference internal" href="#forms">Forms</a></li>
+<li><a class="reference internal" href="#version-specific-functions">Version (specific) functions</a><ul>
+<li><a class="reference internal" href="#search-version-modules">search_version_modules</a></li>
+<li><a class="reference internal" href="#get-version-repositories-and-modules">get_version_repositories_and_modules</a></li>
+<li><a class="reference internal" href="#get-version-repositories">get_version_repositories</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#forms">Forms</a><ul>
+<li><a class="reference internal" href="#submitform">SubmitForm</a></li>
+<li><a class="reference internal" href="#versionselectionform">VersionSelectionForm</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#maintenance">Maintenance</a></li>

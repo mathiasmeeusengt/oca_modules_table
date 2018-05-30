@@ -53,8 +53,8 @@ return_template or a ``return redirect(url_for('name_page', var1=var1,...))``. T
 that matches the name inside the parentheses.
 
 
-Regular Functions
------------------
+Functions
+---------
 This section will give a bit of explanation for the functions in 'functions.py'.
 
 .. note::
@@ -246,7 +246,7 @@ because the first one randomly stopped working one day.
 
 get_oca_repositories()
 **********************
-This functions returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
+This function returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
 at once. Seeing how there are +160 repositoires, not so strange.
 
 
@@ -255,20 +255,46 @@ get_one_repository()
 
 *Parameter: string(name of repository)*
 
-This functions calls for one repository from the API, using a string to search for the name. This is used in the
+This function calls for one repository from the API, using a string to search for the name. This is used in the
 ``update_single_repository`` function.
-
 
 
 Version (specific) functions
 ----------------------------
+*Version_x is the selected version used in the functions: "version_(8-11)"
 
+search_version_modules
+**********************
+This function returns a list of modules. In this list are modules that exist, meaning their ``Module.version_x == 'X'``
+and the modules' repo_name must match that of the string passed when the function is called. This function is used
+by ``get_version_repositories_and_modules(...)``.
 
+get_version_repositories_and_modules
+************************************
+This function gets all the modules for a specific version. It contains a ``for``-loop, going through all the
+repositories in the database, to place every module that exists for a specific version in a list. This list is returned
+at the end of the function. This function is used by ``get_version_repositories``
 
+get_version_repositories
+************************
+This function returns all repositories that have modules in version_x. It uses the returned list from
+``get_version_repositories`` in a for loop to know what repositories it needs to return.
 
 
 Forms
 -----
+
+SubmitForm
+**********
+This is a small, one field form with only a button. It's used to start the update function.
+
+VersionSelectionForm
+********************
+This Form has a RadioField which is a group of radiobuttons and a submit button. It's used to select the version you
+wish to see version-specific things in.
+
+SearchRepositoryForm
+********************
 
 
 
