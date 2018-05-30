@@ -8,7 +8,7 @@ Database model
 ==============
 
 The image below shows how the database looks like, it has two objects, Repository and Module.
-One repository can have multiple modules, but one module cannot have multi repositories
+One repository can have multiple modules, but one module cannot have multiple repositories
 
 .. image :: diagram.png
 
@@ -236,6 +236,27 @@ to query based on multiple filters.
 PyGitHub API
 ------------
 
+get_oca_user():
+***************
+This function logs in to GitHub with a github-account's "personal access token" which is placed into a variable.
+This makes it possible to call on PyGitHub (GitHub API library for python) functions to get data. As well as a way
+larger calls per hour number than an anyomous user. A second personal access token is placed in the server,
+because the first one randomly stopped working one day.
+
+
+get_oca_repositories()
+**********************
+This functions returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
+at once. Seeing how there are +160 repositoires, not so strange.
+
+
+get_one_repository()
+********************
+
+*Parameter: string(name of repository)*
+
+This functions calls for one repository from the API, using a string to search for the name. This is used in the
+``update_single_repository`` function.
 
 
 

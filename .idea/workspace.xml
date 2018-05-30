@@ -17,8 +17,8 @@
             <file leaf-file-name="source_code.rst" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="472">
-                    <caret line="216" column="86" lean-forward="false" selection-start-line="216" selection-start-column="86" selection-end-line="216" selection-end-column="86" />
+                  <state relative-caret-position="736">
+                    <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="787">
-              <caret line="521" column="10" lean-forward="false" selection-start-line="521" selection-start-column="10" selection-end-line="521" selection-end-column="10" />
+            <state relative-caret-position="202">
+              <caret line="482" column="0" lean-forward="true" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
               <folding>
                 <element signature="e#11066#15230#0" expanded="false" />
                 <element signature="e#15249#18965#0" expanded="false" />
@@ -96,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uses.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="uses.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/user_guide/uses.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
@@ -106,11 +106,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_repository.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/search_repository.html">
+      <file leaf-file-name="pygithub_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pygithub_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -403,7 +403,7 @@
     <frame x="0" y="0" width="1061" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1368421" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1368421" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -619,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pygithub_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -768,17 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="521" column="10" lean-forward="false" selection-start-line="521" selection-start-column="10" selection-end-line="521" selection-end-column="10" />
-          <folding>
-            <element signature="e#11066#15230#0" expanded="false" />
-            <element signature="e#15249#18965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/user_guide/uses.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -789,9 +771,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="216" column="86" lean-forward="false" selection-start-line="216" selection-start-column="86" selection-end-line="216" selection-end-column="86" />
+        <state relative-caret-position="736">
+          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pygithub_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="482" column="0" lean-forward="true" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+          <folding>
+            <element signature="e#11066#15230#0" expanded="false" />
+            <element signature="e#15249#18965#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

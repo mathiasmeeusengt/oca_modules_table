@@ -38,7 +38,7 @@ in certain events (eg.: adding a new odoo version).</p>
 <div class="section" id="database-model">
 <h2>Database model<a class="headerlink" href="#database-model" title="Permalink to this headline">¶</a></h2>
 <p>The image below shows how the database looks like, it has two objects, Repository and Module.
-One repository can have multiple modules, but one module cannot have multi repositories</p>
+One repository can have multiple modules, but one module cannot have multiple repositories</p>
 <img alt="../_images/diagram.png" src="../_images/diagram.png" />
 </div>
 <div class="section" id="python-files">
@@ -214,6 +214,24 @@ to query based on multiple filters.</p>
 </div>
 <div class="section" id="pygithub-api">
 <h3>PyGitHub API<a class="headerlink" href="#pygithub-api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="get-oca-user">
+<h4>get_oca_user():<a class="headerlink" href="#get-oca-user" title="Permalink to this headline">¶</a></h4>
+<p>This function logs in to GitHub with a github-account’s “personal access token” which is placed into a variable.
+This makes it possible to call on PyGitHub (GitHub API library for python) functions to get data. As well as a way
+larger calls per hour number than an anyomous user. A second personal access token is placed in the server,
+because the first one randomly stopped working one day.</p>
+</div>
+<div class="section" id="get-oca-repositories">
+<h4>get_oca_repositories()<a class="headerlink" href="#get-oca-repositories" title="Permalink to this headline">¶</a></h4>
+<p>This functions returns all the OCA repositories, split up into pages because the GitHub API can not handle everything
+at once. Seeing how there are +160 repositoires, not so strange.</p>
+</div>
+<div class="section" id="get-one-repository">
+<h4>get_one_repository()<a class="headerlink" href="#get-one-repository" title="Permalink to this headline">¶</a></h4>
+<p><em>Parameter: string(name of repository)</em></p>
+<p>This functions calls for one repository from the API, using a string to search for the name. This is used in the
+<code class="docutils literal notranslate"><span class="pre">update_single_repository</span></code> function.</p>
+</div>
 </div>
 <div class="section" id="version-specific-functions">
 <h3>Version (specific) functions<a class="headerlink" href="#version-specific-functions" title="Permalink to this headline">¶</a></h3>
@@ -256,7 +274,12 @@ to query based on multiple filters.</p>
 <li><a class="reference internal" href="#search-repository-f">search_repository_f(…)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pygithub-api">PyGitHub API</a></li>
+<li><a class="reference internal" href="#pygithub-api">PyGitHub API</a><ul>
+<li><a class="reference internal" href="#get-oca-user">get_oca_user():</a></li>
+<li><a class="reference internal" href="#get-oca-repositories">get_oca_repositories()</a></li>
+<li><a class="reference internal" href="#get-one-repository">get_one_repository()</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#version-specific-functions">Version (specific) functions</a></li>
 <li><a class="reference internal" href="#forms">Forms</a></li>
 </ul>
