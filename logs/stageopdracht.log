@@ -127,3 +127,4 @@ Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
     "this expression" % op.__name__)
 NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 16:13:02,943 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

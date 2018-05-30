@@ -374,3 +374,13 @@ one(s) is/are added.
 
 Maintenance
 ===========
+
+Managing the SQLite database
+----------------------------
+
+To view the contents of the database outside of the application, a third party tool is required. During development
+I used Db browser for SQlite.
+
+Adding things to the database is not an issue. Renaming or deleting columns is a bigger hassle. SQlite does not support
+drop-statements, and thus can not change columns after creation. The solution to this is deleting the database and
+re-initialising it.
