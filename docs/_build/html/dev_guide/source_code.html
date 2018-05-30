@@ -235,7 +235,7 @@ at once. Seeing how there are +160 repositoires, not so strange.</p>
 </div>
 <div class="section" id="version-specific-functions">
 <h3>Version (specific) functions<a class="headerlink" href="#version-specific-functions" title="Permalink to this headline">¶</a></h3>
-<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Version_x is the selected version used in the functions: “version_(8-11)”</p>
+<p><em>Version_x is the selected version used in the functions: “version_(8-11)”</em></p>
 <div class="section" id="search-version-modules">
 <h4>search_version_modules<a class="headerlink" href="#search-version-modules" title="Permalink to this headline">¶</a></h4>
 <p>This function returns a list of modules. In this list are modules that exist, meaning their <code class="docutils literal notranslate"><span class="pre">Module.version_x</span> <span class="pre">==</span> <span class="pre">'X'</span></code>
@@ -256,12 +256,37 @@ at the end of the function. This function is used by <code class="docutils liter
 </div>
 <div class="section" id="forms">
 <h3>Forms<a class="headerlink" href="#forms" title="Permalink to this headline">¶</a></h3>
+<p><em>A RadioField is a group of radiobuttons</em></p>
 <div class="section" id="submitform">
 <h4>SubmitForm<a class="headerlink" href="#submitform" title="Permalink to this headline">¶</a></h4>
 <p>This is a small, one field form with only a button. It’s used to start the update function.</p>
 </div>
 <div class="section" id="versionselectionform">
 <h4>VersionSelectionForm<a class="headerlink" href="#versionselectionform" title="Permalink to this headline">¶</a></h4>
+<p>This Form has a RadioField and a submit button. It’s used to select the version you
+wish to see version-specific things in.</p>
+</div>
+<div class="section" id="searchrepositoryform">
+<h4>SearchRepositoryForm<a class="headerlink" href="#searchrepositoryform" title="Permalink to this headline">¶</a></h4>
+<p>This form is a bit longer, it’s used in searching for repositories. It contains five fields:</p>
+<p><strong>repository</strong>: a textfield to fill in a keyword that will be compared to the names of repositories.</p>
+<p><strong>in_scope</strong>: a RadioField with 3 buttons: True, False and Both. Filters repositories based on the value of their
+in_scope property.</p>
+<p><strong>bp</strong>: a RadioField with x buttons, the amount of buttons matches the amount of BPs in the company. Filters
+repositories of which the bp property matches the selected one.</p>
+<p><strong>select_version</strong>: the same RadioField as in <code class="docutils literal notranslate"><span class="pre">VersionSelectionForm</span></code>, selects which version should be used.</p>
+<p><strong>submit</strong>: submit button to submit the form and call the search function.</p>
+</div>
+<div class="section" id="searchmoduleform">
+<h4>SearchModuleForm<a class="headerlink" href="#searchmoduleform" title="Permalink to this headline">¶</a></h4>
+<p><strong>select_version</strong>: the same RadioField as in <code class="docutils literal notranslate"><span class="pre">VersionSelectionForm</span></code>, selects which version should be used.</p>
+<p><strong>module</strong>: a textfield to fill in a keyword that will be compared to the names of repositories.
+With the “Search readme” checkbox checked: also searches in the readme text with the filled in keyword.</p>
+<p><strong>Customers</strong>, <strong>Verticals</strong>: different fields, work when one or both is filled in. A textfield to fill in a keyword
+that will be compared to the values of the corresponding properties of modules.</p>
+<p><strong>search_readme</strong>: a booleanfield, returns true or false. If checked, the text in <strong>module</strong> will also be searched for
+in the readme text of modules.</p>
+<p><strong>installable_bool</strong>: a RadioField,</p>
 </div>
 </div>
 </div>
@@ -314,6 +339,8 @@ at the end of the function. This function is used by <code class="docutils liter
 <li><a class="reference internal" href="#forms">Forms</a><ul>
 <li><a class="reference internal" href="#submitform">SubmitForm</a></li>
 <li><a class="reference internal" href="#versionselectionform">VersionSelectionForm</a></li>
+<li><a class="reference internal" href="#searchrepositoryform">SearchRepositoryForm</a></li>
+<li><a class="reference internal" href="#searchmoduleform">SearchModuleForm</a></li>
 </ul>
 </li>
 </ul>

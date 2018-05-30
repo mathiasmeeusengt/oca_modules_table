@@ -259,10 +259,9 @@ This function calls for one repository from the API, using a string to search fo
 ``update_single_repository`` function.
 
 
-
 Version (specific) functions
 ----------------------------
-*Version_x is the selected version used in the functions: "version_(8-11)"
+*Version_x is the selected version used in the functions: "version_(8-11)"*
 
 search_version_modules
 **********************
@@ -282,15 +281,53 @@ This function returns all repositories that have modules in version_x. It uses t
 ``get_version_repositories`` in a for loop to know what repositories it needs to return.
 
 
+
 Forms
 -----
+*A RadioField is a group of radiobuttons*
 
 SubmitForm
 **********
 This is a small, one field form with only a button. It's used to start the update function.
 
+
 VersionSelectionForm
 ********************
+This Form has a RadioField and a submit button. It's used to select the version you
+wish to see version-specific things in.
+
+
+SearchRepositoryForm
+********************
+This form is a bit longer, it's used in searching for repositories. It contains five fields:
+
+**repository**: a textfield to fill in a keyword that will be compared to the names of repositories.
+
+**in_scope**: a RadioField with 3 buttons: True, False and Both. Filters repositories based on the value of their
+in_scope property.
+
+**bp**: a RadioField with x buttons, the amount of buttons matches the amount of BPs in the company. Filters
+repositories of which the bp property matches the selected one.
+
+**select_version**: the same RadioField as in ``VersionSelectionForm``, selects which version should be used.
+
+**submit**: submit button to submit the form and call the search function.
+
+
+SearchModuleForm
+****************
+**select_version**: the same RadioField as in ``VersionSelectionForm``, selects which version should be used.
+
+**module**: a textfield to fill in a keyword that will be compared to the names of repositories.
+With the "Search readme" checkbox checked: also searches in the readme text with the filled in keyword.
+
+**Customers**, **Verticals**: different fields, work when one or both is filled in. A textfield to fill in a keyword
+that will be compared to the values of the corresponding properties of modules.
+
+**search_readme**: a booleanfield, returns true or false. If checked, the text in **module** will also be searched for
+in the readme text of modules.
+
+**installable_bool**: a RadioField,
 
 
 
