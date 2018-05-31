@@ -32,17 +32,47 @@
             
   <div class="section" id="cli">
 <h1>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h1>
-<p>This page is intended for developers. Here is explained what you can / need to do in a cli console.</p>
+<p>This page is intended for developers. Here is explained what you can / need to do in a CLI.</p>
 <div class="section" id="start-the-application">
 <h2>Start the application<a class="headerlink" href="#start-the-application" title="Permalink to this headline">¶</a></h2>
-<p>ctrl+c, if not exit immediately , refresh webpage</p>
+<p>To start the application follow the steps below:</p>
+<ol class="arabic simple">
+<li>Navigate to the directory where &lt;app_name&gt;.py is located</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">venv\Scripts\Activate</span></code> to start the virtual environment</li>
+<li><dl class="first docutils">
+<dt>Set the FLASK_APP environment variable:</dt>
+<dd><ol class="first last arabic">
+<li>On Linux: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">FLASK_APP=&lt;app_name&gt;.py</span></code></li>
+<li>On Windows: <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">FLASK_APP=&lt;app_name&gt;.py</span></code></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code></li>
+</ol>
+<p>The application should now be running.</p>
+<p>To stop the application, press <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code>. If this does not immediately stop the application, perform an action
+(like refreshing) in a browser.</p>
 </div>
 <div class="section" id="start-a-python-shell">
 <h2>Start a python shell<a class="headerlink" href="#start-a-python-shell" title="Permalink to this headline">¶</a></h2>
-<p>ctrl+z to exit</p>
+<p>In a python shell you can test out snippets of code. Python files need to be imported in this shell before they can
+be used.</p>
+<p>To enter the python shell, instead of performing step 4 of <strong>Start the application</strong>, enter <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">shell</span></code>.
+Now it’s possible to enter python code in your CLI.</p>
+<p>To exit the shell, simply press <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">z</span></code>.</p>
 </div>
 <div class="section" id="create-or-update-database-schema">
 <h2>Create or update database schema<a class="headerlink" href="#create-or-update-database-schema" title="Permalink to this headline">¶</a></h2>
+<p>When there is no database present, an extra command must be entered to create it.
+Follow the first three steps from <strong>Start the application</strong> and then the steps below:</p>
+<ol class="arabic simple">
+<li>Enter <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">db</span> <span class="pre">init</span></code> to initialise the database (based on the models.py file)</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">db</span> <span class="pre">migrate</span></code> to create or overwrite the migration script</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">db</span> <span class="pre">upgrade</span></code> to apply the migration script to the database.</li>
+</ol>
+<p>When there is an existing database that needs an update, because models.py is changedn simply input steps 2. and 3.
+from above.</p>
 </div>
 </div>
 

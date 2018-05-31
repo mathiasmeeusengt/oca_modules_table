@@ -18,7 +18,7 @@
               <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="392">
-                    <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+                    <caret line="406" column="0" lean-forward="false" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -51,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version_functions.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version_functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/version_functions.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="errors.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/errors.py">
+      <file leaf-file-name="CLI.rst" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/dev_guide/CLI.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="645">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -215,7 +215,6 @@
         <option value="$PROJECT_DIR$/docs/userguide/cli.rst" />
         <option value="$PROJECT_DIR$/docs/main.rst" />
         <option value="$PROJECT_DIR$/app/templates/update_repository.html" />
-        <option value="$PROJECT_DIR$/docs/dev_guide/CLI.rst" />
         <option value="$PROJECT_DIR$/docs/user_guide/pages.rst" />
         <option value="$PROJECT_DIR$/app/templates/detail.html" />
         <option value="$PROJECT_DIR$/docs/conf.py" />
@@ -238,6 +237,7 @@
         <option value="$PROJECT_DIR$/app/my_scribbles.py" />
         <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/docs/dev_guide/source_code.rst" />
+        <option value="$PROJECT_DIR$/docs/dev_guide/CLI.rst" />
       </list>
     </option>
   </component>
@@ -682,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/dev_guide/CLI.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -772,6 +764,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="406" column="0" lean-forward="false" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/version_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -780,10 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
+    <entry file="file://$PROJECT_DIR$/docs/dev_guide/CLI.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+        <state relative-caret-position="645">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
