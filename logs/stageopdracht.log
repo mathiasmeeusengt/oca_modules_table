@@ -133,3 +133,5 @@ NotImplementedError: Operator 'getitem' is not supported on this expression
 2018-05-31 10:36:42,431 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
 2018-05-31 10:36:48,169 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
 2018-05-31 10:38:38,243 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:53:43,026 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:53:49,449 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

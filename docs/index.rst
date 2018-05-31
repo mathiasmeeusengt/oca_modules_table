@@ -11,7 +11,7 @@ Below is a table of contents. If you enter any page, you can come back to this p
 you're currently on (except on this page).
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
 
     user_guide/pages
