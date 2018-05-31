@@ -407,30 +407,30 @@ Every Select_version RadioField needs an extra option.
 
 Functions
 #########
-**get_tree_hashes_per_repo(repo)**: A new line is required in the if/elif section.
+``get_tree_hashes_per_repo(repo)``: A new line is required in the if/elif section.
 
-**url_test_module(module)**: A new line is required.
+``url_test_module(module)``: A new line is required.
 
-**count_modules(repository)**: Two new lines are required.
+``count_modules(repository)``: Two new lines are required.
 
-**get_installable_and_get_readme(repository)**: Five new lines are required. A query, a for-loop with two lines inside
+``get_installable_and_get_readme(repository)``: Five new lines are required. A query, a for-loop with two lines inside
 it and a commit to the database.
 
-**get_readme_module(module, version_x)**: Three new lines are required in the if/elif section.
+``get_readme_module(module, version_x)``: Three new lines are required in the if/elif section.
 
-**rating_review_f(...)**: A new elif-block is required.
+``rating_review_f(...)``: A new elif-block is required.
 
 
 Models
 ######
 
-**Repository**: A new line is required, ``m_x``, where x is the new version, this is used to store the number of
+``Repository``: A new line is required, ``m_x``, where x is the new version, this is used to store the number of
 modules returned from ``count_modules(repository)``.
 
-**Module**: Eight new lines are required, all copy paste edit from the previous version.
+``Module``: Eight new lines are required, all copy paste edit from the previous version.
 
 
 Version_functions
 #################
 
-**Search_version_modules(version_x, repo)**: Three new lines are required in the if/elif section.
+``Search_version_modules(version_x, repo)``: Three new lines are required in the if/elif section.
