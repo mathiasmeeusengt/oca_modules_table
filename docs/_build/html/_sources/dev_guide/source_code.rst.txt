@@ -379,7 +379,7 @@ Managing the SQLite database
 ----------------------------
 
 To view the contents of the database outside of the application, a third party tool is required. During development
-I used Db browser for SQlite.
+I used **DB browser for SQlite**.
 
 Adding things to the database is not an issue. Renaming or deleting columns is a bigger hassle. SQlite does not support
 drop-statements, and thus can not change columns after creation. The solution to this is deleting the database and
@@ -391,3 +391,46 @@ https://oca-modules-table.readthedocs.io/en/latest/dev_guide/CLI.html#create-or-
     Deleting app.db will also remove user submitted data like Customers, Verticals, reviews, and so on.
 
 A copy can be made and viewed locally with the tool mentioned above.
+
+
+Adding a new Odoo version
+-------------------------
+This section will explain where, in what function and file, code needs to be changed / added to in order to
+integrate a new version of Odoo. Most, if not all, of these are just copy/paste from a previous version and change
+the number to the new version.
+
+
+Forms
+#####
+Every Select_version RadioField needs an extra option.
+
+
+Functions
+#########
+**get_tree_hashes_per_repo(repo)**: A new line is required in the if/elif section.
+
+**url_test_module(module)**: A new line is required.
+
+**count_modules(repository)**: Two new lines are required.
+
+**get_installable_and_get_readme(repository)**: Five new lines are required. A query, a for-loop with two lines inside
+it and a commit to the database.
+
+**get_readme_module(module, version_x)**: Three new lines are required in the if/elif section.
+
+**rating_review_f(...)**: A new elif-block is required.
+
+
+Models
+######
+
+**Repository**: A new line is required, ``m_x``, where x is the new version, this is used to store the number of
+modules returned from ``count_modules(repository)``.
+
+**Module**: Eight new lines are required, all copy paste edit from the previous version.
+
+
+Version_functions
+#################
+
+**Search_version_modules(version_x, repo)**: Three new lines are required in the if/elif section.

@@ -10,7 +10,6 @@ from app.functions import update_repositories, update_single_repository, search_
 from app.version_functions import get_version_repositories, search_version_modules
 
 
-
 # Routes for single version pages
 # ===============================================
 
@@ -150,7 +149,6 @@ def edit_module(module, version_x):
                       form.delete_customers.data,
                       form.delete_verticals.data)
 
-
         return redirect(url_for('version_details', repository=module.repo_name, version_x=version_x))
     return render_template('edit_module.html', title='Edit Module',
                            form=form, module=module.addon, version=version)
@@ -195,6 +193,7 @@ def detail(repository):
     r = Repository.query.filter(Repository.repository == repository).first()
     module = Module.query.filter(and_(Module.repo_name == r.repository, Module.addon is not None))
     return render_template('detail.html', title="detail", module=module)
+
 
 # testing pages used to test new pieces of code
 
