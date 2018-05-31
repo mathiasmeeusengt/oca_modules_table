@@ -9,3 +9,25 @@
 2018-05-31 13:20:25,745 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
 2018-05-31 13:23:16,649 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
 2018-05-31 14:55:13,792 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 16:31:33,835 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 16:39:25,717 ERROR: Exception on /table [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 176, in table
+    update_repositories()
+  File "D:\flask\stageopdracht\app\functions.py", line 25, in update_repositories
+    repositories = get_oca_repositories()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 28, in get_oca_repositories
+    user_oca_repos = get_oca_user().get_repos().get_page(0)
+AttributeError: 'NoneType' object has no attribute 'get_repos'
