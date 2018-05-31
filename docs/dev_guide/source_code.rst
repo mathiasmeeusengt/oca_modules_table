@@ -401,12 +401,12 @@ the number to the new version.
 
 
 Forms
-#####
+*****
 Every Select_version RadioField needs an extra option.
 
 
 Functions
-#########
+*********
 ``get_tree_hashes_per_repo(repo)``: A new line is required in the if/elif section.
 
 ``url_test_module(module)``: A new line is required.
@@ -422,8 +422,7 @@ it and a commit to the database.
 
 
 Models
-######
-
+******
 ``Repository``: A new line is required, ``m_x``, where x is the new version, this is used to store the number of
 modules returned from ``count_modules(repository)``.
 
@@ -431,6 +430,6 @@ modules returned from ``count_modules(repository)``.
 
 
 Version_functions
-#################
+*****************
 
 ``Search_version_modules(version_x, repo)``: Three new lines are required in the if/elif section.

@@ -342,15 +342,12 @@ re-initialising it. To this, delete the “migrations” folder and “app.db”
 <p>This section will explain where, in what function and file, code needs to be changed / added to in order to
 integrate a new version of Odoo. Most, if not all, of these are just copy/paste from a previous version and change
 the number to the new version.</p>
-</div>
-</div>
-</div>
 <div class="section" id="id1">
-<h1>Forms<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h4>Forms<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>Every Select_version RadioField needs an extra option.</p>
 </div>
 <div class="section" id="id2">
-<h1>Functions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<h4>Functions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">get_tree_hashes_per_repo(repo)</span></code>: A new line is required in the if/elif section.</p>
 <p><code class="docutils literal notranslate"><span class="pre">url_test_module(module)</span></code>: A new line is required.</p>
 <p><code class="docutils literal notranslate"><span class="pre">count_modules(repository)</span></code>: Two new lines are required.</p>
@@ -360,14 +357,17 @@ it and a commit to the database.</p>
 <p><code class="docutils literal notranslate"><span class="pre">rating_review_f(...)</span></code>: A new elif-block is required.</p>
 </div>
 <div class="section" id="models">
-<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<h4>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Repository</span></code>: A new line is required, <code class="docutils literal notranslate"><span class="pre">m_x</span></code>, where x is the new version, this is used to store the number of
 modules returned from <code class="docutils literal notranslate"><span class="pre">count_modules(repository)</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Module</span></code>: Eight new lines are required, all copy paste edit from the previous version.</p>
 </div>
 <div class="section" id="version-functions">
-<h1>Version_functions<a class="headerlink" href="#version-functions" title="Permalink to this headline">¶</a></h1>
+<h4>Version_functions<a class="headerlink" href="#version-functions" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Search_version_modules(version_x,</span> <span class="pre">repo)</span></code>: Three new lines are required in the if/elif section.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -425,15 +425,17 @@ modules returned from <code class="docutils literal notranslate"><span class="pr
 </li>
 <li><a class="reference internal" href="#maintenance">Maintenance</a><ul>
 <li><a class="reference internal" href="#managing-the-sqlite-database">Managing the SQLite database</a></li>
-<li><a class="reference internal" href="#adding-a-new-odoo-version">Adding a new Odoo version</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#adding-a-new-odoo-version">Adding a new Odoo version</a><ul>
 <li><a class="reference internal" href="#id1">Forms</a></li>
 <li><a class="reference internal" href="#id2">Functions</a></li>
 <li><a class="reference internal" href="#models">Models</a></li>
 <li><a class="reference internal" href="#version-functions">Version_functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>

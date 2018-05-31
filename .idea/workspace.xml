@@ -17,8 +17,8 @@
             <file leaf-file-name="source_code.rst" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="752">
-                    <caret line="432" column="17" lean-forward="true" selection-start-line="432" selection-start-column="17" selection-end-line="432" selection-end-column="17" />
+                  <state relative-caret-position="392">
+                    <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -782,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/dev_guide/source_code.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="432" column="17" lean-forward="true" selection-start-line="432" selection-start-column="17" selection-end-line="432" selection-end-column="17" />
+        <state relative-caret-position="392">
+          <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
           <folding />
         </state>
       </provider>
