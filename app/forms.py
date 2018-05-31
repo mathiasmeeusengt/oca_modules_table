@@ -54,7 +54,7 @@ class SearchModuleForm(FlaskForm):
                                          ('11', 'Version: 11')],
                                 validators=[DataRequired()],
                                 default='8')
-    module = StringField('Module*:', default='')
+    module = StringField('Module:', default='')
     customers = StringField('Customer(s):', default='')
     verticals = StringField('Vertical(s):', default='')
     search_readme = BooleanField('Search in README', default=False)

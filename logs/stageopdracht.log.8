@@ -1,36 +1,4 @@
-2018-05-25 13:18:56,130 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
-    update_single_repository(repository)
-  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
-    repository = get_one_repository(repository1)
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
-    user = get_oca_user()
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
-    user_oca = g.get_user('OCA')
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
-    "/users/" + login
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
-    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
-    raise self.__createException(status, responseHeaders, output)
-github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
-2018-05-25 13:22:14,297 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 09:27:44,489 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 10:03:52,911 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 10:03:57,350 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-28 10:04:04,879 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
     context)
@@ -82,3 +50,55 @@ Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
     cursor.execute(statement, parameters)
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: module.customer_8 [SQL: 'SELECT module.id AS module_id, module.addon AS module_addon, module.version AS module_version, module.summary AS module_summary, module.customer_8 AS module_customer_8, module.customer_9 AS module_customer_9, module.customer_10 AS module_customer_10, module.customer_11 AS module_customer_11, module.vertical_8 AS module_vertical_8, module.vertical_9 AS module_vertical_9, module.vertical_10 AS module_vertical_10, module.vertical_11 AS module_vertical_11, module.version_8 AS module_version_8, module.version_9 AS module_version_9, module.version_10 AS module_version_10, module.version_11 AS module_version_11, module.installable_8 AS module_installable_8, module.installable_9 AS module_installable_9, module.installable_10 AS module_installable_10, module.installable_11 AS module_installable_11, module.readme_8 AS module_readme_8, module.readme_9 AS module_readme_9, module.readme_10 AS module_readme_10, module.readme_11 AS module_readme_11, module.readme_text_8 AS module_readme_text_8, module.readme_text_9 AS module_readme_text_9, module.readme_text_10 AS module_readme_text_10, module.readme_text_11 AS module_readme_text_11, module.rating_8 AS module_rating_8, module.rating_9 AS module_rating_9, module.rating_10 AS module_rating_10, module.rating_11 AS module_rating_11, module.review_8 AS module_review_8, module.review_9 AS module_review_9, module.review_10 AS module_review_10, module.review_11 AS module_review_11, module.repo_name AS module_repo_name \nFROM module \nWHERE module.addon LIKE ? AND module.version_8 = ?'] [parameters: ('%account%', 'X')] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-05-28 10:04:50,434 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:04:55,995 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:05:05,480 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 11:51:07,594 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:08:16,750 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:17:30,053 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:25:21,615 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:25:45,360 ERROR: Exception on /edit_module/ account_analytic_line_list/version_8 [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: edit_module() missing 1 required positional argument: 'self'
+2018-05-28 13:26:13,005 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:27:21,167 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 13:27:26,009 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 88, in search_module
+    rating=rating, review=review, readme=readme))
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'search_results_module.html' with values ['installable', 'modules', 'rating', 'readme', 'review', 'search_readme', 'title', 'version_x']. Did you mean 'search_module' instead?
+2018-05-28 13:27:55,425 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

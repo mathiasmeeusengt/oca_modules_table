@@ -7,11 +7,11 @@ Welcome to stageopdracht's documentation!
 #########################################
 
 Below is a table of contents. If you enter any page, you can come back to this page by clicking
-"Table of Contents" in the top left menu. Below that you can see the table of contents for the page
-you're currently on (except on this page).
+"Table of Contents" in the top left menu (All the way at the bottom for mobile and small screens). Right below that you
+can see the table of contents for the page you're currently on (except on this page).
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
 
     user_guide/pages

@@ -13,28 +13,28 @@
     <tr>
         <td>{{ mod.addon }}</td>
         {% if mod.version_8 == '-' %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td><a target="_blank" href="https://github.com/OCA/{{ mod.repo_name }}/tree/8.0/{{ mod.addon }}">
             {{ mod.version_8 }}</a></td>
         {% endif %}
 
         {% if mod.version_9 == '-' %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td><a target="_blank" href="https://github.com/OCA/{{ mod.repo_name }}/tree/9.0/{{ mod.addon }}">
             {{ mod.version_9 }}</a></td>
         {% endif %}
 
         {% if mod.version_10 == '-' %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td><a target="_blank" href="https://github.com/OCA/{{ mod.repo_name }}/tree/10.0/{{ mod.addon }}">
             {{ mod.version_10 }}</a></td>
         {% endif %}
 
         {% if mod.version_11 == '-' %}
-        <td>-</td>
+        <td></td>
         {% else %}
         <td><a target="_blank" href="https://github.com/OCA/{{ mod.repo_name }}/tree/11.0/{{ mod.addon }}">
             {{ mod.version_11 }}</a></td>

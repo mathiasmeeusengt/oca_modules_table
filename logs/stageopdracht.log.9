@@ -1,15 +1,4 @@
-2018-05-23 13:06:27,066 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:06:46,752 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:12:28,970 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:18:29,343 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:18:33,936 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:18:38,426 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 13:18:44,400 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 16:57:06,290 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-23 16:57:16,586 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 13:08:51,405 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 13:34:39,393 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 13:35:34,891 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-25 13:18:56,130 ERROR: Exception on /update_repository/account-analytic [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,99 +12,73 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 88, in search_module
-    rating=rating, review=review, readme=readme)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 134, in render_template
-    context, ctx.app)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\templating.py", line 116, in _render
-    rv = template.render(context)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
+    update_single_repository(repository)
+  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
+    repository = get_one_repository(repository1)
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
+    user = get_oca_user()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
+    user_oca = g.get_user('OCA')
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
+    "/users/" + login
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
+    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
+2018-05-25 13:22:14,297 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 09:27:44,489 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:03:52,911 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 10:03:57,350 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: module.customer_8
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 76, in search_module
+    form.search_readme.data, form.installable_bool.data)
+  File "D:\flask\stageopdracht\app\functions.py", line 337, in search_module_f
+    (getattr(Module, version_x) == 'X')).all()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2737, in all
+    return list(self)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
     raise value.with_traceback(tb)
-  File "D:\flask\stageopdracht\app\templates\search_results_module.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "D:\flask\stageopdracht\app\templates\base.html", line 20, in top-level template code
-    {% block content %} {% endblock %}
-  File "D:\flask\stageopdracht\app\templates\search_results_module.html", line 5, in block "content"
-    parameters: {{ type(version_x) }}
-jinja2.exceptions.UndefinedError: 'type' is undefined
-2018-05-24 13:47:44,523 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 13:49:07,591 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 14:24:48,312 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-24 14:33:00,036 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 09:19:06,602 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 09:21:43,574 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 09:22:10,333 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 10:05:22,648 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:03:15,934 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:05:21,790 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:05:58,508 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:06:46,044 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:07:48,289 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 11:09:04,071 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 12:15:04,192 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 12:15:28,252 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 13:12:00,900 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-25 13:12:16,343 ERROR: Exception on /update_repository/calendar [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
-    update_single_repository(repository)
-  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
-    repository = get_one_repository(repository1)
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
-    user = get_oca_user()
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
-    user_oca = g.get_user('OCA')
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
-    "/users/" + login
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
-    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
-    raise self.__createException(status, responseHeaders, output)
-github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
-2018-05-25 13:13:24,717 ERROR: Exception on /update_repository/account-budgeting [GET] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 160, in update_repository
-    update_single_repository(repository)
-  File "D:\flask\stageopdracht\app\functions.py", line 57, in update_single_repository
-    repository = get_one_repository(repository1)
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 32, in get_one_repository
-    user = get_oca_user()
-  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
-    user_oca = g.get_user('OCA')
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
-    "/users/" + login
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
-    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
-    raise self.__createException(status, responseHeaders, output)
-github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: module.customer_8 [SQL: 'SELECT module.id AS module_id, module.addon AS module_addon, module.version AS module_version, module.summary AS module_summary, module.customer_8 AS module_customer_8, module.customer_9 AS module_customer_9, module.customer_10 AS module_customer_10, module.customer_11 AS module_customer_11, module.vertical_8 AS module_vertical_8, module.vertical_9 AS module_vertical_9, module.vertical_10 AS module_vertical_10, module.vertical_11 AS module_vertical_11, module.version_8 AS module_version_8, module.version_9 AS module_version_9, module.version_10 AS module_version_10, module.version_11 AS module_version_11, module.installable_8 AS module_installable_8, module.installable_9 AS module_installable_9, module.installable_10 AS module_installable_10, module.installable_11 AS module_installable_11, module.readme_8 AS module_readme_8, module.readme_9 AS module_readme_9, module.readme_10 AS module_readme_10, module.readme_11 AS module_readme_11, module.readme_text_8 AS module_readme_text_8, module.readme_text_9 AS module_readme_text_9, module.readme_text_10 AS module_readme_text_10, module.readme_text_11 AS module_readme_text_11, module.rating_8 AS module_rating_8, module.rating_9 AS module_rating_9, module.rating_10 AS module_rating_10, module.rating_11 AS module_rating_11, module.review_8 AS module_review_8, module.review_9 AS module_review_9, module.review_10 AS module_review_10, module.review_11 AS module_review_11, module.repo_name AS module_repo_name \nFROM module \nWHERE module.addon LIKE ? AND module.version_8 = ?'] [parameters: ('%account%', 'X')] (Background on this error at: http://sqlalche.me/e/e3q8)

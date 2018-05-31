@@ -1,98 +1,4 @@
-2018-05-28 13:27:58,695 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 88, in search_module
-    rating=rating, review=review, readme=readme))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'search_results_module' with values ['installable', 'modules', 'rating', 'readme', 'review', 'search_readme', 'title', 'version_x']. Did you mean 'search_module' instead?
-2018-05-28 13:30:51,516 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:30:55,716 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 88, in search_module
-    rating=rating, review=review, readme=readme))
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 333, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\helpers.py", line 323, in url_for
-    force_external=external)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'search_results_module' with values ['installable', 'modules', 'rating', 'readme', 'review', 'search_readme', 'title', 'version_x']. Did you mean 'search_module' instead?
-2018-05-28 13:34:13,606 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:36:15,723 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:37:03,491 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:37:46,768 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:38:14,545 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:39:06,062 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:39:16,307 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:40:49,132 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:41:19,156 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:42:00,994 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:42:31,386 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:42:46,463 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:43:09,237 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:43:24,777 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:43:58,408 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:48:01,829 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:48:28,597 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:52:25,140 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:52:48,732 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:56:46,777 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 13:58:09,816 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:00:52,812 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:01:41,955 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:02:59,087 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:03:17,465 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:04:05,454 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:20:57,613 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:26:02,693 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:26:13,004 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:28:59,478 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:29:11,952 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:31:03,996 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:40:58,674 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:42:31,232 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:43:36,587 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:45:42,855 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:47:25,711 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:51:29,583 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:52:02,223 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-28 14:52:10,884 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-28 14:54:55,217 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -119,3 +25,104 @@ Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\werkzeug\routing.py", line 1776, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'version_details' with values ['module', 'version_x']. Did you forget to specify values ['repository']?
+2018-05-28 14:55:26,348 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 14:56:27,369 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 14:58:11,841 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:03:23,292 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:04:38,652 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:05:00,890 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:24:37,837 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:29:19,411 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:29:23,003 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:38:12,853 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:38:40,057 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:40:11,446 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:41:10,540 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:41:14,996 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 156, in edit_module
+    module.append(setattr(module, m_vertical, vertical_str))
+AttributeError: 'Module' object has no attribute 'append'
+2018-05-28 15:43:22,323 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:59:20,627 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 15:59:47,744 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 157, in edit_module
+    vertical.append(', ' + vertical_str)
+AttributeError: 'str' object has no attribute 'append'
+2018-05-28 16:00:08,147 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:00:13,160 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 157, in edit_module
+    vertical.add(', ' + vertical_str)
+AttributeError: 'str' object has no attribute 'add'
+2018-05-28 16:16:41,064 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:20:51,186 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:23:05,733 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:23:36,247 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:31:56,803 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:41:48,506 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-28 16:42:34,551 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 09:29:37,507 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 09:30:21,837 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 09:31:58,223 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 09:32:02,003 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 10:00:17,858 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 10:02:33,468 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 11:20:40,042 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 11:27:27,308 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 11:28:59,055 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-29 11:57:07,403 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 156, in edit_module
+    if customer_str != '':
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+2018-05-29 13:22:03,025 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

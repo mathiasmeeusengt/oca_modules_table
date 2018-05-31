@@ -33,19 +33,21 @@
             
   <div class="section" id="how-to">
 <h1>How-to<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h1>
-<p>This page will explain how to perform certain actions, eg.: update a repository, in the
-application.</p>
+<p><em>This page will explain how to perform certain actions (eg.: update a repository) in the
+application.</em></p>
 <div class="section" id="look-up-a-repository">
 <h2>Look up a repository<a class="headerlink" href="#look-up-a-repository" title="Permalink to this headline">¶</a></h2>
 <p>You can look up a repository on a couple of pages: <strong>Full table</strong>, <strong>Search repository</strong> and
 <strong>Table per version</strong>.</p>
-<p>In <strong>Full table</strong>, you get an overview of every repository in the database. You can use the
+<p>In <strong>Full table</strong>, you see an overview of every repository in the database. You can use the
 search-function of your browser to look for a repository, or use the application’s search-page to
 filter based on some properties.</p>
 <p>On the page <strong>Search repository</strong>, you can enter a keyword to look in a more specific way. There’s
-also the option to set a few properties, in scope and BP.  Along with the keyword, this will affect
-which repositories you will see in the search results. Every field/option is optional to fill in,
-and leaving everything at the default value will result in a table that is the same as <strong>Full table</strong>.</p>
+also the option to set a few properties, in scope, BP and Select version. Along with the keyword, this will affect
+which repositories you will see in the search results. Select version does not alter which repositories will be shown,
+and is only used to display the right modules if you click on the name of the repository in the results table.
+Every field/option is optional to fill in, and leaving everything at the default value will result in a table
+that is the same as <strong>Full table</strong>.</p>
 <p>And lastly you can use the page <strong>Table per version</strong>. After you’ve selected a version, the table will
 only show repositories that have modules in that specific version. So if the repository has modules,
 but none exist in the selected version, it is not shown.</p>
@@ -64,23 +66,23 @@ Except: “Select Version” and “Installable: All Results”. Installable: Tr
 <p><strong>Module</strong> is a text field where you can input a keyword. When the search-button is pressed, this keyword will
 be compared to the names of modules. Modules that match the keyword, and other options that are selected,
 will be shown in the results table.</p>
-<p><strong>Select Version</strong> field selects in which version you want to look for modules. This field has a default value
+<p>The <strong>Select Version</strong> field selects in which version you want to look for modules. This field has a default value
 selected and can be changed to a different selection, but it cannot be unselected.</p>
-<p><strong>Installable</strong> filter will select what the installable property of the modules is. It’s possible to choose from
+<p>The <strong>Installable</strong> filter will select what the installable property of the modules is. It’s possible to choose from
 True, False or both (All results). Again, if you select True or False, this is enough to perform a search on,
 this is not the case if “All results” is still selected. (If another filter or option is filled in, All results
 will work.)</p>
 <p><strong>Customer</strong> and <strong>Vertical</strong> are two separate fields, but work the same. Here you can fill in the name of a
-Customer and Vertical, in their assigned textboxes. Any modules matching the entered text will show up in the results.
+Customer and Vertical, in their respective textboxes. Any modules matching the entered text will show up in the results.
 They always work, either if one field is filled in, or both.</p>
 <p><strong>Search in Readme</strong>, last but not least. If this checkbox is checked, the search will look in readme files
-of modules instead of the names for the entered text in “Module”.</p>
+of modules <strong>instead</strong> of the names for the entered text in “Module”.</p>
 <p>It is possible to look up multiple words at once, if “Search in Readme” is checked. The words will be searched for in
 the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
 an exact match.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If “Search in Readme” is checked, the keyword inputted in “Module” will no longer look for the name of
+<p class="last">If “Search in Readme” is checked, the keyword(s) inputted in “Module” will no longer look for the name of
 the modules, but only in the readme.</p>
 </div>
 <p>Another way to look up a module is via any table that also shows repositories. When you are looking
@@ -98,13 +100,15 @@ should take you out of your current page, back to the previous one.</p>
 <p class="last">It is possible that by pressing Back after filling in and submitting a form ,
 the submitted data will not be written to the database. (Except with search-forms)</p>
 </div>
+<p>When pressing “Back” after performing a search, you will be taken to the form, with all the filters and options
+filled in like they were.</p>
 <p>Try to avoid using the “Back” button when you’ve written a review or edited a repository.</p>
 </div>
 <div class="section" id="update">
 <h2>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
 <p>This section explains how to update either the whole database or just a single repository.
 As you shouldn’t need these buttons/links very often, all the update actions are confined
-to <strong>Full table</strong> to keep clutter in other tables to a minimum.</p>
+to the page <strong>Full table</strong> to keep clutter in other tables, which display more information, to a minimum.</p>
 <div class="section" id="update-everything">
 <h3>Update everything<a class="headerlink" href="#update-everything" title="Permalink to this headline">¶</a></h3>
 <p>To update the whole database, visit the <strong>Full table</strong> page. Scroll all the way to the bottom and
@@ -131,7 +135,7 @@ the application will run a mini-version of the <code class="docutils literal not
 </div>
 <div class="section" id="edit-repository">
 <h2>Edit repository<a class="headerlink" href="#edit-repository" title="Permalink to this headline">¶</a></h2>
-<p><em>Affects: In scope, BP, employee</em></p>
+<p><em>Affects Repository: In scope, BP, employee</em></p>
 <p>If you edit a repository, you can specify if it’s <code class="docutils literal notranslate"><span class="pre">in</span> <span class="pre">scope</span></code> of the company, which <code class="docutils literal notranslate"><span class="pre">BP</span></code> it’s
 linked to, and an <code class="docutils literal notranslate"><span class="pre">employee</span></code> who has experience with this repository. To do this, you can go
 to any repository table: <strong>Full Table</strong>, <strong>Search Repository</strong>’s search results
@@ -141,7 +145,7 @@ select the above mentioned items.</p>
 </div>
 <div class="section" id="edit-module">
 <h2>Edit module<a class="headerlink" href="#edit-module" title="Permalink to this headline">¶</a></h2>
-<p><em>Affects: customer, vertical</em></p>
+<p><em>Affects Module: customer, vertical</em></p>
 <p>To edit a module you can click on <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Module</span></code> in <strong>Search Module</strong>’s results table or from
 the module table in <strong>Table per Version</strong>. On this page you can fill in the <strong>Customers</strong> and <strong>Verticals</strong>
 this module is used in. You can enter multiple names at once, given that they are separated by a space.
@@ -153,7 +157,7 @@ button to write the changes to the database.</p>
 </div>
 <div class="section" id="edit-rating-and-review">
 <h2>Edit rating and review<a class="headerlink" href="#edit-rating-and-review" title="Permalink to this headline">¶</a></h2>
-<p><em>Affects: rating, review</em></p>
+<p><em>Affects Module: rating, review</em></p>
 <p>When you have a version specific module table (so not from Full Table) on your screen, you can click
 “Write review”. This clickable link is in the last column of a module record. Clicking on
 it will take you to a form, here you can assign a number and write a review. Optionally, you can

@@ -1,44 +1,4 @@
-2018-05-29 14:46:57,519 ERROR: Exception on /edit_module/account_analytic_line_list/version_8 [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
-Traceback (most recent call last):
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
-    raise value
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "D:\flask\stageopdracht\app\routes.py", line 149, in edit_module
-    form.customer_delete.data,
-AttributeError: 'EditModuleForm' object has no attribute 'customer_delete'
-2018-05-29 14:47:15,259 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:54:45,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:55:02,511 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:55:25,542 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 14:55:47,455 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:00:54,790 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:05:37,532 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:06:02,327 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:06:22,421 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:11:25,552 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:11:46,050 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:40:09,136 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 15:58:42,047 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:14:34,235 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:14:49,911 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:15:15,482 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:16:11,862 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:18:55,409 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:19:23,783 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:19:50,286 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:20:11,811 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-29 16:20:36,046 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:02:24,395 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:02:37,482 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+2018-05-30 10:32:33,560 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,22 +14,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
     form.customers.data, form.verticals.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 84, in search_module_f
-    modules = Module.query.filter(and_(query)).all()
-  File "<string>", line 2, in and_
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1959, in and_
-    return cls._construct(operators.and_, True_, False_, *clauses)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1893, in _construct
-    util.coerce_generator_arg(clauses)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1892, in <listcomp>
-    for clause in
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4254, in _expression_literal_as_text
-    return _literal_as_text(element, warn=True)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4275, in _literal_as_text
-    "instead" % type(element)
-sqlalchemy.exc.ArgumentError: SQL expression object or string expected, got object of type <class 'tuple'> instead
-2018-05-30 10:04:11,161 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:04:15,299 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 187, in search_module_f
+    # # fill customer_list, pass if no values
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 10:32:46,342 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,25 +46,24 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
     form.customers.data, form.verticals.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 84, in search_module_f
-    modules = Module.query.filter(and_(query)).all()
-  File "<string>", line 2, in and_
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1959, in and_
-    return cls._construct(operators.and_, True_, False_, *clauses)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1893, in _construct
-    util.coerce_generator_arg(clauses)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 1892, in <listcomp>
-    for clause in
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4254, in _expression_literal_as_text
-    return _literal_as_text(element, warn=True)
-  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 4275, in _literal_as_text
-    "instead" % type(element)
-sqlalchemy.exc.ArgumentError: SQL expression object or string expected, got object of type <class 'tuple'> instead
-2018-05-30 10:19:46,138 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:21:20,693 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:24:10,106 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:27:21,687 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
-2018-05-30 10:27:52,100 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 187, in search_module_f
+    # # fill customer_list, pass if no values
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 11:30:24,537 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-30 11:30:38,749 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
 Traceback (most recent call last):
   File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -119,7 +79,59 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
     form.customers.data, form.verticals.data)
-  File "D:\flask\stageopdracht\app\my_scribbles.py", line 117, in search_module_f
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 171, in search_module_f
     modules = Module.query.filter(and_(*query)).all()
-UnboundLocalError: local variable 'query' referenced before assignment
-2018-05-30 10:30:08,083 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 11:30:58,521 ERROR: Exception on /search_module [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 81, in search_module
+    form.customers.data, form.verticals.data)
+  File "D:\flask\stageopdracht\app\my_scribbles.py", line 171, in search_module_f
+    modules = Module.query.filter(and_(*query)).all()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 692, in operate
+    return op(self.comparator, *other, **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\operators.py", line 411, in __getitem__
+    return self.operate(getitem, index)
+  File "<string>", line 1, in <lambda>
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\type_api.py", line 63, in operate
+    return o[0](self.expr, op, *(other + o[1:]), **kwargs)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 192, in _getitem_impl
+    _unsupported_impl(expr, op, other, **kw)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\sqlalchemy\sql\default_comparator.py", line 197, in _unsupported_impl
+    "this expression" % op.__name__)
+NotImplementedError: Operator 'getitem' is not supported on this expression
+2018-05-30 16:13:02,943 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 09:15:19,294 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:36:30,221 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:36:42,431 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:36:48,169 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:38:38,243 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:53:43,026 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-05-31 10:53:49,449 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

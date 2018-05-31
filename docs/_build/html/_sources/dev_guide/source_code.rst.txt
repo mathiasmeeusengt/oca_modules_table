@@ -433,3 +433,9 @@ Version_functions
 *****************
 
 ``Search_version_modules(version_x, repo)``: Three new lines are required in the if/elif section.
+
+
+Templates
+*********
+
+**detail.html**: A new if-block is required. Copy from a previous version and change the version number three times.
