@@ -22,7 +22,7 @@ class VersionSelectionForm(FlaskForm):
     submit = SubmitField('Select Version')
 
 
-# search repository form,
+# search repository form
 class SearchRepositoryForm(FlaskForm):
     repository = StringField('Repository:', default='')
     in_scope = RadioField('Filter repositories in scope:',
@@ -99,8 +99,6 @@ class EditRepositoryForm(FlaskForm):
 
 # edit module form
 class EditModuleForm(FlaskForm):
-    # customer_delete = StringField('Customer(s) to be deleted:', default='')
-    # vertical_delete = StringField('Customer(s) to be deleted:', default='')
 
     customer_str = StringField('Customer(s) to add:', default='')
     vertical_str = StringField('Vertical(s) to add:', default='')

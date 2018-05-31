@@ -285,41 +285,41 @@ def search_module_f(form_module_data,
 
     # Module search parameters
     if form_module_data != '':
-        query = exists, like_module
+        query = exists
         if form_search_readme_data is True:
-            query = exists, like_module, like_readme
+            query = exists, like_readme
             if customer_data != '':
-                query = exists, like_module, like_readme, like_customer
+                query = exists, like_readme, like_customer
                 if vertical_data != '':
-                    query = exists, like_module, like_readme, like_customer, like_vertical
+                    query = exists, like_readme, like_customer, like_vertical
                     if form_installable_bool_data == 'True:':
-                        query = exists, like_module, like_readme, like_customer, like_vertical, install_true
+                        query = exists, like_readme, like_customer, like_vertical, install_true
                     elif form_installable_bool_data == 'False':
-                        query = exists, like_module, like_readme, like_customer, like_vertical, install_false
+                        query = exists, like_readme, like_customer, like_vertical, install_false
                     else:
-                        query = exists, like_module, like_readme, like_customer, like_vertical  # could be a pass
+                        query = exists, like_readme, like_customer, like_vertical  # could be a pass
                 else:
                     if form_installable_bool_data == 'True:':
-                        query = exists, like_module, like_readme, like_customer, install_true
+                        query = exists, like_readme, like_customer, install_true
                     elif form_installable_bool_data == 'False':
-                        query = exists, like_module, like_readme, like_customer, install_false
+                        query = exists, like_readme, like_customer, install_false
                     else:
-                        query = exists, like_module, like_readme, like_customer  # could be a pass
+                        query = exists, like_readme, like_customer  # could be a pass
             elif vertical_data != '':
-                query = exists, like_module, like_readme, like_vertical
+                query = exists, like_readme, like_vertical
                 if form_installable_bool_data == 'True:':
-                    query = exists, like_module, like_readme, like_vertical, install_true
+                    query = exists, like_readme, like_vertical, install_true
                 elif form_installable_bool_data == 'False':
-                    query = exists, like_module, like_readme, like_vertical, install_false
+                    query = exists, like_readme, like_vertical, install_false
                 else:
-                    query = exists, like_module, like_readme, like_vertical  # could be a pass
+                    query = exists, like_readme, like_vertical  # could be a pass
             else:
                 if form_installable_bool_data == 'True':
-                    query = exists, like_module, like_readme, install_true
+                    query = exists, like_readme, install_true
                 elif form_installable_bool_data == 'False':
-                    query = exists, like_module, like_readme, install_false
+                    query = exists, like_readme, install_false
                 else:
-                    query = exists, like_module, like_readme
+                    query = exists, like_readme
         else:
             query = exists, like_module  # could be a pass
             if customer_data != '':
@@ -550,100 +550,3 @@ def edit_module_f(version, module, customer_str, vertical_str, customer_delete, 
 
     db.session.commit()
     pass
-
-
-# ==============================================================================================================
-# All functions below are currently not used, but still kept just in case.
-# "converted" means the function was taken to the new update_repositories() and edited/merged for better performance
-# ===========================================================================================================
-
-
-# import requests
-# from app import db
-#
-#
-# # converted
-# def check_if_readme_exists(url_to_check):
-#     request = requests.get(url_to_check)
-#     if request.status_code < 400:
-#         return "readme"
-#     else:
-#         return "-"
-#     pass
-#
-#
-# # converted
-# # Check URL and return "X" or "-" depending on the returned code
-# def check_if_url_is_valid(url_to_check):
-#     # can maybe be optimised by only requesting/checking headers
-#     # http://docs.python-requests.org/en/latest/user/advanced/?highlight=download#http-verbs
-#     request = requests.get(url_to_check)
-#     if request.status_code < 400:
-#         return "X"
-#     else:
-#         return "-"
-#
-#
-# # converted
-# def module_url_tester(m):
-#     from app.models import Module
-#     module = Module.query.filter_by(addon=m.addon).first()
-#     module.version_8 =
-# check_if_url_is_valid("https://github.com/OCA/" + module.repo_name + "/tree/8.0/" + module.addon)
-#     module.version_9 =
-# check_if_url_is_valid("https://github.com/OCA/" + module.repo_name + "/tree/9.0/" + module.addon)
-#     module.version_10 =
-# check_if_url_is_valid("https://github.com/OCA/" + module.repo_name + "/tree/10.0/" + module.addon)
-#     module.version_11 =
-# check_if_url_is_valid("https://github.com/OCA/" + module.repo_name + "/tree/11.0/" + module.addon)
-#     db.session.commit()
-#     pass
-#
-#
-# # converted
-# def get_one_repo_module_and_url_test(repository):
-#     from app.models import Module
-#     module = Module.query.filter_by(repo_name=repository.repository)
-#     for m in module:
-#         module_url_tester(m)
-#     pass
-#
-#
-# # converted
-# def get_all_repo_modules_and_url_test():
-#     from app.models import Repository, Module
-#     repos = Repository.query.all()
-#     for repo in repos:
-#         modules = Module.query.filter_by(repo_name=repo.repository)
-#         for module in modules:
-#             module_url_tester(module)
-#         pass
-#     pass
-#
-#
-# # converted
-# def module_counter(repo):
-#     from app.models import Module, Repository
-#     '''m61 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_6="X").count()
-#     repo.m_6_1 = m61
-#     m7 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_7="X").count()
-#     repo.m_7 = m7'''
-#     m8 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_8="X").count()
-#     repo.m_8 = m8
-#     m9 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_9="X").count()
-#     repo.m_9 = m9
-#     m10 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_10="X").count()
-#     repo.m_10 = m10
-#     m11 = Module.query.filter_by(repo_name=repo.repository).filter_by(version_11="X").count()
-#     repo.m_11 = m11
-#     db.session.commit()
-#     pass
-#
-#
-# # converted
-# def count_modules_per_version():
-#     from app.models import Repository
-#     repo_list = Repository.query.order_by(Repository.id).all()
-#     for repo in repo_list:
-#         module_counter(repo)
-#     pass

@@ -38,6 +38,10 @@ few differences. The options are different and there's a checkbox too.
 
 Now all the different filters and options will be explained.
 
+**Module** is a text field where you can input a keyword. When the search-button is pressed, this keyword will
+be compared to the names of modules. Modules that match the keyword, and other options that are selected,
+will be shown in the results table.
+
 **Select Version** field selects in which version you want to look for modules. This field has a default value
 selected and can be changed to a different selection, but it cannot be unselected.
 
@@ -50,12 +54,17 @@ will work.)
 Customer and Vertical, in their assigned textboxes. Any modules matching the entered text will show up in the results.
 They always work, either if one field is filled in, or both.
 
-**Search in Readme**, last but not least. If this checkbox is checked, the search will also look in readme files
-of modules for the entered text in "Module".
+**Search in Readme**, last but not least. If this checkbox is checked, the search will look in readme files
+of modules instead of the names for the entered text in "Module".
 
 It is possible to look up multiple words at once, if "Search in Readme" is checked. The words will be searched for in
 the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
 an exact match.
+
+.. note::
+
+    If "Search in Readme" is checked, the keyword inputted in "Module" will no longer look for the name of
+    the modules, but only in the readme.
 
 Another way to look up a module is via any table that also shows repositories. When you are looking
 at such a table, simply click on a repository's name. This will take you to one of two tables.
@@ -131,7 +140,7 @@ Edit module
 
 *Affects: customer, vertical*
 
-To edit a module you can click on ``Edit Repository`` in **Search Module**'s results table or from
+To edit a module you can click on ``Edit Module`` in **Search Module**'s results table or from
 the module table in **Table per Version**. On this page you can fill in the **Customers** and **Verticals**
 this module is used in. You can enter multiple names at once, given that they are separated by a space.
 If the name contains a space, replace the space in the name by an underscore '_'.  There's also the option

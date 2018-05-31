@@ -61,6 +61,9 @@ few differences. The options are different and there’s a checkbox too.</p>
 Except: “Select Version” and “Installable: All Results”. Installable: True / False do work on their own.</p>
 </div>
 <p>Now all the different filters and options will be explained.</p>
+<p><strong>Module</strong> is a text field where you can input a keyword. When the search-button is pressed, this keyword will
+be compared to the names of modules. Modules that match the keyword, and other options that are selected,
+will be shown in the results table.</p>
 <p><strong>Select Version</strong> field selects in which version you want to look for modules. This field has a default value
 selected and can be changed to a different selection, but it cannot be unselected.</p>
 <p><strong>Installable</strong> filter will select what the installable property of the modules is. It’s possible to choose from
@@ -70,11 +73,16 @@ will work.)</p>
 <p><strong>Customer</strong> and <strong>Vertical</strong> are two separate fields, but work the same. Here you can fill in the name of a
 Customer and Vertical, in their assigned textboxes. Any modules matching the entered text will show up in the results.
 They always work, either if one field is filled in, or both.</p>
-<p><strong>Search in Readme</strong>, last but not least. If this checkbox is checked, the search will also look in readme files
-of modules for the entered text in “Module”.</p>
+<p><strong>Search in Readme</strong>, last but not least. If this checkbox is checked, the search will look in readme files
+of modules instead of the names for the entered text in “Module”.</p>
 <p>It is possible to look up multiple words at once, if “Search in Readme” is checked. The words will be searched for in
 the order that they were inputted. If no results are returned, try searching with less words to make it easier to find
 an exact match.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If “Search in Readme” is checked, the keyword inputted in “Module” will no longer look for the name of
+the modules, but only in the readme.</p>
+</div>
 <p>Another way to look up a module is via any table that also shows repositories. When you are looking
 at such a table, simply click on a repository’s name. This will take you to one of two tables.
 Either the <strong>Full table</strong> variant, or the <strong>Table per version</strong> one. The difference is that the
@@ -134,7 +142,7 @@ select the above mentioned items.</p>
 <div class="section" id="edit-module">
 <h2>Edit module<a class="headerlink" href="#edit-module" title="Permalink to this headline">¶</a></h2>
 <p><em>Affects: customer, vertical</em></p>
-<p>To edit a module you can click on <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Repository</span></code> in <strong>Search Module</strong>’s results table or from
+<p>To edit a module you can click on <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Module</span></code> in <strong>Search Module</strong>’s results table or from
 the module table in <strong>Table per Version</strong>. On this page you can fill in the <strong>Customers</strong> and <strong>Verticals</strong>
 this module is used in. You can enter multiple names at once, given that they are separated by a space.
 If the name contains a space, replace the space in the name by an underscore ‘_’.  There’s also the option
