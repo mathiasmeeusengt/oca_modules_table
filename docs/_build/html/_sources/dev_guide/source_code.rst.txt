@@ -478,6 +478,8 @@ Update Docs
 
 The entire application is available on github: https://github.com/mathiasmeeusengt/oca_modules_table
 
+Linux operating system is recommended, or Windows with python already installed.
+
 To update the docs, two programs are needed. GitHub Desktop and a text editor that can work with RestructuredText
 (I used PyCharm Community Edition).
 Alternatives are using github in a console window with commands, but GitHub Desktop provides a GUI to make
@@ -530,8 +532,21 @@ These files can be edited in your text editor to update or change the documentat
 section, at the top right under the subtitle "Update Docs" is a guide / cheatsheet to the basics
 of Restructuredtext.
 
-If the files are edited as desired (and saved), they need to be pushed to GitHub. This can be done from
-GitHub Desktop:
+If the files are edited as desired (and saved), they need to be build into html and pushed to GitHub.
+This can be done with sphinx and GitHub Desktop:
+
+To install sphinx on Linux (Debian/Ubuntu):
+* ``apt-get install python3-sphinx``
+* or with PyPi: ``pip install -U sphinx``
+* http://www.sphinx-doc.org/en/master/usage/installation.html#linux
+
+To install sphinx on Windows without python: Follow the guide from the url right above here (scroll down a bit)
+
+Once sphinx is installed, open your favorite terminal/CLI, and navigate to the project's location on disk so
+that the reads something like ``x\...\x\docs``. Then type ``make html`` and press enter. The updated .rst files
+are now made into .html files in _build.
+
+To push your new edits to GitHub, open GitHub Desktop and follow the steps below (View image below the steps):
 
 1. Put something in the summary, as this is required
 2. Commit to <branch>(usually "master")
@@ -539,14 +554,29 @@ GitHub Desktop:
 
 .. image:: commit_push.png
 
-Webhooks from ReadtheDocs.org should handle the rest automatically to update the online documentation
+Now you need to login / link your GitHub account to ReadtheDocs.org ( https://readthedocs.org/ ).
+Once you are logged in:
 
+1. Go to "My Projects" (View image below).
 
+.. image:: rtd_myprojects.png
 
+2. "Import a Project
 
+.. image:: rtd_import.png
 
+3. Click on the right project from your GitHub account
 
+.. image:: rtd_import_project.png
 
+Now ReadtheDocs should automatically update your documentation and place it online for everyone to
+browse to. Webhooks that were set up when you imported your project trigger ReadtheDocs to update the
+documentation.
 
+If this is not the case, give it manually a bump by going to:
 
+    1. My Projects
+    2. "project_name"(click on it)
+    3. "Build version" (You may need to scroll down a bit) (View image below)
 
+.. image:: rtd_build.png

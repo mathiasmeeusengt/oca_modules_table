@@ -400,6 +400,7 @@ repositories based on the old BP.</p>
 <h3>Update Docs<a class="headerlink" href="#update-docs" title="Permalink to this headline">¶</a></h3>
 <p><em>RestructuredText introduction:</em> <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html</a></p>
 <p>The entire application is available on github: <a class="reference external" href="https://github.com/mathiasmeeusengt/oca_modules_table">https://github.com/mathiasmeeusengt/oca_modules_table</a></p>
+<p>Linux operating system is recommended, or Windows with python already installed.</p>
 <p>To update the docs, two programs are needed. GitHub Desktop and a text editor that can work with RestructuredText
 (I used PyCharm Community Edition).
 Alternatives are using github in a console window with commands, but GitHub Desktop provides a GUI to make
@@ -448,15 +449,49 @@ create the online documentation automatically.</li>
 These files can be edited in your text editor to update or change the documentation. The first link in this
 section, at the top right under the subtitle “Update Docs” is a guide / cheatsheet to the basics
 of Restructuredtext.</p>
-<p>If the files are edited as desired (and saved), they need to be pushed to GitHub. This can be done from
-GitHub Desktop:</p>
+<p>If the files are edited as desired (and saved), they need to be build into html and pushed to GitHub.
+This can be done with sphinx and GitHub Desktop:</p>
+<p>To install sphinx on Linux (Debian/Ubuntu):
+* <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-sphinx</span></code>
+* or with PyPi: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">sphinx</span></code>
+* <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/installation.html#linux">http://www.sphinx-doc.org/en/master/usage/installation.html#linux</a></p>
+<p>To install sphinx on Windows without python: Follow the guide from the url right above here (scroll down a bit)</p>
+<p>Once sphinx is installed, open your favorite terminal/CLI, and navigate to the project’s location on disk so
+that the reads something like <code class="docutils literal notranslate"><span class="pre">x\...\x\docs</span></code>. Then type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> and press enter. The updated .rst files
+are now made into .html files in _build.</p>
+<p>To push your new edits to GitHub, open GitHub Desktop and follow the steps below (View image below the steps):</p>
 <ol class="arabic simple">
 <li>Put something in the summary, as this is required</li>
 <li>Commit to &lt;branch&gt;(usually “master”)</li>
 <li>Push to origin (View image below, the button(3) will change its text once a commit has been made)</li>
 </ol>
 <img alt="../_images/commit_push.png" src="../_images/commit_push.png" />
-<p>Webhooks from ReadtheDocs.org should handle the rest automatically to update the online documentation</p>
+<p>Now you need to login / link your GitHub account to ReadtheDocs.org ( <a class="reference external" href="https://readthedocs.org/">https://readthedocs.org/</a> ).
+Once you are logged in:</p>
+<ol class="arabic simple">
+<li>Go to “My Projects” (View image below).</li>
+</ol>
+<img alt="../_images/rtd_myprojects.png" src="../_images/rtd_myprojects.png" />
+<ol class="arabic simple" start="2">
+<li>“Import a Project</li>
+</ol>
+<img alt="../_images/rtd_import.png" src="../_images/rtd_import.png" />
+<ol class="arabic simple" start="3">
+<li>Click on the right project from your GitHub account</li>
+</ol>
+<img alt="../_images/rtd_import_project.png" src="../_images/rtd_import_project.png" />
+<p>Now ReadtheDocs should automatically update your documentation and place it online for everyone to
+browse to. Webhooks that were set up when you imported your project trigger ReadtheDocs to update the
+documentation.</p>
+<p>If this is not the case, give it manually a bump by going to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>My Projects</li>
+<li>“project_name”(click on it)</li>
+<li>“Build version” (You may need to scroll down a bit) (View image below)</li>
+</ol>
+</div></blockquote>
+<img alt="../_images/rtd_build.png" src="../_images/rtd_build.png" />
 </div>
 </div>
 </div>
