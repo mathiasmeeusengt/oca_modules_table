@@ -1,7 +1,7 @@
 CLI
 ###
 
-This page is intended for developers. Here is explained what you can / need to do in a CLI.
+*This page is intended for developers. Here is explained what you can / need to do in a CLI.*
 
 
 Start the application

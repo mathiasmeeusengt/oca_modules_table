@@ -31,3 +31,90 @@ Traceback (most recent call last):
   File "D:\flask\stageopdracht\app\pygithub_api.py", line 28, in get_oca_repositories
     user_oca_repos = get_oca_user().get_repos().get_page(0)
 AttributeError: 'NoneType' object has no attribute 'get_repos'
+2018-06-01 09:20:49,605 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 09:48:25,495 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 09:49:09,771 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 09:52:03,120 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 10:14:18,589 ERROR: Exception on /table [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 176, in table
+    update_repositories()
+  File "D:\flask\stageopdracht\app\functions.py", line 25, in update_repositories
+    repositories = get_oca_repositories()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 28, in get_oca_repositories
+    user_oca_repos = get_oca_user().get_repos().get_page(0)
+AttributeError: 'NoneType' object has no attribute 'get_repos'
+2018-06-01 10:15:32,735 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 10:15:37,518 ERROR: Exception on /table [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 176, in table
+    update_repositories()
+  File "D:\flask\stageopdracht\app\functions.py", line 25, in update_repositories
+    repositories = get_oca_repositories()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 21, in get_oca_repositories
+    user_oca_repos = get_oca_user().get_repos().get_page(0)
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
+    user_oca = g.get_user('OCA')
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
+    "/users/" + login
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
+    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
+2018-06-01 10:16:03,086 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 10:16:14,205 ERROR: Exception on /table [POST] [in d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "d:\flask\stageopdracht\venv\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\flask\stageopdracht\app\routes.py", line 176, in table
+    update_repositories()
+  File "D:\flask\stageopdracht\app\functions.py", line 25, in update_repositories
+    repositories = get_oca_repositories()
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 21, in get_oca_repositories
+    user_oca_repos = get_oca_user().get_repos().get_page(0)
+  File "D:\flask\stageopdracht\app\pygithub_api.py", line 13, in get_oca_user
+    user_oca = g.get_user('OCA')
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\MainClass.py", line 168, in get_user
+    "/users/" + login
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 169, in requestJsonAndCheck
+    return self.__check(*self.requestJson(verb, url, parameters, headers, input, cnx))
+  File "d:\flask\stageopdracht\venv\lib\site-packages\github\Requester.py", line 182, in __check
+    raise self.__createException(status, responseHeaders, output)
+github.GithubException.BadCredentialsException: 401 {'message': 'Bad credentials', 'documentation_url': 'https://developer.github.com/v3'}
+2018-06-01 10:18:05,015 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]
+2018-06-01 11:46:15,872 INFO: App startup [in D:\flask\stageopdracht\app\__init__.py:33]

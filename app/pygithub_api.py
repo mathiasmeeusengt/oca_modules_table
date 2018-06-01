@@ -9,18 +9,11 @@ Github.per_page = 50
 
 # Log in with user MathiasMeeusengt using personal access token to get OCA user details
 def get_oca_user():
-    try:
-        g = Github('b5935d3156a0ec6ef53125952c7721ae3f31fa32')
-        user_oca = g.get_user('OCA')
-        return user_oca
-    except BadCredentialsException:
-        try:
-            g = Github('4c0ec0d70636055953a0a1cce75c2b5173b71135')
-            user_oca = g.get_user('OCA')
-            return user_oca
-        except BadCredentialsException:
-            print('BadCredentialsException, 401, personal access token stopped working.'
-                  'pygithub_api.py line 10-23')
+    g = Github('f92e0afc29454e34b9679c60e44c4502754065f7')
+    user_oca = g.get_user('OCA')
+    return user_oca
+
+
 
 
 # Get all repositories from OCA

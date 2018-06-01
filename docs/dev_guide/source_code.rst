@@ -1,8 +1,8 @@
 Source Code
 ###########
 
-This page is intended for developers. Here is explained what all the functions are and where code needs to be changed
-in certain events (eg.: adding a new odoo version).
+*This page is intended for developers. Here is explained what all the functions are and where code needs to be changed
+in certain events (eg.: adding a new odoo version).*
 
 Database model
 ==============

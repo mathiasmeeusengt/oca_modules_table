@@ -33,11 +33,11 @@
             
   <div class="section" id="pages">
 <h1>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h1>
-<p><em>This document will explain what information can be found on every page of the application.
+<p><em>This page will explain what information can be found on every page of the application.
 The titles correspond with the pages in the menu of the application.</em></p>
 <div class="section" id="home">
 <h2>Home<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
-<p>This is the homepage of the application. Here you can find short explanations of the pages.
+<p>This is the homepage of the application. Here you can find a short explanation of every page.
 There’s not much else going on.</p>
 </div>
 <div class="section" id="search-repository">
@@ -47,13 +47,14 @@ These filters are:</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong>Repository</strong>: A word to search for the name of a repository</li>
+<li><strong>In scope</strong>: Select if the result is in the scope or not. A repository that is in scope, means that it’s
+relevant for the company (eg.: l10n-brazil is probably not in the scope)</li>
 <li><strong>BP</strong>: Select a BP from the list</li>
-<li><strong>In scope</strong>: Select if the result is in the scope or not</li>
 <li><strong>Select version</strong>: Select a version. This will not affect repository results, but enables clicking on a
 repository’s name to show the modules of the correct version</li>
 </ul>
 </div></blockquote>
-<p>The result will be a table similar to the one described in <strong>Full Table</strong> below here.</p>
+<p>The result will be a table similar to the one described in <strong>Full Table</strong> a bit below here.</p>
 </div>
 <div class="section" id="search-module">
 <h2>Search module<a class="headerlink" href="#search-module" title="Permalink to this headline">¶</a></h2>
@@ -61,11 +62,11 @@ repository’s name to show the modules of the correct version</li>
 These filters are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Module</strong>: A word or even a couple of words (multiple words will only work if ‘search readme’ is checked)</li>
+<li><strong>Module</strong>: Input a word or even a couple of words (multiple words will only work if ‘search readme’ is checked)</li>
 <li><strong>Select version</strong>: Which version the module needs to exist in</li>
 <li><strong>Installable</strong>: If the module is installable (yes/no/both)</li>
-<li><strong>Customer</strong>: A customer or customers to filter on</li>
-<li><strong>Vertical</strong>: A vertical or verticals to filter on</li>
+<li><strong>Customer</strong>: Input a customer to filter on</li>
+<li><strong>Vertical</strong>: Input a vertical to filter on</li>
 <li><strong>Search Readme</strong>: And a checkbox to indicate if the readme should be checked too, instead of only the name</li>
 </ul>
 </div></blockquote>
@@ -101,8 +102,8 @@ When you click on “Full Table” in the menu, you will see a table filled with
 </li>
 </ul>
 </div></blockquote>
-<p>If you click on a repository name, you will see a table filled with modules next. This are
-all the modules that are in the selected repository. In the columns you can see for which
+<p>If you click on a repository name, you will see a table filled with modules. These are
+all the modules that exists in at least one version of the selected repository. In the columns you can see for which
 version every module exists. If it exists, it is indicated as such by an ‘X’.
 Clicking the ‘X’ will take you to the corresponding OCA page.
 If the module does not exist in a version, the cell will be empty.</p>
@@ -110,20 +111,22 @@ If the module does not exist in a version, the cell will be empty.</p>
 <div class="section" id="table-per-version">
 <h2>Table per version<a class="headerlink" href="#table-per-version" title="Permalink to this headline">¶</a></h2>
 <p>This page leads to a table that focuses on detail.
-First you will be required to select an Odoo version from the existing (and relevant) versions.
-After that you are redirected to a table consisting of repositories.
-Each of these repositories contain modules for the selected version.
-If a repository does not contain existing modules for the selected version, it is not shown.</p>
+First you will be required to select an Odoo version from the existing (and relevant, 6.1 and 7 are not included)
+versions. After that you are redirected to a table consisting of repositories. Each of these repositories contain
+modules for the selected version. If a repository does not contain existing modules for the selected version,
+it is not shown.</p>
 <p>You will see the same columns as with <strong>Full Table</strong>, but less rows.
 This is because not every module exists in every version.</p>
 <p>You can click on every Repository. Doing so will present you with a table of modules that are
-part of the repository. Again, you are greeted by a number of rows and columns:</p>
+part of the repository. You are then greeted by a number of rows and columns:</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong>Addon</strong>: The name of the module</li>
 <li><strong>Readme</strong>: If a readme-file exists for this module, a clickable link is shown here</li>
 <li><strong>Installable</strong>: This field indicates if the module is installable or not</li>
 <li><strong>OCA</strong>: This is a clickable link to the module on OCA</li>
+<li><strong>Customer</strong>: Shows all the custmers that have been assigned to this module</li>
+<li><strong>Vertical</strong>: Shows all the verticals that have been assigned to this module</li>
 <li><strong>Rating</strong>: A user can input a rating using ‘write review’ which will be shown here</li>
 <li><strong>Review</strong>: A user can input a review using ‘write review’ which will be shown here</li>
 <li><strong>Write Review</strong>: A clickable link to write a review and assign a score</li>
