@@ -395,13 +395,13 @@ things easier. It’s also possible to use any text editor, but without syntax r
 harder (Errors will not be picked up and shown to the user).</p>
 <p>Now let’s go over the process to get access to the files you want to edit.</p>
 <ol class="arabic simple">
-<li>Log in to a GitHub account</li>
-<li>Browse to the second link under the title “Update Docs”</li>
+<li>Log in to a GitHub account in a browser</li>
+<li>Browse to the second link right above here, under the title “Update Docs”</li>
 <li>Fork the repository by clicking on the fork button (View image below)</li>
 </ol>
 <img alt="../_images/fork_repo.png" src="../_images/fork_repo.png" />
-<p>This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the original. This is
-done so you have all the rights to your own copy.</p>
+<p>This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the
+original. This is done so you have all the rights to your own copy.</p>
 <p>Now to get the files local so you can edit them.</p>
 <ol class="arabic simple" start="4">
 <li>Browse to your forked repository and open the code tab (it should be open already)</li>
@@ -411,8 +411,38 @@ done so you have all the rights to your own copy.</p>
 <ol class="arabic simple" start="6">
 <li>Now open your GitHub Desktop</li>
 <li>In the top menu: File &gt; Clone Repository</li>
-<li>This will open a new window</li>
+<li>This will open a new window, open the third tab “URL”</li>
+<li>Paste the copied URL into the first text field, and choose a local destination to save the files to. Press
+“Clone” when ready (View image below).</li>
 </ol>
+<img alt="../_images/github_desktop_clone_repo.png" src="../_images/github_desktop_clone_repo.png" />
+<p>This will download the files to your PC locally.
+Now it’s time to open your text editor and open the repository (or project in some text editors).
+This is done by clicking something along the lines of “Open Project”, then browsing on your local pc, to the
+directory where the repository was downloaded in step 9. If all is well, you should see a tree structure that
+matches the one on the GitHub repository. Expand directories until you see the directory “docs”. This is the
+place we need to go.</p>
+<p>In the “Docs” directory, there are a couple of subdirectories and files. The important ones are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>_build</strong>: This is where the generated html-pages are placed. Normally no interaction is required here.</li>
+<li><strong>dev_guide</strong>: This is where files targeted to developers (and maintainers of the application) are located.</li>
+<li><strong>user_guide</strong>: This is where files targeted to users are located.</li>
+<li><strong>index.rst</strong>: The Homepage of the docs. The name “index” is critical, otherwise readthedocs.org can not
+create the online documentation automatically.</li>
+</ul>
+</div></blockquote>
+<p>The files that end in <code class="docutils literal notranslate"><span class="pre">.rst</span></code> are the text files (written in restructuredtext) that make up the documentation.
+These files can be edited in your text editor to update or change the documentation. The first link in this
+section, at the top right under the subtitle “Update Docs” is a guide / cheatsheet to the basics
+of Restructuredtext.</p>
+<p>If the files are edited as desired (and saved), they need to be:</p>
+<ol class="arabic simple">
+<li>Commit to &lt;branch&gt;(usually “master”). Putting something in the summary is required</li>
+<li>Pushed to origin (View image below)</li>
+</ol>
+<img alt="../_images/commit_push.png" src="../_images/commit_push.png" />
+<p>Webhooks from ReadtheDocs.org should handle the rest automatically to update the online documentation</p>
 </div>
 </div>
 </div>

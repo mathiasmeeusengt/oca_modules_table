@@ -471,14 +471,14 @@ harder (Errors will not be picked up and shown to the user).
 
 Now let's go over the process to get access to the files you want to edit.
 
-1. Log in to a GitHub account
-2. Browse to the second link under the title "Update Docs"
+1. Log in to a GitHub account in a browser
+2. Browse to the second link right above here, under the title "Update Docs"
 3. Fork the repository by clicking on the fork button (View image below)
 
 .. image:: fork_repo.png
 
-This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the original. This is
-done so you have all the rights to your own copy.
+This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the
+original. This is done so you have all the rights to your own copy.
 
 Now to get the files local so you can edit them.
 
@@ -490,9 +490,46 @@ Now to get the files local so you can edit them.
 6. Now open your GitHub Desktop
 7. In the top menu: File > Clone Repository
 8. This will open a new window, open the third tab "URL"
-9. Paste the copied URL into the first text field, and choose a local destination to save the files to. Click
-   clone when ready (View image below).
+9. Paste the copied URL into the first text field, and choose a local destination to save the files to. Press
+   "Clone" when ready (View image below).
 
 .. image:: github_desktop_clone_repo.png
 
-This will download 
+This will download the files to your PC locally.
+Now it's time to open your text editor and open the repository (or project in some text editors).
+This is done by clicking something along the lines of "Open Project", then browsing on your local pc, to the
+directory where the repository was downloaded in step 9. If all is well, you should see a tree structure that
+matches the one on the GitHub repository. Expand directories until you see the directory "docs". This is the
+place we need to go.
+
+In the "Docs" directory, there are a couple of subdirectories and files. The important ones are:
+
+    * **_build**: This is where the generated html-pages are placed. Normally no interaction is required here.
+    * **dev_guide**: This is where files targeted to developers (and maintainers of the application) are located.
+    * **user_guide**: This is where files targeted to users are located.
+    * **index.rst**: The Homepage of the docs. The name "index" is critical, otherwise readthedocs.org can not
+      create the online documentation automatically.
+
+The files that end in ``.rst`` are the text files (written in restructuredtext) that make up the documentation.
+These files can be edited in your text editor to update or change the documentation. The first link in this
+section, at the top right under the subtitle "Update Docs" is a guide / cheatsheet to the basics
+of Restructuredtext.
+
+If the files are edited as desired (and saved), they need to be:
+
+#. Commit to <branch>(usually "master"). Putting something in the summary is required
+#. Pushed to origin (View image below)
+
+.. image:: commit_push.png
+
+Webhooks from ReadtheDocs.org should handle the rest automatically to update the online documentation
+
+
+
+
+
+
+
+
+
+

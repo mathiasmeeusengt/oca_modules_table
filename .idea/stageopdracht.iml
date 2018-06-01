@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="microblog" />
     <orderEntry type="module" module-name="microblog van tutorial chapter15" />
+    <orderEntry type="module" module-name="stage_dynapps" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

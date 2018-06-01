@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../microblog/.idea/microblog.iml" filepath="$PROJECT_DIR$/../microblog/.idea/microblog.iml" />
       <module fileurl="file://$PROJECT_DIR$/../microblog van tutorial chapter15/.idea/microblog van tutorial chapter15.iml" filepath="$PROJECT_DIR$/../microblog van tutorial chapter15/.idea/microblog van tutorial chapter15.iml" />
+      <module fileurl="file://D:/stage_dynapps/.idea/stage_dynapps.iml" filepath="D:/stage_dynapps/.idea/stage_dynapps.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/stageopdracht.iml" filepath="$PROJECT_DIR$/.idea/stageopdracht.iml" />
     </modules>
   </component>
