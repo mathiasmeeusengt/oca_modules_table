@@ -169,3 +169,11 @@ check a checkbox to delete previous reviews. If this is left unchecked, new revi
 behind existing ones, separated by '||'. When de module is graded and a review is written, click on
 'Place review'. This will save the review. New scores are not added to old scores,
 and only the last score will be shown.
+
+
+Update docs
+===========
+
+How a user can update the docs is described under Source/Maintenance. This requires a little bit of know-how and
+an editor that can read/use reStructuredText.
+( https://oca-modules-table.readthedocs.io/en/latest/dev_guide/source_code.html#maintenance )
