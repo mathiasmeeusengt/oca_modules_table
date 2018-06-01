@@ -174,6 +174,6 @@ and only the last score will be shown.
 Update docs
 ===========
 
-How a user can update the docs is described under Source/Maintenance. This requires a little bit of know-how and
-an editor that can read/use reStructuredText.
+How a user can update the docs is described under Source/Maintenance. This requires a little bit of know-how
+(or a nearby person that knows how it works) and an editor that can read/use reStructuredText.
 ( https://oca-modules-table.readthedocs.io/en/latest/dev_guide/source_code.html#maintenance )

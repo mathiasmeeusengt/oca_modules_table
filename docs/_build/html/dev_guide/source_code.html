@@ -371,6 +371,49 @@ modules returned from <code class="docutils literal notranslate"><span class="pr
 <p><strong>detail.html</strong>: A new if-block is required. Copy from a previous version and change the version number three times.</p>
 </div>
 </div>
+<div class="section" id="update-bp">
+<h3>Update BP<a class="headerlink" href="#update-bp" title="Permalink to this headline">¶</a></h3>
+<p>To add, remove or change a BP only two bits of code require a change.
+Both in the file <strong>forms.py</strong>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">SearchRepositoryForm</span></code>: Edit the <code class="docutils literal notranslate"><span class="pre">choices=[]</span></code> field as needed, the format for an option is
+<code class="docutils literal notranslate"><span class="pre">('value',</span> <span class="pre">'label</span> <span class="pre">text')</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">EditRepositoryForm</span></code>: Edit the <code class="docutils literal notranslate"><span class="pre">choices=[]</span></code> field as needed, the format for an option is <code class="docutils literal notranslate"><span class="pre">('value','label</span> <span class="pre">text')</span></code></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If repositories still have a BP set that will be removed or renamed, it will not be possible to search those
+repositories based on the old BP.</p>
+</div>
+</div>
+<div class="section" id="update-docs">
+<h3>Update Docs<a class="headerlink" href="#update-docs" title="Permalink to this headline">¶</a></h3>
+<p><em>RestructuredText introduction:</em> <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html</a></p>
+<p>The entire application is available on github: <a class="reference external" href="https://github.com/mathiasmeeusengt/oca_modules_table">https://github.com/mathiasmeeusengt/oca_modules_table</a></p>
+<p>To update the docs, two programs are needed. GitHub Desktop and a text editor that can work with RestructuredText
+(I used PyCharm Community Edition).
+Alternatives are using github in a console window with commands, but GitHub Desktop provides a GUI to make
+things easier. It’s also possible to use any text editor, but without syntax recognition, it will make things
+harder (Errors will not be picked up and shown to the user).</p>
+<p>Now let’s go over the process to get access to the files you want to edit.</p>
+<ol class="arabic simple">
+<li>Log in to a GitHub account</li>
+<li>Browse to the second link under the title “Update Docs”</li>
+<li>Fork the repository by clicking on the fork button (View image below)</li>
+</ol>
+<img alt="../_images/fork_repo.png" src="../_images/fork_repo.png" />
+<p>This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the original. This is
+done so you have all the rights to your own copy.</p>
+<p>Now to get the files local so you can edit them.</p>
+<ol class="arabic simple" start="4">
+<li>Browse to your forked repository and open the code tab (it should be open already)</li>
+<li>Click “Clone or download” open and click the button next to the url to copy the link (View image below)</li>
+</ol>
+<img alt="../_images/clone_repo.png" src="../_images/clone_repo.png" />
+<ol class="arabic simple" start="6">
+<li>Now open your GitHub Desktop</li>
+<li>In the top menu: File &gt; Clone Repository</li>
+<li>This will open a new window</li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -437,6 +480,8 @@ modules returned from <code class="docutils literal notranslate"><span class="pr
 <li><a class="reference internal" href="#templates">Templates</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#update-bp">Update BP</a></li>
+<li><a class="reference internal" href="#update-docs">Update Docs</a></li>
 </ul>
 </li>
 </ul>

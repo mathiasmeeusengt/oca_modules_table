@@ -439,3 +439,60 @@ Templates
 *********
 
 **detail.html**: A new if-block is required. Copy from a previous version and change the version number three times.
+
+
+Update BP
+---------
+To add, remove or change a BP only two bits of code require a change.
+Both in the file **forms.py**:
+
+``SearchRepositoryForm``: Edit the ``choices=[]`` field as needed, the format for an option is
+``('value', 'label text')``
+
+``EditRepositoryForm``: Edit the ``choices=[]`` field as needed, the format for an option is ``('value','label text')``
+
+.. warning::
+
+    If repositories still have a BP set that will be removed or renamed, it will not be possible to search those
+    repositories based on the old BP.
+
+
+Update Docs
+-----------
+*RestructuredText introduction:* http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+
+The entire application is available on github: https://github.com/mathiasmeeusengt/oca_modules_table
+
+To update the docs, two programs are needed. GitHub Desktop and a text editor that can work with RestructuredText
+(I used PyCharm Community Edition).
+Alternatives are using github in a console window with commands, but GitHub Desktop provides a GUI to make
+things easier. It's also possible to use any text editor, but without syntax recognition, it will make things
+harder (Errors will not be picked up and shown to the user).
+
+Now let's go over the process to get access to the files you want to edit.
+
+1. Log in to a GitHub account
+2. Browse to the second link under the title "Update Docs"
+3. Fork the repository by clicking on the fork button (View image below)
+
+.. image:: fork_repo.png
+
+This has made a copy of the Repository on your account. Any edits made in the forked repository will not change the original. This is
+done so you have all the rights to your own copy.
+
+Now to get the files local so you can edit them.
+
+4. Browse to your forked repository and open the code tab (it should be open already)
+5. Click "Clone or download" open and click the button next to the url to copy the link (View image below)
+
+.. image:: clone_repo.png
+
+6. Now open your GitHub Desktop
+7. In the top menu: File > Clone Repository
+8. This will open a new window, open the third tab "URL"
+9. Paste the copied URL into the first text field, and choose a local destination to save the files to. Click
+   clone when ready (View image below).
+
+.. image:: github_desktop_clone_repo.png
+
+This will download 
