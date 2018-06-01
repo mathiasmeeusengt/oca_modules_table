@@ -375,6 +375,21 @@ one(s) is/are added.
 Maintenance
 ===========
 
+Personal Access Token
+---------------------
+This is a token generated on the account page of your GitHub account:
+Settings > Developer settings > Personal access tokens.
+
+This token is used to increase the hourly limit an account can request calls from the githubAPI. When no
+verification is passed, this limit is 60 requests per hour. With verification, in the form of user/password,
+or an access token, this limit is increased to 5000 requests per hour.
+
+In the file ``pygithub_api.py`` line 12, an access token needs to be present in the line
+``g = Github('<access token>')`` for the pygithub functions to work.
+If this token is made public by any means (eg.: pushing to GitHub in a public repository), it will be
+deactivated and a now token must be created.
+
+
 Managing the SQLite database
 ----------------------------
 
@@ -515,10 +530,12 @@ These files can be edited in your text editor to update or change the documentat
 section, at the top right under the subtitle "Update Docs" is a guide / cheatsheet to the basics
 of Restructuredtext.
 
-If the files are edited as desired (and saved), they need to be:
+If the files are edited as desired (and saved), they need to be pushed to GitHub. This can be done from
+GitHub Desktop:
 
-#. Commit to <branch>(usually "master"). Putting something in the summary is required
-#. Pushed to origin (View image below)
+1. Put something in the summary, as this is required
+2. Commit to <branch>(usually "master")
+3. Push to origin (View image below, the button(3) will change its text once a commit has been made)
 
 .. image:: commit_push.png
 

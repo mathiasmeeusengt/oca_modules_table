@@ -323,6 +323,18 @@ one(s) is/are added.</p>
 </div>
 <div class="section" id="maintenance">
 <h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="personal-access-token">
+<h3>Personal Access Token<a class="headerlink" href="#personal-access-token" title="Permalink to this headline">¶</a></h3>
+<p>This is a token generated on the account page of your GitHub account:
+Settings &gt; Developer settings &gt; Personal access tokens.</p>
+<p>This token is used to increase the hourly limit an account can request calls from the githubAPI. When no
+verification is passed, this limit is 60 requests per hour. With verification, in the form of user/password,
+or an access token, this limit is increased to 5000 requests per hour.</p>
+<p>In the file <code class="docutils literal notranslate"><span class="pre">pygithub_api.py</span></code> line 12, an access token needs to be present in the line
+<code class="docutils literal notranslate"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">Github('&lt;access</span> <span class="pre">token&gt;')</span></code> for the pygithub functions to work.
+If this token is made public by any means (eg.: pushing to GitHub in a public repository), it will be
+deactivated and a now token must be created.</p>
+</div>
 <div class="section" id="managing-the-sqlite-database">
 <h3>Managing the SQLite database<a class="headerlink" href="#managing-the-sqlite-database" title="Permalink to this headline">¶</a></h3>
 <p>To view the contents of the database outside of the application, a third party tool is required. During development
@@ -436,10 +448,12 @@ create the online documentation automatically.</li>
 These files can be edited in your text editor to update or change the documentation. The first link in this
 section, at the top right under the subtitle “Update Docs” is a guide / cheatsheet to the basics
 of Restructuredtext.</p>
-<p>If the files are edited as desired (and saved), they need to be:</p>
+<p>If the files are edited as desired (and saved), they need to be pushed to GitHub. This can be done from
+GitHub Desktop:</p>
 <ol class="arabic simple">
-<li>Commit to &lt;branch&gt;(usually “master”). Putting something in the summary is required</li>
-<li>Pushed to origin (View image below)</li>
+<li>Put something in the summary, as this is required</li>
+<li>Commit to &lt;branch&gt;(usually “master”)</li>
+<li>Push to origin (View image below, the button(3) will change its text once a commit has been made)</li>
 </ol>
 <img alt="../_images/commit_push.png" src="../_images/commit_push.png" />
 <p>Webhooks from ReadtheDocs.org should handle the rest automatically to update the online documentation</p>
@@ -501,6 +515,7 @@ of Restructuredtext.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#maintenance">Maintenance</a><ul>
+<li><a class="reference internal" href="#personal-access-token">Personal Access Token</a></li>
 <li><a class="reference internal" href="#managing-the-sqlite-database">Managing the SQLite database</a></li>
 <li><a class="reference internal" href="#adding-a-new-odoo-version">Adding a new Odoo version</a><ul>
 <li><a class="reference internal" href="#id1">Forms</a></li>
