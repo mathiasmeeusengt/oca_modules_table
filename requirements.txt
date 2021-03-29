@@ -27,7 +27,7 @@ packaging==17.1
 pathtools==0.1.2
 port-for==0.3.1
 PyGithub==1.37
-Pygments==2.2.0
+Pygments==2.7.4
 PyJWT==1.6.0
 pyparsing==2.2.0
 python-dateutil==2.7.0
